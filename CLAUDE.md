@@ -2,22 +2,50 @@
 
 ## Project Overview
 
-**money-press** is a dropshipping company project. This repository is in its earliest stage — only a README exists. No tech stack, framework, or source code has been committed yet.
+**money-press** is a modern dropshipping e-commerce store built with Next.js 15, React 19, and PostgreSQL. The storefront is fully functional with product management, orders, and cart systems.
 
-## Current Repository State
+## Current State
 
 ```
 money-press/
-├── .git/
-├── README.md       # "money-press — dropshipping company"
-└── CLAUDE.md       # This file
+├── src/
+│   ├── app/                    # Next.js app directory
+│   │   ├── api/               # REST API endpoints
+│   │   │   ├── products/      # Product CRUD operations
+│   │   │   ├── orders/        # Order management
+│   │   │   └── cart/          # Shopping cart
+│   │   ├── layout.tsx         # Root layout with navigation
+│   │   └── page.tsx           # Home page with hero and featured products
+│   ├── components/            # Reusable React components
+│   ├── db/
+│   │   ├── schema.ts          # Drizzle ORM database schema
+│   │   └── index.ts           # Database connection
+│   ├── lib/
+│   │   └── validations.ts     # Zod validation schemas
+│   └── styles/
+│       └── globals.css        # Tailwind CSS global styles
+├── package.json               # Dependencies and scripts
+├── tsconfig.json              # TypeScript configuration
+├── tailwind.config.ts         # Tailwind CSS configuration
+├── next.config.ts             # Next.js configuration
+├── postcss.config.js          # PostCSS configuration
+├── .env.example               # Environment variable template
+├── .eslintrc.json             # ESLint configuration
+├── .gitignore                 # Git ignore rules
+├── README.md                  # User-facing documentation
+└── CLAUDE.md                  # This file
 ```
 
-- **Single commit:** `454ed35` — "Initial commit"
-- **Language/Framework:** Not yet established
-- **Dependencies:** None
-- **Tests:** None
-- **CI/CD:** None
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 19
+- **Styling**: Tailwind CSS 3.4
+- **Backend**: Next.js API Routes
+- **Database**: PostgreSQL 14+ with Drizzle ORM
+- **Validation**: Zod 3.22
+- **Language**: TypeScript 5.3
+- **Package Manager**: npm/pnpm
+
 
 ## Development Branch
 
@@ -29,56 +57,158 @@ claude/claude-md-mm2mnu1wdd9474mi-a5IGM
 
 Always develop on the designated `claude/` branch. Never push to `main` or `master` without explicit permission.
 
-## Git Workflow
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js 18+
+- PostgreSQL 14+
+- npm or pnpm
+
+### Installation
 
 ```bash
-# Push changes
-git push -u origin claude/claude-md-mm2mnu1wdd9474mi-a5IGM
+# Install dependencies
+npm install
 
-# If push fails due to network error, retry with exponential backoff:
-# 2s → 4s → 8s → 16s
+# Copy environment template
+cp .env.example .env
+
+# Edit .env and set DATABASE_URL:
+# DATABASE_URL=postgresql://username:password@localhost:5432/money_press
 ```
 
-- Write clear, descriptive commit messages
-- Commit and push when changes are complete
-- Create the branch locally first if it does not exist
+### Database Setup
 
-## Conventions to Follow (When Code is Added)
+```bash
+# Create database
+createdb money_press
 
-Since no stack has been chosen yet, the following are placeholder conventions to apply once the project is initialized:
+# Run migrations (when migration system is set up)
+npm run db:push
+```
 
-### General
-- Keep the codebase minimal — only add what is needed for the current task
-- No over-engineering; avoid premature abstractions
-- Validate only at system boundaries (user input, external APIs)
-- No backwards-compatibility hacks for code that is not yet in use
+### Development
 
-### Code Style
-- Follow the conventions of whatever language/framework is adopted
-- Use linting and formatting tools standard to that ecosystem
-- Do not add docstrings or comments to code you did not change
+```bash
+# Start development server (http://localhost:3000)
+npm run dev
+
+# Build for production
+npmAPI Endpoints
+
+### Products
+```
+GET    /api/products           # List products (filters: category, minPrice, maxPrice, limit, offset)
+POST   /api/products           # Create product (admin)
+GET    /api/products/[id]      # Get product by ID
+PATCH  /api/products/[id]      # Update product
+DELETE /api/products/[id]      # Delete product
+```
+
+### Orders
+```
+GET    /api/orders             # List orders (filters: status, limit, offset)
+POST   /api/orders             # Create order with items
+GET    /api/orders/[id]        # Get order details
+PATCH  /api/orders/[id]        # Update order (e.g., status)
+```
+
+### Cart (TODO)
+```
+GET    /api/cart               # Get cart by session
+POST   /api/cart/items         # Add item to cart
+PATCH  /api/cart/items/[id]    # Update cart item quantity
+DELETE /api/cart/items/[id]    # Remove item from cart
+```
+
+## Database Schema
+
+### Products Table
+- `id` - Primary key
+- `name` - Product name (varchar 255)
+- `description` - Product description (text)
+- `price` - Selling price (decimal)
+- `cost` - Cost price (decimal)
+- `category` - Category enum (electronics, clothing, home, sports, books, other)
+- `stock` - Inventory count
+- `imageUrl` - Product image URL
+- `sku` - Unique stock keeping unit
+- `active` - Visibility flag
+- `createdAt`, `updatedAt` - Timestamps
+
+### Orders Table
+- `id` - Primary key
+- `orderNumber` - Unique order ID (e.g., ORD-1234567890-abc123)
+- `customerEmail` - Customer email
+- `customerName` - Customer name
+- `totalPrice` - Order total (decimal)
+- `status` - Status enum (pending, processing, shipped, delivered, cancelled)
+- `shippingAddress` - Delivery address
+- `createdAt`, `updatedAt` - Timestamps
+
+### Order Items Table
+- `id` - Primary key
+- `orderId` - Foreign key to orders
+- `productId` - Foreign key to products
+- `quantity` - Item quantity
+- `priceAtPurchase` - Price at time of purchase (for historical accuracy)
+
+### Carts Table
+- `id` - Primary key
+- `sessionId` - Unique session identifier
+- `createdAt`, `updatedAt` - Timestamps
+
+### Cart Items Table
+- `id` - Primary key
+- `cartId` - Foreign key to carts
+- `productId` - Foreign key to products
+- `quantity` - Item quantity
+
+## Next Steps
+
+Priority features to implement:
+
+1. **Shopping Cart UI**
+   - Display products on homepage with real data
+   - Add to cart functionality
+   - Cart page with quantity adjustment
+
+2. **Admin Dashboard**
+   - Product management interface
+   - Order tracking and status updates
+   - Inventory management
+
+3. **Checkout & Payments**
+   - Checkout flow
+   - Stripe integration
+   - Order confirmation emails
+
+4. **Additional Features**
+   - User authentication
+   - Search and advanced filtering
+   - Product reviews/ratings
+   - Wishlist
+   - Admin analytics
+- Follow Next.js and React best practices
+- Use functional components with hooks
+- Use Tailwind CSS for all styling
+- No utility classes beyond Tailwind
+
+### Database
+- Use Drizzle ORM for all database queries
+- Keep schema in `src/db/schema.ts`
+- Use migrations for schema changes (implement when needed)
+
+### API
+- Follow REST conventions
+- Use Zod for request/response validation
+- Return consistent error responses
+- Proper HTTP status codes
 
 ### Security
-- Never commit secrets, credentials, or `.env` files
-- Sanitize all user input before use
-- Avoid OWASP Top 10 vulnerabilities (injection, XSS, CSRF, etc.)
-
-### Testing
-- Write tests for new features once a testing framework is established
-- Run tests before committing
-
-## Next Steps for the Project
-
-When development begins, update this file with:
-
-1. **Tech stack** — language, framework, runtime version
-2. **Setup instructions** — how to install dependencies and run locally
-3. **Development scripts** — `npm run dev`, `make serve`, etc.
-4. **Test commands** — how to run the test suite
-5. **Environment variables** — list required vars (use `.env.example`)
-6. **Directory structure** — explain what lives in each top-level folder
-7. **Deployment** — how the app is built and shipped
-
-## Updating This File
-
-Keep this file current as the project evolves. After any major structural change (new framework, new directory layout, new scripts), update the relevant sections here so future AI sessions have accurate context.
+- Never commit `.env` files
+- Sanitize all user inputs
+- Use parameterized queries (handled by Drizzle)
+- Validate all requests with Zod schemas
+- Implement authentication before payment processing
