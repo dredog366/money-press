@@ -1,93 +1,104 @@
-# money-press
+# Money Press
 
-Dropshipping company — AI-automated WooCommerce store pipeline.
+A modern dropshipping e-commerce platform built with Next.js 15, React 19, and PostgreSQL.
 
-## Architecture
+## Features
 
-Keep WordPress boring. WP/Woo handles store + checkout. AI work runs outside WordPress.
+- **Product Management** - Add, edit, and manage product catalog with categories and pricing
+- **Shopping Cart** - Session-based shopping cart functionality
+- **Order Management** - Track orders from creation to delivery
+- **Responsive Design** - Mobile-first UI built with Tailwind CSS
+- **REST API** - Complete API for products, orders, and cart operations
+- **Type-Safe** - Full TypeScript support with Zod validation
 
-```
-AI generates data → products.json + assets/ → import_products.py → WooCommerce
-```
+## Tech Stack
 
-## Repo structure
+- **Frontend**: Next.js 15, React 19, Tailwind CSS
+- **Backend**: Next.js API Routes
+- **Database**: PostgreSQL with Drizzle ORM
+- **Validation**: Zod
+- **Language**: TypeScript
 
-```
-money-press/
-├── setup_woo.sh          # One-time server provisioning (Ubuntu + Nginx)
-├── products.json         # Product catalog (edit or AI-generate this)
-├── import_products.py    # Pushes products.json into WooCommerce via REST API
-├── .env.example          # Credential template — copy to .env, never commit .env
-└── assets/               # Product images (create this folder, add your images here)
-```
+## Quick Start
 
-## Quick start
+### Prerequisites
 
-### 1. Provision the server
+- Node.js 18+
+- PostgreSQL 14+
+- npm or pnpm
 
-```bash
-cp setup_woo.sh my_setup.sh
-# Edit DOMAIN, ADMIN_PASS, DB_PASS at the top
-chmod +x my_setup.sh
-./my_setup.sh
-```
-
-> **Note:** PHP-FPM socket path varies by version. Edit the `fastcgi_pass` line in
-> the generated Nginx config if needed (e.g. `php8.2-fpm.sock`).
-
-### 2. Configure WooCommerce REST API (one-time, in browser)
-
-1. WP Admin → WooCommerce → Settings → Advanced → REST API → **Add Key**
-2. WP Admin → Users → Profile → **Application Passwords** → Add new
-
-### 3. Set credentials
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Copy environment file and configure
 cp .env.example .env
-# Fill in WC_CONSUMER_KEY, WC_CONSUMER_SECRET, WP_APP_PASSWORD, etc.
+
+# Update DATABASE_URL in .env with your PostgreSQL connection string
 ```
 
-### 4. Add product images
+### Database Setup
 
 ```bash
-mkdir -p assets
-# Copy your images into assets/
-# Filenames must match the "images" field in products.json
+# Create database tables (when ready)
+npm run db:push
 ```
 
-### 5. Import products
+### Development
 
 ```bash
-python3 -m pip install requests python-dotenv
-python3 import_products.py
+# Start development server
+npm run dev
 ```
 
-The importer creates new products and updates existing ones (matched by SKU).
+The store will be available at [http://localhost:3000](http://localhost:3000)
 
-## WooCommerce plugins (minimal set)
+## Project Structure
 
-| Plugin | Purpose |
-|---|---|
-| WooCommerce | Core store |
-| Stripe (official) | Payments |
-| PayPal Payments | Payments |
-| WP Mail SMTP | Transactional email |
-| Rank Math | SEO |
-| WP Super Cache | Caching |
-| Wordfence | Security |
+```
+src/
+├── app/                 # Next.js app directory
+│   ├── api/            # REST API routes
+│   │   ├── products/   # Product endpoints
+│   │   ├── orders/     # Order endpoints
+│   │   └── cart/       # Cart endpoints
+│   ├── layout.tsx      # Root layout
+│   └── page.tsx        # Home page
+├── components/         # React components
+├── db/
+│   ├── schema.ts       # Database schema (Drizzle)
+│   └── index.ts        # Database connection
+├── lib/
+│   └── validations.ts  # Zod schemas
+└── styles/
+    └── globals.css     # Tailwind styles
+```
 
-## Product lineup (FreshPaws — pet dental)
+## API Endpoints
 
-| SKU | Product | Price |
-|---|---|---|
-| FP-DENTAL-30 | 30-day bottle | $29.99 |
-| FP-DENTAL-2PK | 2-pack | $49.99 |
-| FP-TRAVEL-CAP | Travel measuring cap | $6.99 |
+### Products
+- `GET /api/products` - List products (with filters: category, minPrice, maxPrice)
+- `POST /api/products` - Create product (admin)
+- `GET /api/products/[id]` - Get product details
+- `PATCH /api/products/[id]` - Update product
+- `DELETE /api/products/[id]` - Delete product
 
-Edit `products.json` to change or add products.
+### Orders
+- `GET /api/orders` - List orders
+- `POST /api/orders` - Create order
+- `GET /api/orders/[id]` - Get order details
+- `PATCH /api/orders/[id]` - Update order status
 
-## Security
+## Next Steps
 
-- Never commit `.env` — it is in `.gitignore`
-- Use WordPress Application Passwords for media upload (not your main password)
-- WooCommerce REST API keys are scoped to read/write products only
+- [ ] Add authentication (admin login)
+- [ ] Implement shopping cart UI
+- [ ] Add payment processing (Stripe)
+- [ ] Product search and filtering UI
+- [ ] Order tracking page
+- [ ] Admin dashboard
+- [ ] Email notifications
+- [ ] Image optimization
+- [ ] Deployment (Vercel/Railway)
