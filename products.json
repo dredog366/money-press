@@ -1,0 +1,32 @@
+[
+  {
+    "sku": "FP-DENTAL-30",
+    "name": "FreshPaws Dental Water Additive (30-Day)",
+    "regular_price": "29.99",
+    "short_description": "Daily water additive to support fresher breath for dogs.",
+    "description": "<p>Simple daily support for fresher breath. Add to water bowl.</p><ul><li>No brushing required</li><li>Easy daily routine</li><li>Great for picky dogs</li></ul><p><strong>Note:</strong> Not a medicine. No health guarantees.</p>",
+    "categories": ["Dog Care", "Dental"],
+    "tags": ["refill", "daily routine"],
+    "images": ["freshpaws_bottle_1.jpg", "freshpaws_lifestyle_1.jpg"]
+  },
+  {
+    "sku": "FP-DENTAL-2PK",
+    "name": "FreshPaws Dental Water Additive (2-Pack)",
+    "regular_price": "49.99",
+    "short_description": "Two 30-day bottles — stock up and save.",
+    "description": "<p>Get two bottles and keep the routine going without interruption.</p><ul><li>60-day supply</li><li>Same easy daily use</li><li>Better value per bottle</li></ul><p><strong>Note:</strong> Not a medicine. No health guarantees.</p>",
+    "categories": ["Dog Care", "Dental", "Bundles"],
+    "tags": ["refill", "bundle", "value"],
+    "images": ["freshpaws_2pack_1.jpg", "freshpaws_lifestyle_1.jpg"]
+  },
+  {
+    "sku": "FP-TRAVEL-CAP",
+    "name": "FreshPaws Travel Measuring Cap",
+    "regular_price": "6.99",
+    "short_description": "Portable cap for on-the-go dental routines.",
+    "description": "<p>Keep the routine going wherever you and your dog go. Fits standard bottle necks.</p><ul><li>Precise measuring markings</li><li>Compact and lightweight</li><li>Pairs with any FreshPaws bottle</li></ul>",
+    "categories": ["Dog Care", "Dental", "Accessories"],
+    "tags": ["travel", "add-on"],
+    "images": ["freshpaws_cap_1.jpg"]
+  }
+]
