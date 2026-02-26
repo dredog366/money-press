@@ -1,0 +1,4 @@
+name,description,price,sku,cost,stock,category,image_url,weight,active
+FreshPaws Dental Water Additive (30-Day),"Simple daily support for fresher breath. Add to water bowl. No brushing required.",29.99,FP-DENTAL-30,8.50,100,Dog Care,,0.5,true
+FreshPaws Dental Water Additive (2-Pack),"Two 30-day bottles — stock up and save. 60-day supply, better value per bottle.",49.99,FP-DENTAL-2PK,16.00,50,Dog Care,,1.0,true
+FreshPaws Travel Measuring Cap,"Portable cap for on-the-go dental routines. Precise markings, compact and lightweight.",6.99,FP-TRAVEL-CAP,1.50,200,Accessories,,0.1,true
