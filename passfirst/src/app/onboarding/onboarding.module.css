@@ -1,0 +1,233 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px 48px;
+  background: var(--color-bg);
+}
+
+.content {
+  width: 100%;
+  max-width: 480px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.stepLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.heading {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.sub {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.feature {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.stateGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stateBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-card);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+}
+
+.stateBtn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.stateBtn.selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.stateFlag {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: -8px;
+}
+
+.fieldHint {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: -4px;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-card);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.dateInput:focus {
+  border-color: var(--color-primary);
+}
+
+.dailyGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dailyBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-card);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+}
+
+.dailyBtn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.dailyBtn.selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.dailyLabel {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.dailyBtn.selected .dailyLabel {
+  color: var(--color-primary);
+}
+
+.dailySub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.diagProgress {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.diagDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: background 0.2s;
+}
+
+.diagDone { background: var(--color-success); }
+.diagActive { background: var(--color-primary); }
+
+.scoreCircle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  gap: 4px;
+}
+
+.scoreNum {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.scoreLabel {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.readyBox {
+  background: var(--color-primary-light);
+  border: 1px solid #BFDBFE;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.readyBox p {
+  font-size: 14px;
+  color: var(--color-primary);
+  line-height: 1.5;
+  margin: 0;
+}

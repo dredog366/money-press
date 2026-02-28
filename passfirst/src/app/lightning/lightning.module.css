@@ -1,0 +1,238 @@
+.introSection {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.introIcon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.introText {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.introBullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.introBullet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.bulletIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Drill */
+.drillSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.drillHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.drillCount {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.quitBtn {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.timerRing {
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+
+.timerSvg {
+  width: 90px;
+  height: 90px;
+}
+
+.timerNum {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  transition: color 0.3s;
+}
+
+.topicTag {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.prompt {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.4;
+  text-align: center;
+  max-width: 340px;
+}
+
+.revealBtn {
+  padding: 12px 28px;
+  background: var(--color-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  transition: border-color 0.15s;
+}
+
+.revealBtn:hover {
+  border-color: var(--color-primary);
+}
+
+.gradeRow {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.gotBtn {
+  flex: 1;
+  padding: 12px;
+  background: var(--color-success);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.blankedBtn {
+  flex: 1;
+  padding: 12px;
+  background: var(--color-danger);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Results */
+.resultsSection {
+  padding-top: 4px;
+}
+
+.scoreCircle {
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.scoreHigh { background: var(--color-success-light); }
+.scoreMid { background: var(--color-primary-light); }
+.scoreLow { background: var(--color-warning-light); }
+
+.scoreNum {
+  display: block;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.scoreSub {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.resultItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.resultGot {
+  background: var(--color-success-light);
+  border: 1px solid #BBF7D0;
+}
+
+.resultBlanked {
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+}
+
+.resultIcon {
+  font-size: 14px;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.resultGot .resultIcon { color: var(--color-success); }
+.resultBlanked .resultIcon { color: var(--color-danger); }
+
+.resultPrompt {
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.resultActions {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,235 @@
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid var(--color-border);
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progressText {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.progressTrack {
+  height: 4px;
+  background: var(--color-bg);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 100px;
+  transition: width 0.3s ease;
+}
+
+.difficulty {
+  display: flex;
+}
+
+.difficultyBadge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.easy   { background: var(--color-success-light); color: var(--color-success); }
+.medium { background: var(--color-primary-light); color: var(--color-primary); }
+.hard   { background: var(--color-danger-light); color: var(--color-danger); }
+
+.questionText {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-card);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  width: 100%;
+}
+
+.unanswered:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.unanswered:hover .optionLetter {
+  background: var(--color-primary);
+  color: white;
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.correct {
+  border-color: var(--color-success);
+  background: var(--color-success-light);
+}
+
+.wrong {
+  border-color: var(--color-danger);
+  background: var(--color-danger-light);
+}
+
+.optionLetter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.correct .optionLetter { background: var(--color-success); color: white; }
+.wrong .optionLetter   { background: var(--color-danger); color: white; }
+
+.optionText {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.mark {
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.correct .mark { color: var(--color-success); }
+.wrong .mark   { color: var(--color-danger); }
+
+.explanation {
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.explCorrect { background: var(--color-success-light); border: 1px solid #86EFAC; }
+.explWrong   { background: var(--color-danger-light); border: 1px solid #FCA5A5; }
+
+.explHeader {
+  font-size: 15px;
+  font-weight: 700;
+}
+.explCorrect .explHeader { color: var(--color-success); }
+.explWrong .explHeader   { color: var(--color-danger); }
+
+.explText {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.trapNote {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.trapLabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #92400E;
+  margin-bottom: 4px;
+}
+
+.trapNote p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #78350F;
+}
+
+.missSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.missPrompt {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.missButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.missBtn {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--color-text);
+  text-align: left;
+  transition: border-color 0.15s;
+}
+
+.missBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.missConfirm {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
