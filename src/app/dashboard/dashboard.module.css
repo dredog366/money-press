@@ -1,0 +1,298 @@
+.overallCard {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+
+.overallHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.overallLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.overallScore {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.streakBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  border-radius: 100px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.streakNum {
+  font-size: 12px;
+  font-weight: 700;
+  color: #EA580C;
+}
+
+.overallTrack {
+  height: 8px;
+  background: var(--color-bg);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.overallFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #3B82F6 100%);
+  border-radius: 100px;
+  transition: width 0.6s ease;
+}
+
+.overallPills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border-radius: 8px;
+  padding: 8px 4px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Accuracy card */
+.accuracyCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+.accuracyLeft { flex: 1; }
+
+.accuracyLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.accuracyNum {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.accuracyMeta {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.accuracyRight {
+  flex-shrink: 0;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 24px;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+/* Topic rows */
+.topicRows {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.topicRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: background 0.1s;
+}
+
+.topicRow:last-child { border-bottom: none; }
+.topicRow:hover { background: var(--color-bg); }
+
+.topicIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.topicMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.topicName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+/* Section cards */
+.sectionCards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionCard {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sectionCardIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.sectionCardMeta {
+  flex: 1;
+}
+
+.sectionCardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.sectionCardWeight {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.sectionCardPct {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.miniTrack {
+  height: 5px;
+  background: var(--color-bg);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.miniFill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 0.4s ease;
+}
+
+/* Danger zone */
+.dangerZone {
+  margin-top: 8px;
+  padding: 16px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dangerLabel {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.resetBtn {
+  background: none;
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.resetBtn:hover {
+  background: var(--color-danger-light);
+}
