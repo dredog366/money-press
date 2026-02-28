@@ -1,24 +1,16 @@
-'use client';
+import Link from "next/link";
+import styles from "./page.module.css";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useApp } from '@/store';
-
-export default function RootPage() {
-  const { state } = useApp();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (state.user?.onboardingComplete) {
-      router.replace('/home');
-    } else {
-      router.replace('/onboarding');
-    }
-  }, [state.user, router]);
-
+export default function HomePage() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
-      <span style={{ fontSize: 32 }}>🏠</span>
-    </div>
+    <main className={styles.main}>
+      <section className={styles.hero}>
+        <h1>Money Press</h1>
+        <p>Quality products, delivered fast.</p>
+        <Link href="/products" className={styles.cta}>
+          Shop Now
+        </Link>
+      </section>
+    </main>
   );
 }
