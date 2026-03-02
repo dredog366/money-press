@@ -7,27 +7,65 @@
 }
 
 :root {
-  --font-geist-sans: sans-serif;
-  --font-geist-mono: monospace;
-  --color-bg: #ffffff;
-  --color-text: #111111;
+  --font-sans: var(--font-dm-sans), "DM Sans", sans-serif;
+  --font-serif: var(--font-dm-serif), "DM Serif Display", Georgia, serif;
+
+  /* Brand palette — LatherLoop / Money Press */
+  --color-bg: #f7f5f2; /* Foam White */
+  --color-primary: #1e3a2f; /* Deep Forest */
+  --color-primary-hover: #2a5040;
+  --color-accent: #a8c5a0; /* Sage Mist */
+  --color-sand: #d9c9b0; /* Warm Sand */
+  --color-text: #2d2d2d; /* Clean Slate */
   --color-muted: #666666;
-  --color-border: #e5e5e5;
-  --color-accent: #0070f3;
+  --color-border: #e0dbd3;
+  --color-surface: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-sans);
   background: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-sans);
+}
+
+/* Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
