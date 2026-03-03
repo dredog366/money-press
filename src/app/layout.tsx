@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Money Press — Dropshipping Store",
-  description: "Quality products delivered to your door.",
+  title: "FaceTea Shop — Tea-Powered Skincare",
+  description: "Premium tea-infused skincare products delivered to your door.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
