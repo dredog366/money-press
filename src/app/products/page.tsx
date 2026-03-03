@@ -3,7 +3,7 @@ import { SAMPLE_PRODUCTS } from "@/data/products";
 import styles from "./products.module.css";
 
 export const metadata = {
-  title: "Products — Money Press",
+  title: "Products — FaceTea Shop",
 };
 
 export default function ProductsPage() {
