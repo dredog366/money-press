@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function HomePage() {
@@ -7,9 +6,9 @@ export default function HomePage() {
       <section className={styles.hero}>
         <h1>FaceTea Shop</h1>
         <p>Tea-powered skincare, delivered to your door.</p>
-        <Link href="/products" className={styles.cta}>
+        <a href="https://facetea.org/shop" className={styles.cta}>
           Shop Now
-        </Link>
+        </a>
       </section>
     </main>
   );
