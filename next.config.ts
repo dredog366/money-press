@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/products",
-        destination: "https://facetea.org/shop",
+        destination: "https://shop.facetea.org",
         permanent: false,
       },
     ];
