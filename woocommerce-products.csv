@@ -1,0 +1,5 @@
+ID,Type,SKU,Name,Published,Featured,Visibility in catalog,Short description,Description,Tax status,In stock?,Stock,Backorders allowed?,Sold individually?,Regular price,Sale price,Categories,Tags,Images
+,simple,FACETEA-001,Green Tea Brightening Serum,1,0,visible,"Antioxidant-rich serum with matcha extract.","Antioxidant-rich serum with matcha extract. Visibly brightens and evens skin tone in 2 weeks.",taxable,1,,0,0,24.99,,Serums,,
+,simple,FACETEA-002,Chamomile Calming Face Wash,1,0,visible,"Gentle foam cleanser with chamomile and calendula.","Gentle foam cleanser with chamomile and calendula. Soothes redness and removes impurities.",taxable,1,,0,0,14.99,,Cleansers,,
+,simple,FACETEA-003,White Tea Eye Cream,1,0,visible,"Delicate eye cream with white tea peptides.","Delicate eye cream with white tea peptides. Reduces dark circles and fine lines overnight.",taxable,0,,0,0,34.99,,Treatments,,
+,simple,FACETEA-004,Oolong Hydrating Day Cream,1,0,visible,"Lightweight SPF 30 moisturiser with oolong polyphenols.","Lightweight SPF 30 moisturiser with oolong polyphenols. Hydrates and shields all day.",taxable,1,,0,0,29.99,,Moisturisers,,
