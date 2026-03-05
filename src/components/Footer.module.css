@@ -1,0 +1,93 @@
+.footer {
+  background: var(--color-text);
+  color: #F7F5F2;
+  margin-top: 6rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  flex: 1;
+  min-width: 180px;
+}
+
+.logo {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.5rem;
+  color: #F7F5F2;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.brand p {
+  font-size: 0.9rem;
+  color: #A8C5A0;
+  line-height: 1.5;
+}
+
+.links {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 120px;
+}
+
+.col h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A8C5A0;
+  margin-bottom: 0.25rem;
+}
+
+.col a {
+  font-size: 0.9rem;
+  color: #D9C9B0;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.col a:hover {
+  color: #F7F5F2;
+  text-decoration: none;
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bottom p {
+  font-size: 0.8rem;
+  color: rgba(247, 245, 242, 0.5);
+}
+
+.badges {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: rgba(247, 245, 242, 0.6);
+}

@@ -1,0 +1,264 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 7rem 2rem 6rem;
+  text-align: center;
+  background: var(--color-bg);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.ctaPrimary {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #F7F5F2;
+  padding: 0.875rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.ctaPrimary:hover {
+  background: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+.ctaSecondary {
+  display: inline-block;
+  color: var(--color-text);
+  padding: 0.875rem 1.25rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.ctaSecondary:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+/* Trust badges */
+.badges {
+  background: var(--color-text);
+  padding: 1rem 2rem;
+}
+
+.badgesInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badgesInner span {
+  font-size: 0.85rem;
+  color: #A8C5A0;
+  font-weight: 400;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 2rem;
+}
+
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionInner > h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 2.5rem;
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stepNum {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5rem;
+  color: var(--color-sage);
+  line-height: 1;
+}
+
+.step h3 {
+  font-size: 1.1rem;
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* Benefits */
+.benefits {
+  background: var(--color-sand);
+  padding: 5rem 2rem;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.benefit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.benefitIcon {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.benefit h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+}
+
+.benefit p {
+  font-size: 0.95rem;
+  color: #4a5a4a;
+  line-height: 1.6;
+}
+
+/* Products grid */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.viewAll {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+/* Testimonials */
+.testimonials {
+  background: var(--color-text);
+  padding: 5rem 2rem;
+}
+
+.testimonials .sectionInner {
+  text-align: center;
+}
+
+.socialProof {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-sage);
+  margin-bottom: 2rem;
+}
+
+.reviewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.review {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.review p {
+  font-size: 0.95rem;
+  color: #F7F5F2;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.review cite {
+  font-size: 0.8rem;
+  color: var(--color-sage);
+  font-style: normal;
+}
+
+/* Final CTA */
+.finalCta {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.finalCta .sectionInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.finalCta h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.finalCta p {
+  font-size: 1.05rem;
+  color: var(--color-muted);
+  max-width: 480px;
+}
