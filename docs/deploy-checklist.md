@@ -1,91 +1,69 @@
-# FaceTea Shop — Deploy Checklist (Hostinger + WooCommerce)
+# FaceTea Shop — Deploy Checklist (Vercel + Stripe)
 
 ---
 
-## Phase 1: Hostinger Account Setup
+## Phase 1: Stripe Account Setup
 
-- [ ] Log in to https://hpanel.hostinger.com
-- [ ] Confirm your hosting plan supports WordPress (any WordPress or Web hosting plan)
-- [ ] Note your **Server IP Address** (Plan Details section)
-- [ ] Note your **Nameservers** (e.g., `ns1.dns-parking.com`, `ns2.dns-parking.com`)
+- [ ] Create a Stripe account at https://stripe.com
+- [ ] Complete account verification (business details, bank account)
+- [ ] Note your **Test** Secret Key: `sk_test_...` (from Dashboard > Developers > API Keys)
+- [ ] Note your **Live** Secret Key: `sk_live_...` (for production — enable after testing)
 
-## Phase 2: WordPress Installation
+## Phase 2: Vercel Project Setup
 
-- [ ] In hPanel, go to **WordPress > Install**
-- [ ] Select your hosting plan
-- [ ] Set admin email, username, and password
-- [ ] Choose language: English
-- [ ] Click **Install** — WordPress is ready in ~2 minutes
-- [ ] Log in to wp-admin and confirm dashboard loads
+- [ ] Go to https://vercel.com/new
+- [ ] Import your GitHub repo (`dredog366/money-press`)
+- [ ] Framework preset: **Other** (not Next.js — this is a static site with serverless functions)
+- [ ] Build command: leave blank
+- [ ] Output directory: `.`
+- [ ] Add environment variable:
+  - Key: `STRIPE_SECRET_KEY`
+  - Value: your Stripe test key (`sk_test_...`) for now
+- [ ] Click **Deploy**
 
 ## Phase 3: Domain Connection
 
-- [ ] Follow the [domain-connection.md](./domain-connection.md) guide
-- [ ] Point `facetea.org` to Hostinger (Option A: nameservers, or Option B: A records)
-- [ ] Wait for DNS propagation (check at https://dnschecker.org)
-- [ ] In wp-admin: **Settings > General** — set both URLs to `https://facetea.org`
-- [ ] In hPanel: **Security > SSL** — install free SSL and force HTTPS
-- [ ] Verify `https://facetea.org` loads your WordPress site
+- [ ] In Vercel project, go to **Settings > Domains**
+- [ ] Add `facetea.org` (it's already on your Vercel account)
+- [ ] Add `www.facetea.org` as well
+- [ ] Vercel handles SSL automatically
 
-## Phase 4: WooCommerce Setup
+## Phase 4: Testing (Use Stripe Test Mode)
 
-- [ ] In wp-admin: **Plugins > Add New** — search and install **WooCommerce**
-- [ ] Activate WooCommerce and run the setup wizard
-- [ ] Set store address, currency (USD), and product type (Physical)
-- [ ] In **WooCommerce > Settings > General**: confirm store URL is `https://facetea.org`
-- [ ] In **WooCommerce > Settings > Shipping**: set up free shipping zone (threshold: $50)
-- [ ] In **WooCommerce > Settings > Payments**: enable a payment gateway (see Phase 5)
+- [ ] Visit your deployed site
+- [ ] Add products to cart
+- [ ] Click Checkout — should redirect to Stripe Checkout page
+- [ ] Use test card: `4242 4242 4242 4242` (any future date, any CVC)
+- [ ] Complete purchase — should redirect to success page
+- [ ] Verify cart is cleared after purchase
+- [ ] Test cancel flow — should redirect to cancel page
+- [ ] Check Stripe Dashboard > Payments — test payment should appear
+- [ ] Test on mobile (phone + tablet)
+- [ ] Test all pages: products, about, shipping, FAQ, contact, privacy, terms
 
-## Phase 5: Payment Gateway
+## Phase 5: Go Live
 
-- [ ] **Option A — Stripe:** Install "WooCommerce Stripe Payment Gateway" plugin
-  - Add Stripe API keys in **WooCommerce > Settings > Payments > Stripe**
-- [ ] **Option B — PayPal:** Install "WooCommerce PayPal Payments" plugin
-  - Connect your PayPal business account
-- [ ] Test a purchase in test/sandbox mode
-- [ ] Switch to live mode once confirmed working
+- [ ] In Stripe Dashboard, switch from Test to Live mode
+- [ ] Copy your **Live** Secret Key (`sk_live_...`)
+- [ ] In Vercel > Project Settings > Environment Variables:
+  - Update `STRIPE_SECRET_KEY` to your live key
+  - Redeploy the project
+- [ ] Place a real $14.99 test order (buy the cheapest product)
+- [ ] Verify order appears in Stripe Dashboard (live)
+- [ ] Refund the test order from Stripe Dashboard
 
-## Phase 6: Import Products
+## Phase 6: SEO & Analytics
 
-- [ ] In wp-admin: **WooCommerce > Products > Import**
-- [ ] Upload `woocommerce/products-import.csv` from this repo
-- [ ] Map columns and click **Run the Importer**
-- [ ] Verify all 8 products appear with correct names, descriptions, and prices
-- [ ] Add product images (upload or link from supplier)
-
-## Phase 7: Theme & Branding
-
-- [ ] Follow [facetea-theme-setup.md](./facetea-theme-setup.md) for theme configuration
-- [ ] Install a WooCommerce-compatible theme (e.g., Astra, Flavflavor, Flavor by flavor)
-- [ ] Set up logo, colors, and fonts per brand guidelines
-- [ ] Configure homepage layout with featured products
-- [ ] Create pages: About, Shipping & Returns, FAQ, Contact
-- [ ] Add Privacy Policy and Terms of Service pages
-
-## Phase 8: Email Setup
-
-- [ ] In hPanel: **Emails > Manage** for facetea.org
-- [ ] Create `support@facetea.org`
-- [ ] In WooCommerce: **Settings > Emails** — set "From" address to `support@facetea.org`
-- [ ] Test: place a test order and confirm email notifications arrive
-
-## Phase 9: SEO & Analytics
-
-- [ ] Install **Yoast SEO** or **Rank Math** plugin
-- [ ] Set up meta titles and descriptions for all products and pages
-- [ ] Submit sitemap to Google Search Console (`https://facetea.org/sitemap.xml`)
-- [ ] Install Google Analytics (GA4) — use **Site Kit by Google** or paste tag in theme header
+- [ ] Google Search Console: verify `facetea.org` and submit sitemap
+- [ ] Google Analytics: add GA4 tag to `index.html` (in the `<head>`)
 - [ ] Test structured data: https://search.google.com/test/rich-results
+- [ ] Share on social media and verify Open Graph preview looks correct
 
-## Phase 10: Final Checks
+## Phase 7: Final Checks
 
-- [ ] All 8 products have images, descriptions, and correct prices
-- [ ] Checkout flow works end-to-end (add to cart → checkout → payment → confirmation)
-- [ ] Email notifications work (order confirmation, admin notification)
-- [ ] `https://facetea.org` loads with SSL padlock
-- [ ] `https://www.facetea.org` redirects to `https://facetea.org`
-- [ ] Site loads in under 3 seconds (test at https://pagespeed.web.dev)
-- [ ] Mobile layout works correctly
-- [ ] Privacy Policy and Terms of Service links in footer
-- [ ] Free shipping threshold ($50) displays correctly
-- [ ] Contact email `support@facetea.org` receives mail
+- [ ] All product descriptions are correct
+- [ ] Prices match between site and Stripe checkout
+- [ ] Contact email `support@facetea.org` is set up
+- [ ] Privacy Policy and Terms of Service pages work
+- [ ] Free shipping threshold ($50) displays correctly in cart
+- [ ] Site loads in under 3 seconds
