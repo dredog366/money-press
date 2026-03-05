@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#2d6a4f"/>
+  <rect x="0" y="580" width="1200" height="50" fill="#1b4332"/>
+  <text x="600" y="240" font-family="Georgia, serif" font-size="72" fill="#ffffff" text-anchor="middle" font-weight="bold">FaceTea Shop</text>
+  <text x="600" y="320" font-family="Georgia, serif" font-size="36" fill="#d4a373" text-anchor="middle">Tea-Powered Skincare</text>
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="24" fill="#ffffffcc" text-anchor="middle">Premium tea-infused skincare products | Free shipping over $50</text>
+  <text x="600" y="460" font-family="Arial, sans-serif" font-size="20" fill="#ffffffaa" text-anchor="middle">facetea.org</text>
+  <text x="600" y="140" font-size="80" text-anchor="middle">🍵</text>
+</svg>

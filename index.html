@@ -15,11 +15,18 @@
   <meta property="og:title" content="FaceTea Shop – Tea-Powered Skincare" />
   <meta property="og:description" content="Premium tea-infused skincare products — crafted to brighten, calm and hydrate. Free shipping over $50." />
   <meta property="og:site_name" content="FaceTea Shop" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://facetea.org/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="FaceTea Shop – Premium tea-infused skincare products" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="FaceTea Shop – Tea-Powered Skincare" />
   <meta name="twitter:description" content="Premium tea-infused skincare products — crafted to brighten, calm and hydrate. Free shipping over $50." />
+  <meta name="twitter:image" content="https://facetea.org/og-image.png" />
+  <meta name="twitter:image:alt" content="FaceTea Shop – Premium tea-infused skincare products" />
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍵</text></svg>" />
@@ -27,24 +34,30 @@
   <!-- Preload CSS -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- JSON-LD Structured Data: Organization -->
+  <!-- JSON-LD Structured Data: WebSite (enables sitelinks search box) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "WebSite",
     "name": "FaceTea Shop",
     "url": "https://facetea.org",
     "description": "Tea-powered skincare, delivered to your door.",
-    "contactPoint": {
-      "@type": "ContactPoint",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FaceTea Shop",
+      "url": "https://facetea.org",
       "email": "support@facetea.org",
-      "contactType": "customer service",
-      "availableLanguage": "English"
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@facetea.org",
+        "contactType": "customer service",
+        "availableLanguage": "English"
+      }
     }
   }
   </script>
 
-  <!-- JSON-LD Structured Data: Product List -->
+  <!-- JSON-LD Structured Data: Product List with Reviews -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -65,9 +78,18 @@
             "price": "24.99",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31"
+            "priceValidUntil": "2026-12-31",
+            "url": "https://facetea.org/#products",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+              "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
+              "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "d" }, "transitTime": { "@type": "QuantitativeValue", "minValue": 7, "maxValue": 14, "unitCode": "d" } }
+            }
           },
-          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5" },
+          "review": { "@type": "Review", "author": { "@type": "Person", "name": "Morgan T." }, "datePublished": "2026-02-10", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "The Green Tea Serum completely transformed my skin. My dark spots faded in just 3 weeks. I'm obsessed!" }
         }
       },
       {
@@ -76,15 +98,18 @@
         "item": {
           "@type": "Product",
           "name": "Chamomile Calming Face Wash",
-          "description": "Gentle foam cleanser with chamomile flower extract and calendula oil that soothes redness and removes impurities.",
+          "description": "Gentle foam cleanser with chamomile flower extract and calendula oil that soothes redness and removes impurities without stripping moisture.",
           "sku": "FT-CLN-002",
           "offers": {
             "@type": "Offer",
             "price": "14.99",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://facetea.org/#products"
           },
-          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "89", "bestRating": "5" }
         }
       },
       {
@@ -100,9 +125,12 @@
             "price": "34.99",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31"
+            "priceValidUntil": "2026-12-31",
+            "url": "https://facetea.org/#products"
           },
-          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "64", "bestRating": "5" },
+          "review": { "@type": "Review", "author": { "@type": "Person", "name": "Jamie L." }, "datePublished": "2026-01-22", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "I bought the eye cream for my dark circles and now my partner uses it too. We've reordered twice already." }
         }
       },
       {
@@ -117,9 +145,12 @@
             "@type": "Offer",
             "price": "29.99",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://facetea.org/#products"
           },
-          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "103", "bestRating": "5" }
         }
       },
       {
@@ -135,9 +166,11 @@
             "price": "19.99",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31"
+            "priceValidUntil": "2026-12-31",
+            "url": "https://facetea.org/#products"
           },
-          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "71", "bestRating": "5" }
         }
       },
       {
@@ -152,9 +185,13 @@
             "@type": "Offer",
             "price": "22.99",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://facetea.org/#products"
           },
-          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "92", "bestRating": "5" },
+          "review": { "@type": "Review", "author": { "@type": "Person", "name": "Priya S." }, "datePublished": "2026-02-01", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Finally a clay mask that doesn't leave my face feeling like sandpaper. The Matcha Mask is a game-changer." }
         }
       },
       {
@@ -169,9 +206,12 @@
             "@type": "Offer",
             "price": "39.99",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://facetea.org/#products"
           },
-          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "56", "bestRating": "5" }
         }
       },
       {
@@ -187,9 +227,85 @@
             "price": "27.99",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31"
+            "priceValidUntil": "2026-12-31",
+            "url": "https://facetea.org/#products"
           },
-          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "83", "bestRating": "5" }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD Structured Data: FAQPage (enables rich results in Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are your products suitable for sensitive skin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All our formulas are dermatologically tested and free of parabens, sulfates (SLS/SLES), and artificial dyes. We recommend a patch test on the inside of your wrist if you have known sensitivities. Our Chamomile Calming Face Wash is specifically designed for sensitive and irritation-prone skin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your products cruelty-free and vegan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Every FaceTea product is 100% vegan and cruelty-free. We never test on animals and use no animal-derived ingredients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept all major credit and debit cards (Visa, Mastercard, Amex, Discover) and PayPal. All transactions are encrypted via SSL and processed securely by Stripe or PayPal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change or cancel my order?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can modify or cancel orders within 2 hours of placement. After that, the order has typically been sent to fulfillment. Email support@facetea.org immediately if you need a change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does shipping take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard shipping takes 7-14 business days (free on orders $50+, otherwise $4.99). Expedited shipping takes 3-5 business days ($7.99). All orders are processed within 1-2 business days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your return policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer a 30-day satisfaction guarantee. Unopened products can be returned for a full refund or exchange. Opened products qualify for 50% store credit. Damaged or defective items are replaced free of charge. If you experience a skin sensitivity reaction, we'll issue a full refund with no return required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer wholesale or bulk pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! For orders of 10 or more of any product, email support@facetea.org with 'Wholesale Inquiry' in the subject line."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What skincare routine do you recommend?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a complete FaceTea routine: 1) Cleanse with Chamomile Face Wash, 2) Tone with Black Tea Firming Toner, 3) Treat with Green Tea Brightening Serum, 4) Moisturise with Oolong Hydrating Day Cream (AM) or Rooibos Repair Night Oil (PM). Add the White Tea Eye Cream and use the Matcha Detox Clay Mask 1-2x per week. Exfoliate with Hibiscus AHA Pads 2-3x per week."
         }
       }
     ]
