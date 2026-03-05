@@ -1,4 +1,4 @@
-# Email Templates — LatherLoop
+# Email Templates — FaceTea Shop
 
 Copy-paste these templates into Mailchimp, Klaviyo, or any ESP.
 Replace `[PLACEHOLDERS]` with merge tags appropriate for your ESP.
@@ -14,7 +14,7 @@ Replace `[PLACEHOLDERS]` with merge tags appropriate for your ESP.
 
 Hi [First Name],
 
-Welcome to LatherLoop! 🫧
+Welcome to FaceTea Shop! 🫧
 
 We're glad you're here. You're joining thousands of people who've simplified their daily skincare routine with one tiny pod.
 
@@ -22,19 +22,19 @@ We're glad you're here. You're joining thousands of people who've simplified the
 
 > **WELCOME10** — 10% off your first order
 
-[→ Shop Now](https://DOMAIN/shop?utm_source=mailchimp&utm_medium=email&utm_campaign=welcome-series&utm_content=cta-shop)
+[→ Shop Now](https://facetea.org/shop?utm_source=mailchimp&utm_medium=email&utm_campaign=welcome-series&utm_content=cta-shop)
 
 Your code is valid for 30 days and applies to any order at checkout.
 
 Questions? Just reply to this email — we respond within one business day.
 
 With warmth,  
-The LatherLoop Team  
+The FaceTea Shop Team  
 [hello@DOMAIN](mailto:hello@DOMAIN)
 
 ---
-*You're receiving this because you signed up at latherloop.com.*  
-*[Unsubscribe]* | [Privacy Policy](https://DOMAIN/privacy-policy)
+*You're receiving this because you signed up at facetea.org.*  
+*[Unsubscribe]* | [Privacy Policy](https://facetea.org/privacy-policy)
 
 ---
 
@@ -51,12 +51,12 @@ We noticed you left something in your cart. Life happens — we get it.
 
 Your **[CART_ITEM_NAME]** is still saved for you:
 
-[→ Complete Your Order](https://DOMAIN/cart?utm_source=mailchimp&utm_medium=email&utm_campaign=abandoned-cart&utm_content=email-1)
+[→ Complete Your Order](https://facetea.org/cart?utm_source=mailchimp&utm_medium=email&utm_campaign=abandoned-cart&utm_content=email-1)
 
 If you had a question or ran into an issue at checkout, just hit reply — we'll help immediately.
 
 See you soon,  
-LatherLoop
+FaceTea Shop
 
 ---
 
@@ -78,7 +78,7 @@ Here's a reminder of what you're getting:
 ✦ ~30-day supply in one small pack  
 ✦ Free shipping on orders over $35
 
-[→ Go Back to My Cart](https://DOMAIN/cart?utm_source=mailchimp&utm_medium=email&utm_campaign=abandoned-cart&utm_content=email-2)
+[→ Go Back to My Cart](https://facetea.org/cart?utm_source=mailchimp&utm_medium=email&utm_campaign=abandoned-cart&utm_content=email-2)
 
 Not sure? Here's what other customers are saying:
 
@@ -86,7 +86,7 @@ Not sure? Here's what other customers are saying:
 
 Your cart is saved and ready when you are.
 
-The LatherLoop Team
+The FaceTea Shop Team
 
 ---
 
@@ -99,17 +99,17 @@ The LatherLoop Team
 
 Hi [First Name],
 
-We don't want you to miss out. As a small thank-you for your interest in LatherLoop, here's a one-time 10% off code:
+We don't want you to miss out. As a small thank-you for your interest in FaceTea Shop, here's a one-time 10% off code:
 
 **COMEBACK10**
 
 Use it at checkout on any order. Expires in 48 hours.
 
-[→ Complete My Order](https://DOMAIN/cart?utm_source=mailchimp&utm_medium=email&utm_campaign=abandoned-cart&utm_content=email-3)
+[→ Complete My Order](https://facetea.org/cart?utm_source=mailchimp&utm_medium=email&utm_campaign=abandoned-cart&utm_content=email-3)
 
 After that, we'll stop nudging. Promise. 😊
 
-The LatherLoop Team
+The FaceTea Shop Team
 
 ---
 
@@ -122,28 +122,26 @@ The LatherLoop Team
 
 Hi [First Name],
 
-It's been about 25 days since your LatherLoop pods arrived — which means your daily wash routine is almost up.
+It's been about 25 days since your FaceTea Shop pods arrived — which means your daily wash routine is almost up.
 
 Ready for your next pack?
 
-**[Starter Pack — $34.99 →](https://DOMAIN/product/latherloop-daily-wash-pods-starter-pack?utm_source=mailchimp&utm_medium=email&utm_campaign=refill-reminder&utm_content=starter)**  
+**[Starter Pack — $34.99 →](https://facetea.org/product/green-tea-brightening-serum?utm_source=mailchimp&utm_medium=email&utm_campaign=refill-reminder&utm_content=starter)**  
 
 Or save more with the bundle:  
-**[3-Month Supply — $79.99 (save 24%) →](https://DOMAIN/product/latherloop-3-month-supply?utm_source=mailchimp&utm_medium=email&utm_campaign=refill-reminder&utm_content=bundle)**
+**[3-Month Supply — $79.99 (save 24%) →](https://facetea.org/product/black-tea-firming-toner?utm_source=mailchimp&utm_medium=email&utm_campaign=refill-reminder&utm_content=bundle)**
 
 Use code **REFILL10** for an extra 10% off your reorder today.
 
 Your routine is worth protecting. See you in the loop.
 
-The LatherLoop Team
+The FaceTea Shop Team
 
 ---
 
-## Template 6 — Order Confirmation (WooCommerce default — customize in Admin)
+## Template 6 — Order Confirmation
 
-*Customize via WooCommerce → Settings → Emails → Processing Order*
-
-**Subject:** Your LatherLoop order is confirmed (#[ORDER_NUMBER])  
+**Subject:** Your FaceTea Shop order is confirmed (#[ORDER_NUMBER])  
 **Preview text:** Your pods are being prepared!
 
 ---
@@ -168,15 +166,13 @@ Shipping to: [SHIPPING_ADDRESS]
 You'll receive a tracking email within 2 business days. If you have any questions, reply to this email.
 
 Thank you for being part of the loop,  
-The LatherLoop Team
+The FaceTea Shop Team
 
 ---
 
-## Template 7 — Order Shipped (WooCommerce default — customize in Admin)
+## Template 7 — Order Shipped
 
-*Customize via WooCommerce → Settings → Emails → Completed Order*
-
-**Subject:** Your LatherLoop pods are on their way! 📦  
+**Subject:** Your FaceTea Shop pods are on their way! 📦  
 **Preview text:** Here's your tracking info.
 
 ---
@@ -198,4 +194,4 @@ While you wait, check out our most-asked question:
 > Keep them in a cool, dry place away from humidity. The Travel Pod Case (add one to your next order) works perfectly.
 
 See you in the loop,  
-The LatherLoop Team
+The FaceTea Shop Team

@@ -1,6 +1,6 @@
 # FaceTea Shop — Product Descriptions
 
-All copy below is ready to paste into WooCommerce product pages. Each product includes a **short description** (for product cards/listings) and a **long description** (for the full product page).
+Each product includes a **short description** (for product cards/listings) and a **long description** (for the full product page).
 
 ---
 
