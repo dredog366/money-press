@@ -49,7 +49,7 @@ module.exports = async function handler(req, res) {
     // Calculate if free shipping applies ($50+ = free)
     const subtotal = lineItems.reduce(
       (sum, li) => sum + li.price_data.unit_amount * li.quantity,
-      0
+      0,
     );
     const shippingOptions =
       subtotal >= 5000

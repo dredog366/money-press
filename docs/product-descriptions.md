@@ -12,6 +12,7 @@ All copy below is ready to paste into WooCommerce product pages. Each product in
 **Badge:** Best Seller
 
 ### Short Description
+
 Antioxidant-rich serum with matcha extract that visibly brightens and evens skin tone in as little as 2 weeks.
 
 ### Long Description
@@ -21,12 +22,14 @@ Antioxidant-rich serum with matcha extract that visibly brightens and evens skin
 Our best-selling Green Tea Brightening Serum is packed with concentrated matcha extract and vitamin C to target dullness, dark spots, and uneven skin tone. The lightweight, fast-absorbing formula layers effortlessly under moisturiser and makeup.
 
 **Key Ingredients:**
+
 - **Matcha Extract** — loaded with EGCG antioxidants to fight free radical damage
 - **Vitamin C (Ascorbic Acid)** — brightens dark spots and boosts collagen production
 - **Hyaluronic Acid** — locks in moisture for plump, dewy skin
 - **Niacinamide** — minimises pores and smooths texture
 
 **How to Use:**
+
 1. Cleanse and tone your face
 2. Apply 3–4 drops to fingertips
 3. Gently press into face and neck, avoiding the eye area
@@ -47,6 +50,7 @@ Our best-selling Green Tea Brightening Serum is packed with concentrated matcha 
 **Badge:** New
 
 ### Short Description
+
 Gentle foam cleanser with chamomile and calendula that soothes redness and removes impurities without stripping moisture.
 
 ### Long Description
@@ -56,12 +60,14 @@ Gentle foam cleanser with chamomile and calendula that soothes redness and remov
 FaceTea's Chamomile Calming Face Wash transforms into a silky foam that lifts away dirt, oil, and makeup while calming irritated skin. Infused with real chamomile flower extract and calendula oil, it leaves your face feeling soft, balanced, and never tight.
 
 **Key Ingredients:**
+
 - **Chamomile Flower Extract** — anti-inflammatory properties calm redness and irritation
 - **Calendula Oil** — promotes healing and soothes sensitive skin
 - **Aloe Vera** — hydrates and provides a protective moisture barrier
 - **Glycerin** — draws water into the skin to prevent dryness after cleansing
 
 **How to Use:**
+
 1. Wet your face with lukewarm water
 2. Pump a small amount into your palms and lather
 3. Massage gently in circular motions for 30–60 seconds
@@ -82,6 +88,7 @@ FaceTea's Chamomile Calming Face Wash transforms into a silky foam that lifts aw
 **Badge:** Sale
 
 ### Short Description
+
 Delicate eye cream with white tea peptides that reduces dark circles and fine lines while you sleep.
 
 ### Long Description
@@ -91,12 +98,14 @@ Delicate eye cream with white tea peptides that reduces dark circles and fine li
 The most delicate area of your face deserves the most refined ingredient. White tea — the least processed of all teas — delivers a potent dose of antioxidants and peptides to the under-eye area. Our White Tea Eye Cream visibly reduces dark circles, puffiness, and crow's feet with consistent use.
 
 **Key Ingredients:**
+
 - **White Tea Extract** — premium antioxidant protection with anti-ageing properties
 - **Peptide Complex** — stimulates collagen to smooth fine lines
 - **Caffeine** — reduces puffiness by constricting blood vessels
 - **Squalane** — deeply moisturises without clogging pores
 
 **How to Use:**
+
 1. After cleansing and applying serum, take a pea-sized amount
 2. Dot gently around the orbital bone using your ring finger
 3. Pat softly — never rub or pull the delicate eye area
@@ -117,6 +126,7 @@ The most delicate area of your face deserves the most refined ingredient. White 
 **Badge:** —
 
 ### Short Description
+
 Lightweight SPF 30 moisturiser with oolong polyphenols that hydrates and shields your skin all day long.
 
 ### Long Description
@@ -126,12 +136,14 @@ Lightweight SPF 30 moisturiser with oolong polyphenols that hydrates and shields
 Skip the multi-step routine. Our Oolong Hydrating Day Cream combines rich oolong tea polyphenols with broad-spectrum SPF 30 in a lightweight, non-greasy formula. It absorbs in seconds, sits beautifully under makeup, and keeps your skin hydrated from morning to evening.
 
 **Key Ingredients:**
+
 - **Oolong Tea Polyphenols** — powerful antioxidants that protect against environmental stress
 - **Zinc Oxide (SPF 30)** — mineral broad-spectrum UV protection
 - **Ceramides** — strengthen the skin barrier and lock in moisture
 - **Vitamin E** — nourishes and repairs sun-stressed skin
 
 **How to Use:**
+
 1. Apply as the last step of your morning skincare routine
 2. Use a nickel-sized amount for face and neck
 3. Smooth evenly and let absorb for 1–2 minutes before makeup
@@ -152,6 +164,7 @@ Skip the multi-step routine. Our Oolong Hydrating Day Cream combines rich oolong
 **Badge:** Sale
 
 ### Short Description
+
 Alcohol-free toner with black tea EGCG that tightens pores and improves skin elasticity after every use.
 
 ### Long Description
@@ -161,12 +174,14 @@ Alcohol-free toner with black tea EGCG that tightens pores and improves skin ela
 Our Black Tea Firming Toner bridges the gap between cleansing and treatment. Rich in EGCG (the catechin found in fermented black tea), it visibly tightens pores, improves elasticity, and preps your skin to absorb serums and moisturisers more effectively.
 
 **Key Ingredients:**
+
 - **Black Tea EGCG** — tightens pores and boosts elasticity with powerful polyphenols
 - **Witch Hazel** — natural astringent that balances oil production
 - **Rose Water** — soothes and tones while adding a subtle freshness
 - **Panthenol (Vitamin B5)** — calms skin and supports barrier repair
 
 **How to Use:**
+
 1. After cleansing, pour a small amount onto a cotton pad or your palms
 2. Sweep gently across face and neck
 3. Allow to absorb for 30 seconds
@@ -187,6 +202,7 @@ Our Black Tea Firming Toner bridges the gap between cleansing and treatment. Ric
 **Badge:** New
 
 ### Short Description
+
 Deep-cleansing clay mask with ceremonial matcha and kaolin clay that draws out impurities in just 10 minutes.
 
 ### Long Description
@@ -196,12 +212,14 @@ Deep-cleansing clay mask with ceremonial matcha and kaolin clay that draws out i
 Powered by ceremonial-grade matcha and French kaolin clay, this mask pulls out pore-clogging impurities, excess oil, and environmental pollutants without over-drying. Your skin is left feeling clean, smooth, and refreshed — never stripped or tight.
 
 **Key Ingredients:**
+
 - **Ceremonial Matcha** — 137x more antioxidants than regular green tea; detoxifies and brightens
 - **Kaolin Clay** — gently absorbs excess oil without irritating sensitive skin
 - **Tea Tree Oil** — antibacterial properties help prevent breakouts
 - **Aloe Vera** — soothes and rehydrates skin post-mask
 
 **How to Use:**
+
 1. Apply an even layer to clean, dry skin (avoid eyes and lips)
 2. Leave on for 10 minutes — you'll feel a gentle tightening
 3. Rinse off with warm water using circular motions
@@ -222,6 +240,7 @@ Powered by ceremonial-grade matcha and French kaolin clay, this mask pulls out p
 **Badge:** —
 
 ### Short Description
+
 Nourishing facial oil with rooibos and rosehip that repairs and regenerates your skin while you sleep.
 
 ### Long Description
@@ -231,12 +250,14 @@ Nourishing facial oil with rooibos and rosehip that repairs and regenerates your
 South African rooibos tea is one of nature's best-kept skincare secrets. Rich in alpha hydroxy acid, zinc, and superoxide dismutase (SOD), our Rooibos Repair Night Oil works overnight to repair daily damage, reduce redness, and boost cell turnover. Wake up to softer, more radiant skin.
 
 **Key Ingredients:**
+
 - **Rooibos Extract** — rare antioxidant (SOD) that fights ageing and reduces inflammation
 - **Rosehip Seed Oil** — rich in vitamins A and C; promotes cell regeneration
 - **Jojoba Oil** — mimics natural sebum for balanced, non-greasy moisture
 - **Lavender Essential Oil** — calms skin and promotes relaxation before sleep
 
 **How to Use:**
+
 1. Apply as the final step of your evening routine
 2. Warm 4–5 drops between your palms
 3. Press gently into face and neck — let the oil sink in
@@ -257,6 +278,7 @@ South African rooibos tea is one of nature's best-kept skincare secrets. Rich in
 **Badge:** Best Seller
 
 ### Short Description
+
 Pre-soaked exfoliating pads with hibiscus-derived AHAs that smooth texture and boost radiance in one swipe.
 
 ### Long Description
@@ -266,12 +288,14 @@ Pre-soaked exfoliating pads with hibiscus-derived AHAs that smooth texture and b
 These convenient pre-soaked pads deliver a precise dose of hibiscus-derived alpha hydroxy acids (AHAs) with every use. The textured side gently buffs away dead skin cells while the smooth side deposits brightening and hydrating actives. No rinsing required.
 
 **Key Ingredients:**
+
 - **Hibiscus AHAs** — natural fruit acids that dissolve dead skin cells and stimulate renewal
 - **Lactic Acid** — mild exfoliant that hydrates while it resurfaces
 - **Centella Asiatica (Cica)** — calms post-exfoliation sensitivity
 - **Green Tea Extract** — antioxidant boost to protect freshly revealed skin
 
 **How to Use:**
+
 1. After cleansing, take one pad from the jar
 2. Swipe the textured side across face and neck (avoid eyes)
 3. Flip to the smooth side and press gently to deposit actives

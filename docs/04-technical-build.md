@@ -208,6 +208,7 @@ wp plugin install cookie-notice --activate --allow-root
 ```
 
 > **PAID alternatives** (optional upgrades later):
+>
 > - WooCommerce Subscriptions ($199/yr) — enables true subscribe-and-save. Free alternative: use "WC Subscriptions Free" (community fork) or handle it with monthly cart-reminder emails until budget allows.
 > - Rank Math Pro ($59/yr) — adds advanced schema; free tier covers 95% of needs.
 
@@ -340,13 +341,13 @@ wp option update blogdescription 'Your daily ritual, simplified.' --allow-root
 
 ### Steps That Require Admin UI
 
-| Step | Admin UI Location | Notes |
-|------|-----------------|-------|
-| Connect Stripe | WooCommerce → Settings → Payments → Stripe → Connect | Requires Stripe API keys |
-| Connect PayPal | WooCommerce → Settings → Payments → PayPal | Requires PayPal client ID/secret |
-| Configure shipping zones | WooCommerce → Settings → Shipping | Add US zone, free shipping $35+, flat rate $4.99 |
-| Configure tax rates | WooCommerce → Settings → Tax | TaxJar plugin (free tier) automates this |
-| WP Mail SMTP setup | Settings → WP Mail SMTP → Setup Wizard | Connect Gmail or SendGrid |
-| Wordfence initial scan | Wordfence → Scan → Start Scan | Run once after install |
-| GA4 connection | Site Kit → Connect Google Analytics | Requires Google account |
-| Astra customizer | Appearance → Customize | Set colors/fonts from brand guide |
+| Step                     | Admin UI Location                                    | Notes                                            |
+| ------------------------ | ---------------------------------------------------- | ------------------------------------------------ |
+| Connect Stripe           | WooCommerce → Settings → Payments → Stripe → Connect | Requires Stripe API keys                         |
+| Connect PayPal           | WooCommerce → Settings → Payments → PayPal           | Requires PayPal client ID/secret                 |
+| Configure shipping zones | WooCommerce → Settings → Shipping                    | Add US zone, free shipping $35+, flat rate $4.99 |
+| Configure tax rates      | WooCommerce → Settings → Tax                         | TaxJar plugin (free tier) automates this         |
+| WP Mail SMTP setup       | Settings → WP Mail SMTP → Setup Wizard               | Connect Gmail or SendGrid                        |
+| Wordfence initial scan   | Wordfence → Scan → Start Scan                        | Run once after install                           |
+| GA4 connection           | Site Kit → Connect Google Analytics                  | Requires Google account                          |
+| Astra customizer         | Appearance → Customize                               | Set colors/fonts from brand guide                |

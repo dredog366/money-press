@@ -10,20 +10,20 @@ Before placing any orders, verify each supplier against this checklist:
 - [ ] Supplier can provide a **product spec sheet** or safety datasheet (SDS) on request
 - [ ] Supplier offers **custom packaging / white-label** (peel-and-stick label at minimum)
 - [ ] Supplier confirms **ePacket, AliExpress Standard Shipping, or US warehouse** option
-- [ ] Ask explicitly: *"Do your products comply with US cosmetic regulations (FDA 21 CFR Part 700)?"*
+- [ ] Ask explicitly: _"Do your products comply with US cosmetic regulations (FDA 21 CFR Part 700)?"_
 - [ ] Verify no prohibited ingredients (e.g., mercury, formaldehyde, restricted parabens at illegal levels)
 - [ ] Confirm **refund/replacement policy** for damaged/lost shipments in writing (DM or email)
 - [ ] Order a **sample** before going live (see Sample Order Checklist)
 
 ### Recommended Supplier Platforms
 
-| Platform | Best For | MOQ | White-label |
-|----------|----------|-----|-------------|
-| CJDropshipping | Custom packaging + US warehouse | 1 (dropship) | Yes (label $0.5/unit) |
-| AliExpress + DSers | Low startup cost, huge catalog | 1 | Sometimes |
-| Spocket | US/EU suppliers, faster shipping | 1 | Some suppliers |
-| Zendrop | US warehouse, fast fulfillment | 1 | Yes (paid plan) |
-| SaleHoo | Vetted directory | Varies | Varies |
+| Platform           | Best For                         | MOQ          | White-label           |
+| ------------------ | -------------------------------- | ------------ | --------------------- |
+| CJDropshipping     | Custom packaging + US warehouse  | 1 (dropship) | Yes (label $0.5/unit) |
+| AliExpress + DSers | Low startup cost, huge catalog   | 1            | Sometimes             |
+| Spocket            | US/EU suppliers, faster shipping | 1            | Some suppliers        |
+| Zendrop            | US warehouse, fast fulfillment   | 1            | Yes (paid plan)       |
+| SaleHoo            | Vetted directory                 | Varies       | Varies                |
 
 ---
 
@@ -59,12 +59,12 @@ Every 50 orders, request a free unit from the supplier for QC:
 
 ## Shipping Times Policy Logic
 
-| Scenario | Customer Promise | What You Tell the Customer |
-|----------|-----------------|---------------------------|
-| US warehouse stock | 5–7 business days | "Ships within 1 business day. Delivered in 5–7 business days." |
-| CN standard shipping | 10–18 business days | "Ships within 2 business days. Delivered in 10–18 business days." |
-| Peak season (Nov–Jan) | Add 3–5 days buffer | Add a site-wide banner: "Holiday orders: allow extra 3–5 days" |
-| Expedited option | 3–5 business days (US warehouse) | Offer as an upsell at checkout for $7.99 |
+| Scenario              | Customer Promise                 | What You Tell the Customer                                        |
+| --------------------- | -------------------------------- | ----------------------------------------------------------------- |
+| US warehouse stock    | 5–7 business days                | "Ships within 1 business day. Delivered in 5–7 business days."    |
+| CN standard shipping  | 10–18 business days              | "Ships within 2 business days. Delivered in 10–18 business days." |
+| Peak season (Nov–Jan) | Add 3–5 days buffer              | Add a site-wide banner: "Holiday orders: allow extra 3–5 days"    |
+| Expedited option      | 3–5 business days (US warehouse) | Offer as an upsell at checkout for $7.99                          |
 
 > **Rule:** Always add 2 extra days to the supplier's stated shipping time.  
 > Never promise a specific delivery date — promise a window.
@@ -213,12 +213,12 @@ Is the item damaged / defective?
 
 ### Semi-Automated (20+ orders/day)
 
-| Tool | Function | Cost |
-|------|----------|------|
-| **DSers** (AliExpress) | Bulk order placement to AliExpress in 1 click | Free |
-| **CJDropshipping Chrome Extension** | Auto-fill CJDropshipping orders | Free |
-| **AutoDS** | Full auto-fulfillment + tracking sync | $9.90/mo (basic) |
-| **Zendrop** | Auto-fulfillment with WooCommerce integration | $49/mo (pro) |
+| Tool                                | Function                                      | Cost             |
+| ----------------------------------- | --------------------------------------------- | ---------------- |
+| **DSers** (AliExpress)              | Bulk order placement to AliExpress in 1 click | Free             |
+| **CJDropshipping Chrome Extension** | Auto-fill CJDropshipping orders               | Free             |
+| **AutoDS**                          | Full auto-fulfillment + tracking sync         | $9.90/mo (basic) |
+| **Zendrop**                         | Auto-fulfillment with WooCommerce integration | $49/mo (pro)     |
 
 > **Recommended path:** Start manual. At 20+ orders/day, add DSers (free) for AliExpress orders.  
 > At 50+ orders/day, evaluate AutoDS or Zendrop for full automation.

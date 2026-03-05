@@ -2,17 +2,17 @@
 
 ## What Is Assumed
 
-| Item | Assumed State |
-|------|---------------|
-| Domain | Registered and DNS A-record pointed to server IP |
-| Server OS | Ubuntu 22.04 LTS |
-| Web server | Nginx **or** Apache (both covered below) |
-| PHP | 8.1 or 8.2 |
-| Database | MySQL 8.x or MariaDB 10.6+ |
-| SSH access | Root or sudo user |
-| Shell | bash |
-| Region | United States |
-| Budget | $0–$200 total (first month) |
+| Item       | Assumed State                                    |
+| ---------- | ------------------------------------------------ |
+| Domain     | Registered and DNS A-record pointed to server IP |
+| Server OS  | Ubuntu 22.04 LTS                                 |
+| Web server | Nginx **or** Apache (both covered below)         |
+| PHP        | 8.1 or 8.2                                       |
+| Database   | MySQL 8.x or MariaDB 10.6+                       |
+| SSH access | Root or sudo user                                |
+| Shell      | bash                                             |
+| Region     | United States                                    |
+| Budget     | $0–$200 total (first month)                      |
 
 ---
 
@@ -91,29 +91,29 @@ sudo apt install -y certbot python3-certbot-apache
 
 Every command in this guide uses these placeholders — replace them before running:
 
-| Placeholder | Example value | Description |
-|-------------|---------------|-------------|
-| `DOMAIN` | `latherloop.com` | Your domain name |
-| `WEB_ROOT` | `/var/www/latherloop` | Absolute path to web root |
-| `DB_NAME` | `latherloop_db` | MySQL database name |
-| `DB_USER` | `latherloop_user` | MySQL database user |
-| `DB_PASS` | `Str0ngP@ss!` | MySQL database password |
-| `DB_HOST` | `localhost` | Database host |
-| `SITE_TITLE` | `LatherLoop` | WordPress site title |
-| `ADMIN_USER` | `lladmin` | WP admin username |
-| `ADMIN_PASS` | `WpAdm!n2024` | WP admin password |
-| `ADMIN_EMAIL` | `admin@latherloop.com` | WP admin email |
-| `SERVER_IP` | `123.45.67.89` | Your server's public IP |
+| Placeholder   | Example value          | Description               |
+| ------------- | ---------------------- | ------------------------- |
+| `DOMAIN`      | `latherloop.com`       | Your domain name          |
+| `WEB_ROOT`    | `/var/www/latherloop`  | Absolute path to web root |
+| `DB_NAME`     | `latherloop_db`        | MySQL database name       |
+| `DB_USER`     | `latherloop_user`      | MySQL database user       |
+| `DB_PASS`     | `Str0ngP@ss!`          | MySQL database password   |
+| `DB_HOST`     | `localhost`            | Database host             |
+| `SITE_TITLE`  | `LatherLoop`           | WordPress site title      |
+| `ADMIN_USER`  | `lladmin`              | WP admin username         |
+| `ADMIN_PASS`  | `WpAdm!n2024`          | WP admin password         |
+| `ADMIN_EMAIL` | `admin@latherloop.com` | WP admin email            |
+| `SERVER_IP`   | `123.45.67.89`         | Your server's public IP   |
 
 ---
 
 ## Minimum Server Specs (Low-Cost Options)
 
-| Provider | Plan | RAM | Disk | Monthly Cost |
-|----------|------|-----|------|--------------|
-| Hetzner Cloud | CX22 | 4 GB | 40 GB | ~$5 |
-| DigitalOcean | Basic Droplet | 1 GB | 25 GB | $6 |
-| Vultr | Cloud Compute | 1 GB | 25 GB | $6 |
-| Linode (Akamai) | Nanode | 1 GB | 25 GB | $5 |
+| Provider        | Plan          | RAM  | Disk  | Monthly Cost |
+| --------------- | ------------- | ---- | ----- | ------------ |
+| Hetzner Cloud   | CX22          | 4 GB | 40 GB | ~$5          |
+| DigitalOcean    | Basic Droplet | 1 GB | 25 GB | $6           |
+| Vultr           | Cloud Compute | 1 GB | 25 GB | $6           |
+| Linode (Akamai) | Nanode        | 1 GB | 25 GB | $5           |
 
 > **Recommendation:** Hetzner CX22 ($5/mo) — best RAM-per-dollar for WooCommerce.
