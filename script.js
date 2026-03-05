@@ -9,8 +9,11 @@ const PRODUCTS = [
     price: 24.99,
     oldPrice: 34.99,
     badge: "Best Seller",
-    desc: "Antioxidant-rich serum with matcha extract. Visibly brightens and evens skin tone in 2 weeks.",
+    desc: "Antioxidant-rich serum with matcha extract and vitamin C that visibly brightens and evens skin tone in as little as 2 weeks. Lightweight, fast-absorbing formula with hyaluronic acid and niacinamide.",
     emoji: "🍵",
+    sku: "FT-SRM-001",
+    size: "30 ml / 1 fl oz",
+    skinType: "All skin types",
   },
   {
     id: 2,
@@ -19,8 +22,11 @@ const PRODUCTS = [
     price: 14.99,
     oldPrice: null,
     badge: "New",
-    desc: "Gentle foam cleanser with chamomile and calendula. Soothes redness and removes impurities.",
+    desc: "Gentle foam cleanser with chamomile flower extract and calendula oil that soothes redness and removes impurities without stripping moisture. Leaves skin soft, balanced, and never tight.",
     emoji: "🌼",
+    sku: "FT-CLN-002",
+    size: "150 ml / 5 fl oz",
+    skinType: "Sensitive & dry skin",
   },
   {
     id: 3,
@@ -29,8 +35,11 @@ const PRODUCTS = [
     price: 34.99,
     oldPrice: 44.99,
     badge: "Sale",
-    desc: "Delicate eye cream with white tea peptides. Reduces dark circles and fine lines overnight.",
+    desc: "Delicate eye cream with white tea peptides and caffeine that visibly reduces dark circles, puffiness, and crow's feet. The least processed tea delivers premium antioxidant protection.",
     emoji: "☁️",
+    sku: "FT-TRT-003",
+    size: "15 ml / 0.5 fl oz",
+    skinType: "All skin types",
   },
   {
     id: 4,
@@ -39,8 +48,11 @@ const PRODUCTS = [
     price: 29.99,
     oldPrice: null,
     badge: null,
-    desc: "Lightweight SPF 30 moisturiser with oolong polyphenols. Hydrates and shields all day.",
+    desc: "Lightweight SPF 30 moisturiser with oolong tea polyphenols and ceramides. All-day hydration meets mineral sun protection in one non-greasy step. Sits beautifully under makeup.",
     emoji: "🌿",
+    sku: "FT-MST-004",
+    size: "50 ml / 1.7 fl oz",
+    skinType: "All skin types",
   },
   {
     id: 5,
@@ -49,8 +61,11 @@ const PRODUCTS = [
     price: 19.99,
     oldPrice: 27.99,
     badge: "Sale",
-    desc: "Alcohol-free toner with black tea EGCG. Tightens pores and improves elasticity.",
+    desc: "Alcohol-free toner rich in black tea EGCG catechins. Visibly tightens pores, improves elasticity, and preps skin to absorb serums and moisturisers more effectively.",
     emoji: "🫖",
+    sku: "FT-TNR-005",
+    size: "200 ml / 6.8 fl oz",
+    skinType: "Oily & combination skin",
   },
   {
     id: 6,
@@ -59,8 +74,11 @@ const PRODUCTS = [
     price: 22.99,
     oldPrice: null,
     badge: "New",
-    desc: "Deep-cleansing clay mask with ceremonial matcha and kaolin. Draws out impurities in 10 min.",
+    desc: "Deep-cleansing mask with ceremonial-grade matcha and French kaolin clay. Draws out impurities, excess oil, and pollutants in just 10 minutes — without over-drying or stripping.",
     emoji: "🧪",
+    sku: "FT-MSK-006",
+    size: "100 ml / 3.4 fl oz",
+    skinType: "Oily & acne-prone skin",
   },
   {
     id: 7,
@@ -69,8 +87,11 @@ const PRODUCTS = [
     price: 39.99,
     oldPrice: null,
     badge: null,
-    desc: "Nourishing facial oil with rooibos and rosehip. Repairs and regenerates skin overnight.",
+    desc: "Nourishing facial oil with South African rooibos, rosehip seed oil, and jojoba. Works overnight to repair daily damage, reduce redness, and boost cell turnover while you sleep.",
     emoji: "🌙",
+    sku: "FT-TRT-007",
+    size: "30 ml / 1 fl oz",
+    skinType: "Dry & mature skin",
   },
   {
     id: 8,
@@ -79,8 +100,11 @@ const PRODUCTS = [
     price: 27.99,
     oldPrice: 35.99,
     badge: "Best Seller",
-    desc: "Pre-soaked exfoliating pads with hibiscus-derived AHAs. Smooths texture and boosts radiance.",
+    desc: "Pre-soaked pads with hibiscus-derived AHAs and lactic acid. Textured side buffs dead skin cells; smooth side deposits brightening actives. No rinsing required — radiance in one swipe.",
     emoji: "🌺",
+    sku: "FT-EXF-008",
+    size: "50 pads per jar",
+    skinType: "All skin types",
   },
 ];
 
@@ -108,6 +132,7 @@ function renderProducts() {
         <span class="product-category">${p.category}</span>
         <h3 class="product-name">${p.name}</h3>
         <p class="product-desc">${p.desc}</p>
+        <p class="product-meta">${p.size} · ${p.skinType}</p>
       </div>
       <div class="product-footer">
         <span class="product-price">

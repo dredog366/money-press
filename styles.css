@@ -311,6 +311,13 @@ img {
   flex: 1;
 }
 
+.product-meta {
+  font-size: 0.75rem;
+  color: var(--color-gray);
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
 .product-footer {
   display: flex;
   align-items: center;
