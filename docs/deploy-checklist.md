@@ -1,93 +1,69 @@
-# FaceTea Shop — Deploy & Go-Live Checklist
-
-Use this checklist to ensure everything is ready before launching your store.
+# FaceTea Shop — Deploy Checklist (Vercel + Stripe)
 
 ---
 
-## Phase 1: Store Setup
+## Phase 1: Stripe Account Setup
 
-- [ ] WooCommerce installed and activated
-- [ ] Theme selected and customized with FaceTea branding (colors, fonts, logo)
-- [ ] Homepage set as static page with hero, products, and about sections
-- [ ] Navigation menu created (Shop, About, Contact)
-- [ ] All 8 products imported via CSV (`woocommerce/products-import.csv`)
-- [ ] Product images uploaded for all 8 products
-- [ ] Product categories created (Serums, Cleansers, Treatments, Moisturisers, Toners, Masks, Exfoliants)
-- [ ] Prices verified (regular + sale prices)
+- [ ] Create a Stripe account at https://stripe.com
+- [ ] Complete account verification (business details, bank account)
+- [ ] Note your **Test** Secret Key: `sk_test_...` (from Dashboard > Developers > API Keys)
+- [ ] Note your **Live** Secret Key: `sk_live_...` (for production — enable after testing)
 
-## Phase 2: Essential Pages
+## Phase 2: Vercel Project Setup
 
-- [ ] Shop page works and displays products
-- [ ] Cart page works (add/remove items)
-- [ ] Checkout page works
-- [ ] My Account page works (registration + login)
-- [ ] About page created with FaceTea story
-- [ ] Contact page created with contact form
-- [ ] Shipping & Delivery page created
-- [ ] Returns & Refunds page created
-- [ ] FAQ page created
-- [ ] Privacy Policy page updated for your store
-- [ ] Terms of Service page created
+- [ ] Go to https://vercel.com/new
+- [ ] Import your GitHub repo (`dredog366/money-press`)
+- [ ] Framework preset: **Other** (not Next.js — this is a static site with serverless functions)
+- [ ] Build command: leave blank
+- [ ] Output directory: `.`
+- [ ] Add environment variable:
+  - Key: `STRIPE_SECRET_KEY`
+  - Value: your Stripe test key (`sk_test_...`) for now
+- [ ] Click **Deploy**
 
-## Phase 3: Payments & Shipping
+## Phase 3: Domain Connection
 
-- [ ] WooCommerce Payments (or Stripe) connected and tested
-- [ ] PayPal configured (optional but recommended)
-- [ ] Shipping zones set up:
-  - [ ] Free shipping for orders $50+
-  - [ ] Flat rate $4.99 for orders under $50
-- [ ] Tax settings configured (enable WooCommerce Tax for auto-calculation)
-- [ ] Currency set to USD
+- [ ] In Vercel project, go to **Settings > Domains**
+- [ ] Add `facetea.org` (it's already on your Vercel account)
+- [ ] Add `www.facetea.org` as well
+- [ ] Vercel handles SSL automatically
 
-## Phase 4: Testing
+## Phase 4: Testing (Use Stripe Test Mode)
 
-- [ ] **Place a test order** — go through the full checkout flow
-- [ ] Verify order confirmation email is received
-- [ ] Verify order appears in WooCommerce > Orders
+- [ ] Visit your deployed site
+- [ ] Add products to cart
+- [ ] Click Checkout — should redirect to Stripe Checkout page
+- [ ] Use test card: `4242 4242 4242 4242` (any future date, any CVC)
+- [ ] Complete purchase — should redirect to success page
+- [ ] Verify cart is cleared after purchase
+- [ ] Test cancel flow — should redirect to cancel page
+- [ ] Check Stripe Dashboard > Payments — test payment should appear
 - [ ] Test on mobile (phone + tablet)
-- [ ] Test on desktop (Chrome, Safari, Firefox)
-- [ ] Check all links work (no 404 errors)
-- [ ] Check product pages display correctly (descriptions, images, prices)
-- [ ] Test cart add/remove/quantity change
-- [ ] Test coupon codes (if applicable)
-- [ ] Refund the test order after confirming everything works
+- [ ] Test all pages: products, about, shipping, FAQ, contact, privacy, terms
 
-## Phase 5: Domain & SSL
+## Phase 5: Go Live
 
-- [ ] `facetea.org` connected to WordPress.com (see docs/domain-connection.md)
-- [ ] DNS verified and propagated
-- [ ] SSL certificate active (padlock icon in browser)
-- [ ] Old staging URL (`dgrelli-bopge.wpcomstaging.com`) redirects to `facetea.org`
-- [ ] Both `facetea.org` and `www.facetea.org` work
+- [ ] In Stripe Dashboard, switch from Test to Live mode
+- [ ] Copy your **Live** Secret Key (`sk_live_...`)
+- [ ] In Vercel > Project Settings > Environment Variables:
+  - Update `STRIPE_SECRET_KEY` to your live key
+  - Redeploy the project
+- [ ] Place a real $14.99 test order (buy the cheapest product)
+- [ ] Verify order appears in Stripe Dashboard (live)
+- [ ] Refund the test order from Stripe Dashboard
 
 ## Phase 6: SEO & Analytics
 
-- [ ] **SEO plugin** installed (Yoast SEO or Rank Math — if available on your plan)
-- [ ] Homepage meta title: `FaceTea Shop — Tea-Powered Skincare, Delivered to Your Door`
-- [ ] Homepage meta description: `Discover premium tea-infused skincare products. Green tea serums, chamomile cleansers, matcha masks and more. Free shipping on orders over $50.`
-- [ ] Each product has a unique meta title and description
-- [ ] Google Analytics connected (use Google Site Kit plugin or paste GA4 tag)
-- [ ] Google Search Console set up and sitemap submitted
+- [ ] Google Search Console: verify `facetea.org` and submit sitemap
+- [ ] Google Analytics: add GA4 tag to `index.html` (in the `<head>`)
+- [ ] Test structured data: https://search.google.com/test/rich-results
+- [ ] Share on social media and verify Open Graph preview looks correct
 
-## Phase 7: Final Touches
+## Phase 7: Final Checks
 
-- [ ] Favicon uploaded (small FaceTea logo/icon)
-- [ ] Email notifications configured:
-  - [ ] New order notification (to you)
-  - [ ] Order confirmation (to customer)
-  - [ ] Shipping notification (to customer)
-- [ ] Store email set to `support@facetea.org` (or your preferred email)
-- [ ] Social media links added to footer (if applicable)
-- [ ] Remove any sample/placeholder content
-- [ ] Check site speed — aim for under 3 seconds load time
-
----
-
-## Go Live!
-
-Once all boxes are checked:
-1. Make `facetea.org` the primary domain
-2. Announce on social media
-3. Send a launch email to your subscriber list
-4. Monitor orders and analytics for the first 48 hours
-5. Celebrate!
+- [ ] All product descriptions are correct
+- [ ] Prices match between site and Stripe checkout
+- [ ] Contact email `support@facetea.org` is set up
+- [ ] Privacy Policy and Terms of Service pages work
+- [ ] Free shipping threshold ($50) displays correctly in cart
+- [ ] Site loads in under 3 seconds

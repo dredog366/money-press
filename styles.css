@@ -1001,6 +1001,64 @@ img {
 }
 
 /* ===========================
+   Success/Cancel Pages
+   =========================== */
+.success-page {
+  padding: 5rem 0;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.success-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.success-page h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.success-page p {
+  color: var(--color-gray);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.success-details {
+  background: var(--color-light-gray);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.success-details h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.success-details ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.success-details li {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+}
+
+/* ===========================
    Legal Pages
    =========================== */
 .legal-page {

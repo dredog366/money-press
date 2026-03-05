@@ -112,7 +112,6 @@ const PRODUCTS = [
 // Constants
 // ===========================
 const FREE_SHIPPING_THRESHOLD = 50;
-const STORE_URL = "https://dgrelli-bopge.wpcomstaging.com";
 
 // ===========================
 // Cart state (persisted to localStorage)
@@ -324,14 +323,41 @@ function closeCart() {
 }
 
 // ===========================
-// Checkout — redirect to WooCommerce store
+// Checkout — Stripe Checkout
 // ===========================
-function handleCheckout() {
+async function handleCheckout() {
   if (cart.length === 0) return;
-  // Redirect to WooCommerce checkout with cart items
-  // When WooCommerce is live, this will add products to the WC cart via URL
-  const checkoutUrl = STORE_URL + "/checkout/";
-  window.open(checkoutUrl, "_blank");
+
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  if (checkoutBtn) {
+    checkoutBtn.disabled = true;
+    checkoutBtn.textContent = "Processing...";
+  }
+
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        items: cart.map((item) => ({ id: item.id, qty: item.qty })),
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.error || "Checkout failed");
+    }
+
+    // Redirect to Stripe Checkout
+    window.location.href = data.url;
+  } catch (err) {
+    alert("Checkout error: " + err.message + ". Please try again.");
+    if (checkoutBtn) {
+      checkoutBtn.disabled = false;
+      checkoutBtn.textContent = "Checkout";
+    }
+  }
 }
 
 // ===========================
