@@ -9,8 +9,11 @@ const PRODUCTS = [
     price: 24.99,
     oldPrice: 34.99,
     badge: "Best Seller",
-    desc: "Antioxidant-rich serum with matcha extract. Visibly brightens and evens skin tone in 2 weeks.",
+    desc: "Antioxidant-rich serum with matcha extract and vitamin C that visibly brightens and evens skin tone in as little as 2 weeks. Lightweight, fast-absorbing formula with hyaluronic acid and niacinamide.",
     emoji: "🍵",
+    sku: "FT-SRM-001",
+    size: "30 ml / 1 fl oz",
+    skinType: "All skin types",
   },
   {
     id: 2,
@@ -19,8 +22,11 @@ const PRODUCTS = [
     price: 14.99,
     oldPrice: null,
     badge: "New",
-    desc: "Gentle foam cleanser with chamomile and calendula. Soothes redness and removes impurities.",
+    desc: "Gentle foam cleanser with chamomile flower extract and calendula oil that soothes redness and removes impurities without stripping moisture. Leaves skin soft, balanced, and never tight.",
     emoji: "🌼",
+    sku: "FT-CLN-002",
+    size: "150 ml / 5 fl oz",
+    skinType: "Sensitive & dry skin",
   },
   {
     id: 3,
@@ -29,8 +35,11 @@ const PRODUCTS = [
     price: 34.99,
     oldPrice: 44.99,
     badge: "Sale",
-    desc: "Delicate eye cream with white tea peptides. Reduces dark circles and fine lines overnight.",
+    desc: "Delicate eye cream with white tea peptides and caffeine that visibly reduces dark circles, puffiness, and crow's feet. The least processed tea delivers premium antioxidant protection.",
     emoji: "☁️",
+    sku: "FT-TRT-003",
+    size: "15 ml / 0.5 fl oz",
+    skinType: "All skin types",
   },
   {
     id: 4,
@@ -39,8 +48,11 @@ const PRODUCTS = [
     price: 29.99,
     oldPrice: null,
     badge: null,
-    desc: "Lightweight SPF 30 moisturiser with oolong polyphenols. Hydrates and shields all day.",
+    desc: "Lightweight SPF 30 moisturiser with oolong tea polyphenols and ceramides. All-day hydration meets mineral sun protection in one non-greasy step. Sits beautifully under makeup.",
     emoji: "🌿",
+    sku: "FT-MST-004",
+    size: "50 ml / 1.7 fl oz",
+    skinType: "All skin types",
   },
   {
     id: 5,
@@ -49,8 +61,11 @@ const PRODUCTS = [
     price: 19.99,
     oldPrice: 27.99,
     badge: "Sale",
-    desc: "Alcohol-free toner with black tea EGCG. Tightens pores and improves elasticity.",
+    desc: "Alcohol-free toner rich in black tea EGCG catechins. Visibly tightens pores, improves elasticity, and preps skin to absorb serums and moisturisers more effectively.",
     emoji: "🫖",
+    sku: "FT-TNR-005",
+    size: "200 ml / 6.8 fl oz",
+    skinType: "Oily & combination skin",
   },
   {
     id: 6,
@@ -59,8 +74,11 @@ const PRODUCTS = [
     price: 22.99,
     oldPrice: null,
     badge: "New",
-    desc: "Deep-cleansing clay mask with ceremonial matcha and kaolin. Draws out impurities in 10 min.",
+    desc: "Deep-cleansing mask with ceremonial-grade matcha and French kaolin clay. Draws out impurities, excess oil, and pollutants in just 10 minutes — without over-drying or stripping.",
     emoji: "🧪",
+    sku: "FT-MSK-006",
+    size: "100 ml / 3.4 fl oz",
+    skinType: "Oily & acne-prone skin",
   },
   {
     id: 7,
@@ -69,8 +87,11 @@ const PRODUCTS = [
     price: 39.99,
     oldPrice: null,
     badge: null,
-    desc: "Nourishing facial oil with rooibos and rosehip. Repairs and regenerates skin overnight.",
+    desc: "Nourishing facial oil with South African rooibos, rosehip seed oil, and jojoba. Works overnight to repair daily damage, reduce redness, and boost cell turnover while you sleep.",
     emoji: "🌙",
+    sku: "FT-TRT-007",
+    size: "30 ml / 1 fl oz",
+    skinType: "Dry & mature skin",
   },
   {
     id: 8,
@@ -79,15 +100,59 @@ const PRODUCTS = [
     price: 27.99,
     oldPrice: 35.99,
     badge: "Best Seller",
-    desc: "Pre-soaked exfoliating pads with hibiscus-derived AHAs. Smooths texture and boosts radiance.",
+    desc: "Pre-soaked pads with hibiscus-derived AHAs and lactic acid. Textured side buffs dead skin cells; smooth side deposits brightening actives. No rinsing required — radiance in one swipe.",
     emoji: "🌺",
+    sku: "FT-EXF-008",
+    size: "50 pads per jar",
+    skinType: "All skin types",
   },
 ];
 
 // ===========================
-// Cart state
+// Constants
 // ===========================
-let cart = [];
+const FREE_SHIPPING_THRESHOLD = 50;
+
+// ===========================
+// Cart state (persisted to localStorage)
+// ===========================
+let cart = JSON.parse(localStorage.getItem("facetea_cart") || "[]");
+
+function saveCart() {
+  localStorage.setItem("facetea_cart", JSON.stringify(cart));
+}
+
+// ===========================
+// Render product filters
+// ===========================
+function renderFilters() {
+  const filtersEl = document.getElementById("productFilters");
+  if (!filtersEl) return;
+
+  const categories = [...new Set(PRODUCTS.map((p) => p.category))];
+  filtersEl.innerHTML =
+    '<button class="filter-btn active" data-filter="all">All</button>' +
+    categories
+      .map((cat) => `<button class="filter-btn" data-filter="${cat}">${cat}</button>`)
+      .join("");
+
+  filtersEl.addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+
+    filtersEl.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    document.querySelectorAll(".product-card").forEach((card) => {
+      if (filter === "all" || card.dataset.category === filter) {
+        card.classList.remove("hidden-card");
+      } else {
+        card.classList.add("hidden-card");
+      }
+    });
+  });
+}
 
 // ===========================
 // Render products
@@ -96,8 +161,9 @@ function renderProducts() {
   const grid = document.getElementById("productsGrid");
   if (!grid) return;
 
-  grid.innerHTML = PRODUCTS.map((p) => `
-    <article class="product-card">
+  grid.innerHTML = PRODUCTS.map(
+    (p) => `
+    <article class="product-card" data-category="${p.category}">
       <div class="product-img-wrap">
         <div class="product-img" role="img" aria-label="${p.name}" style="display:flex;align-items:center;justify-content:center;font-size:5rem;">
           ${p.emoji}
@@ -108,6 +174,7 @@ function renderProducts() {
         <span class="product-category">${p.category}</span>
         <h3 class="product-name">${p.name}</h3>
         <p class="product-desc">${p.desc}</p>
+        <p class="product-meta">${p.size} · ${p.skinType}</p>
       </div>
       <div class="product-footer">
         <span class="product-price">
@@ -117,7 +184,8 @@ function renderProducts() {
         <button class="add-to-cart" data-id="${p.id}">Add to Cart</button>
       </div>
     </article>
-  `).join("");
+  `
+  ).join("");
 
   grid.querySelectorAll(".add-to-cart").forEach((btn) => {
     btn.addEventListener("click", () => addToCart(Number(btn.dataset.id)));
@@ -138,12 +206,14 @@ function addToCart(productId) {
     cart.push({ ...product, qty: 1 });
   }
 
+  saveCart();
   updateCartUI();
   openCart();
 }
 
 function removeFromCart(productId) {
   cart = cart.filter((item) => item.id !== productId);
+  saveCart();
   updateCartUI();
 }
 
@@ -154,6 +224,7 @@ function changeQty(productId, delta) {
   if (item.qty <= 0) {
     removeFromCart(productId);
   } else {
+    saveCart();
     updateCartUI();
   }
 }
@@ -171,6 +242,7 @@ function updateCartUI() {
   const itemsEl = document.getElementById("cartItems");
   const footerEl = document.getElementById("cartFooter");
   const totalEl = document.getElementById("cartTotal");
+  const shippingNote = document.getElementById("cartShippingNote");
 
   if (countEl) countEl.textContent = cartItemCount();
 
@@ -178,7 +250,9 @@ function updateCartUI() {
     if (cart.length === 0) {
       itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
     } else {
-      itemsEl.innerHTML = cart.map((item) => `
+      itemsEl.innerHTML = cart
+        .map(
+          (item) => `
         <div class="cart-item">
           <div class="cart-item-img" role="img" aria-label="${item.name}" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">
             ${item.emoji}
@@ -193,7 +267,9 @@ function updateCartUI() {
             <button class="qty-btn" data-id="${item.id}" data-delta="1" aria-label="Increase quantity">+</button>
           </div>
         </div>
-      `).join("");
+      `
+        )
+        .join("");
 
       itemsEl.querySelectorAll(".qty-btn").forEach((btn) => {
         btn.addEventListener("click", () =>
@@ -208,6 +284,17 @@ function updateCartUI() {
   }
 
   if (totalEl) totalEl.textContent = `$${cartTotal().toFixed(2)}`;
+
+  // Free shipping progress
+  if (shippingNote) {
+    const total = cartTotal();
+    if (total >= FREE_SHIPPING_THRESHOLD) {
+      shippingNote.textContent = "🚚 You qualify for FREE shipping!";
+    } else {
+      const remaining = (FREE_SHIPPING_THRESHOLD - total).toFixed(2);
+      shippingNote.textContent = `Add $${remaining} more for free shipping`;
+    }
+  }
 }
 
 // ===========================
@@ -221,6 +308,7 @@ function openCart() {
     sidebar.setAttribute("aria-hidden", "false");
   }
   if (overlay) overlay.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
 function closeCart() {
@@ -231,6 +319,87 @@ function closeCart() {
     sidebar.setAttribute("aria-hidden", "true");
   }
   if (overlay) overlay.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// ===========================
+// Checkout — Stripe Checkout
+// ===========================
+async function handleCheckout() {
+  if (cart.length === 0) return;
+
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  if (checkoutBtn) {
+    checkoutBtn.disabled = true;
+    checkoutBtn.textContent = "Processing...";
+  }
+
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        items: cart.map((item) => ({ id: item.id, qty: item.qty })),
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.error || "Checkout failed");
+    }
+
+    // Redirect to Stripe Checkout
+    window.location.href = data.url;
+  } catch (err) {
+    alert("Checkout error: " + err.message + ". Please try again.");
+    if (checkoutBtn) {
+      checkoutBtn.disabled = false;
+      checkoutBtn.textContent = "Checkout";
+    }
+  }
+}
+
+// ===========================
+// Mobile menu
+// ===========================
+function initMobileMenu() {
+  const btn = document.getElementById("mobileMenuBtn");
+  const nav = document.getElementById("mainNav");
+  if (!btn || !nav) return;
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    btn.textContent = nav.classList.contains("open") ? "✕" : "☰";
+  });
+
+  // Close menu when a link is clicked
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      btn.textContent = "☰";
+    });
+  });
+}
+
+// ===========================
+// Back to top button
+// ===========================
+function initBackToTop() {
+  const btn = document.getElementById("backToTop");
+  if (!btn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 // ===========================
@@ -263,19 +432,48 @@ function initContactForm() {
 }
 
 // ===========================
+// Footer category filter links
+// ===========================
+function initFooterFilters() {
+  document.querySelectorAll("[data-filter]").forEach((link) => {
+    if (link.classList.contains("filter-btn")) return; // skip filter buttons
+    link.addEventListener("click", (e) => {
+      const filter = link.dataset.filter;
+      if (!filter) return;
+      // Scroll to products and activate filter
+      setTimeout(() => {
+        const filterBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+        if (filterBtn) filterBtn.click();
+      }, 300);
+    });
+  });
+}
+
+// ===========================
 // Init
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
+  renderFilters();
   updateCartUI();
+  initMobileMenu();
+  initBackToTop();
   initNewsletter();
   initContactForm();
+  initFooterFilters();
 
   const cartBtn = document.getElementById("cartBtn");
   const cartClose = document.getElementById("cartClose");
   const cartOverlay = document.getElementById("cartOverlay");
+  const checkoutBtn = document.getElementById("checkoutBtn");
 
   if (cartBtn) cartBtn.addEventListener("click", openCart);
   if (cartClose) cartClose.addEventListener("click", closeCart);
   if (cartOverlay) cartOverlay.addEventListener("click", closeCart);
+  if (checkoutBtn) checkoutBtn.addEventListener("click", handleCheckout);
+
+  // Close cart on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeCart();
+  });
 });

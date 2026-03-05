@@ -3,8 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FaceTea Shop – Tea-Powered Skincare</title>
+  <title>FaceTea Shop – Tea-Powered Skincare, Delivered to Your Door</title>
+  <meta name="description" content="Discover premium tea-infused skincare products. Green tea serums, chamomile cleansers, matcha masks and more. Cruelty-free, vegan, and shipped direct. Free shipping on orders over $50." />
+  <meta name="keywords" content="tea skincare, green tea serum, chamomile face wash, matcha mask, natural skincare, vegan skincare, cruelty-free beauty" />
+  <meta name="author" content="FaceTea Shop" />
+  <link rel="canonical" href="https://facetea.org/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://facetea.org/" />
+  <meta property="og:title" content="FaceTea Shop – Tea-Powered Skincare" />
+  <meta property="og:description" content="Premium tea-infused skincare products — crafted to brighten, calm and hydrate. Free shipping over $50." />
+  <meta property="og:site_name" content="FaceTea Shop" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FaceTea Shop – Tea-Powered Skincare" />
+  <meta name="twitter:description" content="Premium tea-infused skincare products — crafted to brighten, calm and hydrate. Free shipping over $50." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍵</text></svg>" />
+
+  <!-- Preload CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- JSON-LD Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FaceTea Shop",
+    "url": "https://facetea.org",
+    "description": "Tea-powered skincare, delivered to your door.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "support@facetea.org",
+      "contactType": "customer service",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD Structured Data: Product List -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "FaceTea Shop Products",
+    "numberOfItems": 8,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Green Tea Brightening Serum",
+          "description": "Antioxidant-rich serum with matcha extract and vitamin C that visibly brightens and evens skin tone in as little as 2 weeks.",
+          "sku": "FT-SRM-001",
+          "offers": {
+            "@type": "Offer",
+            "price": "24.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31"
+          },
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Chamomile Calming Face Wash",
+          "description": "Gentle foam cleanser with chamomile flower extract and calendula oil that soothes redness and removes impurities.",
+          "sku": "FT-CLN-002",
+          "offers": {
+            "@type": "Offer",
+            "price": "14.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "White Tea Eye Cream",
+          "description": "Delicate eye cream with white tea peptides and caffeine that visibly reduces dark circles, puffiness, and crow's feet.",
+          "sku": "FT-TRT-003",
+          "offers": {
+            "@type": "Offer",
+            "price": "34.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31"
+          },
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "Oolong Hydrating Day Cream",
+          "description": "Lightweight SPF 30 moisturiser with oolong tea polyphenols and ceramides for all-day hydration and sun protection.",
+          "sku": "FT-MST-004",
+          "offers": {
+            "@type": "Offer",
+            "price": "29.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Product",
+          "name": "Black Tea Firming Toner",
+          "description": "Alcohol-free toner rich in black tea EGCG catechins that tightens pores and improves skin elasticity.",
+          "sku": "FT-TNR-005",
+          "offers": {
+            "@type": "Offer",
+            "price": "19.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31"
+          },
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Product",
+          "name": "Matcha Detox Clay Mask",
+          "description": "Deep-cleansing clay mask with ceremonial-grade matcha and French kaolin clay that draws out impurities in 10 minutes.",
+          "sku": "FT-MSK-006",
+          "offers": {
+            "@type": "Offer",
+            "price": "22.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Product",
+          "name": "Rooibos Repair Night Oil",
+          "description": "Nourishing facial oil with South African rooibos, rosehip seed oil, and jojoba that repairs skin overnight.",
+          "sku": "FT-TRT-007",
+          "offers": {
+            "@type": "Offer",
+            "price": "39.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Product",
+          "name": "Hibiscus AHA Exfoliating Pads",
+          "description": "Pre-soaked exfoliating pads with hibiscus-derived AHAs and lactic acid that smooth texture and boost radiance.",
+          "sku": "FT-EXF-008",
+          "offers": {
+            "@type": "Offer",
+            "price": "27.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31"
+          },
+          "brand": { "@type": "Brand", "name": "FaceTea Shop" }
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -12,9 +202,12 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">🍵 FaceTea Shop</a>
-      <nav class="main-nav">
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+      <nav class="main-nav" id="mainNav">
         <a href="#products">Shop</a>
         <a href="#about">About</a>
+        <a href="#shipping">Shipping</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
       <button class="cart-btn" id="cartBtn" aria-label="Open cart">
@@ -27,8 +220,8 @@
   <section class="hero">
     <div class="container hero-content">
       <h1>Tea-Powered Skincare,<br />Delivered to Your Door</h1>
-      <p>Discover our collection of premium tea-infused skincare products — crafted to brighten, calm and hydrate.</p>
-      <a href="#products" class="btn btn-primary">Shop Now</a>
+      <p>Discover our collection of premium tea-infused skincare products — crafted to brighten, calm and hydrate. Vegan, cruelty-free, and backed by real botanicals.</p>
+      <a href="#products" class="btn btn-primary btn-lg">Shop Now</a>
     </div>
   </section>
 
@@ -51,9 +244,9 @@
         <p>Hassle-free returns policy</p>
       </div>
       <div class="feature-item">
-        <span class="feature-icon">💬</span>
-        <h3>24/7 Support</h3>
-        <p>We're always here to help</p>
+        <span class="feature-icon">🌿</span>
+        <h3>Clean & Vegan</h3>
+        <p>Cruelty-free formulas</p>
       </div>
     </div>
   </section>
@@ -62,6 +255,9 @@
   <section class="products-section" id="products">
     <div class="container">
       <h2 class="section-title">Featured Products</h2>
+      <div class="product-filters" id="productFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+      </div>
       <div class="products-grid" id="productsGrid"></div>
     </div>
   </section>
@@ -73,6 +269,7 @@
         <h2>About FaceTea Shop</h2>
         <p>FaceTea Shop is your destination for tea-powered skincare. We harness the natural antioxidants and botanicals found in green tea, white tea, oolong and chamomile to create gentle, effective formulas for every skin type.</p>
         <p>Our mission: bring you clean, science-backed skincare at honest prices — shipped direct to your door.</p>
+        <p>Every product is vegan, cruelty-free, and made without parabens, sulfates, or artificial dyes. We believe great skincare shouldn't cost the earth — literally.</p>
       </div>
       <div class="about-stats">
         <div class="stat">
@@ -80,12 +277,36 @@
           <span class="stat-label">Happy Customers</span>
         </div>
         <div class="stat">
-          <span class="stat-number">500+</span>
-          <span class="stat-label">Products</span>
+          <span class="stat-number">8</span>
+          <span class="stat-label">Curated Products</span>
         </div>
         <div class="stat">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Countries Shipped</span>
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Vegan & Cruelty-Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Green Tea Serum completely transformed my skin. My dark spots faded in just 3 weeks. I'm obsessed!"</p>
+          <p class="testimonial-author">— Morgan T., Verified Buyer</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Finally a clay mask that doesn't leave my face feeling like sandpaper. The Matcha Mask is a game-changer."</p>
+          <p class="testimonial-author">— Priya S., Verified Buyer</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I bought the eye cream for my dark circles and now my partner uses it too. We've reordered twice already."</p>
+          <p class="testimonial-author">— Jamie L., Verified Buyer</p>
         </div>
       </div>
     </div>
@@ -95,12 +316,92 @@
   <section class="newsletter-section">
     <div class="container newsletter-inner">
       <h2>Get 10% Off Your First Order</h2>
-      <p>Subscribe to our newsletter for exclusive deals and new arrivals.</p>
+      <p>Subscribe to our newsletter for exclusive deals, skincare tips, and new arrivals.</p>
       <form class="newsletter-form" id="newsletterForm">
         <input type="email" placeholder="Enter your email address" required aria-label="Email address" />
         <button type="submit" class="btn btn-primary">Subscribe</button>
       </form>
       <p class="newsletter-success hidden" id="newsletterSuccess">🎉 Thanks for subscribing! Check your inbox for your discount code.</p>
+    </div>
+  </section>
+
+  <!-- ===== SHIPPING & RETURNS ===== -->
+  <section class="info-section" id="shipping">
+    <div class="container">
+      <h2 class="section-title">Shipping & Returns</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>📦 Shipping</h3>
+          <ul>
+            <li><strong>Processing:</strong> 1–2 business days</li>
+            <li><strong>Standard:</strong> 7–14 days (free on orders $50+, otherwise $4.99)</li>
+            <li><strong>Expedited:</strong> 3–5 days ($7.99)</li>
+            <li>Ships to contiguous United States (48 states)</li>
+            <li>Tracking number sent via email within 2 business days</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>↩️ Returns & Refunds</h3>
+          <ul>
+            <li><strong>30-day satisfaction guarantee</strong></li>
+            <li>Unopened products: full refund or exchange</li>
+            <li>Opened products: 50% store credit</li>
+            <li>Damaged or defective items: free replacement</li>
+            <li>Skin sensitivity/reaction: full refund, no return needed</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>💳 Payment</h3>
+          <ul>
+            <li>Visa, Mastercard, Amex, Discover</li>
+            <li>PayPal accepted</li>
+            <li>All transactions encrypted via SSL</li>
+            <li>Processed securely by Stripe/PayPal</li>
+            <li>We never see or store your full card number</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Are your products suitable for sensitive skin?</summary>
+          <p>All our formulas are dermatologically tested and free of parabens, sulfates (SLS/SLES), and artificial dyes. We recommend a patch test on the inside of your wrist if you have known sensitivities. Our Chamomile Calming Face Wash is specifically designed for sensitive and irritation-prone skin.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are your products cruelty-free and vegan?</summary>
+          <p>Yes! Every FaceTea product is 100% vegan and cruelty-free. We never test on animals and use no animal-derived ingredients.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What payment methods do you accept?</summary>
+          <p>We accept all major credit and debit cards (Visa, Mastercard, Amex, Discover) and PayPal. All transactions are encrypted via SSL and processed securely by Stripe or PayPal — we never see or store your full card number.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I change or cancel my order?</summary>
+          <p>We can modify or cancel orders within 2 hours of placement. After that, the order has typically been sent to fulfillment. Email support@facetea.org immediately if you need a change.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does shipping take?</summary>
+          <p>Standard shipping takes 7–14 business days (free on orders $50+, otherwise $4.99). Expedited shipping takes 3–5 business days ($7.99). All orders are processed within 1–2 business days. You'll receive a tracking number by email.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is your return policy?</summary>
+          <p>We offer a 30-day satisfaction guarantee. Unopened products can be returned for a full refund or exchange. Opened products qualify for 50% store credit. Damaged, defective, or wrong items are replaced free of charge. If you experience a skin sensitivity reaction, we'll issue a full refund — no return required.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you offer wholesale or bulk pricing?</summary>
+          <p>Yes! For orders of 10 or more of any product, email support@facetea.org with "Wholesale Inquiry" in the subject line.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What skincare routine do you recommend?</summary>
+          <p>For a complete FaceTea routine: 1) Cleanse with Chamomile Face Wash, 2) Tone with Black Tea Firming Toner, 3) Treat with Green Tea Brightening Serum, 4) Moisturise with Oolong Hydrating Day Cream (AM) or Rooibos Repair Night Oil (PM). Add the White Tea Eye Cream and use the Matcha Detox Clay Mask 1–2x per week. Exfoliate with Hibiscus AHA Pads 2–3x per week.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -110,13 +411,21 @@
       <h2 class="section-title">Contact Us</h2>
       <div class="contact-grid">
         <div class="contact-info">
-          <p>📧 <a href="mailto:support@faceteashop.com">support@faceteashop.com</a></p>
-          <p>📞 +1 (800) 555-0199</p>
+          <p>📧 <a href="mailto:support@facetea.org">support@facetea.org</a></p>
           <p>🕐 Mon–Fri, 9 am – 6 pm EST</p>
+          <p>📍 We typically respond within 24 hours</p>
         </div>
         <form class="contact-form" id="contactForm">
           <input type="text" placeholder="Your name" required aria-label="Your name" />
           <input type="email" placeholder="Your email" required aria-label="Your email" />
+          <select aria-label="Subject" required>
+            <option value="" disabled selected>Select a subject</option>
+            <option value="order">Order inquiry</option>
+            <option value="return">Return or refund</option>
+            <option value="product">Product question</option>
+            <option value="wholesale">Wholesale inquiry</option>
+            <option value="other">Other</option>
+          </select>
           <textarea rows="4" placeholder="Your message" required aria-label="Your message"></textarea>
           <button type="submit" class="btn btn-primary">Send Message</button>
           <p class="form-success hidden" id="contactSuccess">✅ Message sent! We'll get back to you within 24 hours.</p>
@@ -128,15 +437,37 @@
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-logo">🍵 FaceTea Shop</p>
-      <nav class="footer-nav">
-        <a href="#products">Shop</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </nav>
-      <p class="footer-copy">&copy; 2026 FaceTea Shop. All rights reserved.</p>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-logo">🍵 FaceTea Shop</p>
+          <p class="footer-tagline">Tea-powered skincare, delivered to your door.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="#products">All Products</a>
+            <a href="#products" data-filter="Serums">Serums</a>
+            <a href="#products" data-filter="Cleansers">Cleansers</a>
+            <a href="#products" data-filter="Treatments">Treatments</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#shipping">Shipping</a>
+            <a href="#shipping">Returns</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 FaceTea Shop. All rights reserved.</p>
+        <p class="footer-disclaimer">These statements have not been evaluated by the FDA. These products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+      </div>
     </div>
   </footer>
 
@@ -150,11 +481,16 @@
       <p class="cart-empty">Your cart is empty.</p>
     </div>
     <div class="cart-footer hidden" id="cartFooter">
+      <p class="cart-trust">🔒 Secure checkout · 30-day guarantee</p>
       <p class="cart-total">Total: <strong id="cartTotal">$0.00</strong></p>
-      <button class="btn btn-primary btn-block">Checkout</button>
+      <p class="cart-shipping-note" id="cartShippingNote"></p>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">Checkout</button>
     </div>
   </aside>
   <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <script src="script.js"></script>
 </body>
