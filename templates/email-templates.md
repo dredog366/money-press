@@ -33,8 +33,9 @@ The LatherLoop Team
 [hello@DOMAIN](mailto:hello@DOMAIN)
 
 ---
-*You're receiving this because you signed up at latherloop.com.*  
-*[Unsubscribe]* | [Privacy Policy](https://DOMAIN/privacy-policy)
+
+_You're receiving this because you signed up at latherloop.com._  
+_[Unsubscribe]_ | [Privacy Policy](https://DOMAIN/privacy-policy)
 
 ---
 
@@ -82,7 +83,7 @@ Here's a reminder of what you're getting:
 
 Not sure? Here's what other customers are saying:
 
-> *"Obsessed. I travel every week and these pods have replaced an entire toiletry bag shelf."* — Morgan T.
+> _"Obsessed. I travel every week and these pods have replaced an entire toiletry bag shelf."_ — Morgan T.
 
 Your cart is saved and ready when you are.
 
@@ -126,7 +127,7 @@ It's been about 25 days since your LatherLoop pods arrived — which means your 
 
 Ready for your next pack?
 
-**[Starter Pack — $34.99 →](https://DOMAIN/product/latherloop-daily-wash-pods-starter-pack?utm_source=mailchimp&utm_medium=email&utm_campaign=refill-reminder&utm_content=starter)**  
+**[Starter Pack — $34.99 →](https://DOMAIN/product/latherloop-daily-wash-pods-starter-pack?utm_source=mailchimp&utm_medium=email&utm_campaign=refill-reminder&utm_content=starter)**
 
 Or save more with the bundle:  
 **[3-Month Supply — $79.99 (save 24%) →](https://DOMAIN/product/latherloop-3-month-supply?utm_source=mailchimp&utm_medium=email&utm_campaign=refill-reminder&utm_content=bundle)**
@@ -141,7 +142,7 @@ The LatherLoop Team
 
 ## Template 6 — Order Confirmation (WooCommerce default — customize in Admin)
 
-*Customize via WooCommerce → Settings → Emails → Processing Order*
+_Customize via WooCommerce → Settings → Emails → Processing Order_
 
 **Subject:** Your LatherLoop order is confirmed (#[ORDER_NUMBER])  
 **Preview text:** Your pods are being prepared!
@@ -155,8 +156,8 @@ Your order is confirmed and we're on it! 🎉
 **Order #[ORDER_NUMBER]**  
 Date: [ORDER_DATE]
 
-| Item | Qty | Price |
-|------|-----|-------|
+| Item           | Qty   | Price   |
+| -------------- | ----- | ------- |
 | [PRODUCT_NAME] | [QTY] | [PRICE] |
 
 **Subtotal:** [SUBTOTAL]  
@@ -174,7 +175,7 @@ The LatherLoop Team
 
 ## Template 7 — Order Shipped (WooCommerce default — customize in Admin)
 
-*Customize via WooCommerce → Settings → Emails → Completed Order*
+_Customize via WooCommerce → Settings → Emails → Completed Order_
 
 **Subject:** Your LatherLoop pods are on their way! 📦  
 **Preview text:** Here's your tracking info.
@@ -194,7 +195,7 @@ Get ready to simplify your routine. Your pods are [X] days away.
 
 While you wait, check out our most-asked question:
 
-> *How do I store the pods before using them?*  
+> _How do I store the pods before using them?_  
 > Keep them in a cool, dry place away from humidity. The Travel Pod Case (add one to your next order) works perfectly.
 
 See you in the loop,  

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -20,37 +20,54 @@
     </div>
   </header>
 
-  <main class="success-page">
-    <div class="container">
-      <div class="success-content">
-        <span class="success-icon">🎉</span>
-        <h1>Thank You for Your Order!</h1>
-        <p>Your FaceTea products are on their way. You'll receive a confirmation email with tracking details within 1-2 business days.</p>
-        <div class="success-details">
-          <h3>What Happens Next</h3>
-          <ul>
-            <li>📧 Confirmation email sent to your inbox</li>
-            <li>📦 Order processed within 1-2 business days</li>
-            <li>🚚 Tracking number emailed when shipped</li>
-            <li>🍵 Enjoy your tea-powered skincare routine!</li>
-          </ul>
+    <main class="success-page">
+      <div class="container">
+        <div class="success-content">
+          <span class="success-icon">🎉</span>
+          <h1>Thank You for Your Order!</h1>
+          <p>
+            Your FaceTea products are on their way. You'll receive a
+            confirmation email with tracking details within 1-2 business days.
+          </p>
+          <div class="success-details">
+            <h3>What Happens Next</h3>
+            <ul>
+              <li>📧 Confirmation email sent to your inbox</li>
+              <li>📦 Order processed within 1-2 business days</li>
+              <li>🚚 Tracking number emailed when shipped</li>
+              <li>🍵 Enjoy your tea-powered skincare routine!</li>
+            </ul>
+          </div>
+          <a href="index.html" class="btn btn-primary btn-lg"
+            >Continue Shopping</a
+          >
         </div>
-        <a href="index.html" class="btn btn-primary btn-lg">Continue Shopping</a>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2026 FaceTea Shop. All rights reserved.</p>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            &copy; 2026 FaceTea Shop. All rights reserved.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    // Clear the cart after successful purchase
-    localStorage.removeItem("facetea_cart");
-  </script>
-</body>
+    <script>
+      // Clear the cart after successful purchase
+      localStorage.removeItem("facetea_cart");
+    </script>
+
+    <!-- Vercel Speed Insights -->
+    <script>
+      window.si =
+        window.si ||
+        function () {
+          (window.siq = window.siq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+  </body>
 </html>

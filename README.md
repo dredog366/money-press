@@ -20,19 +20,19 @@ bash setup.sh
 
 ## Table of Contents
 
-| # | Document | What's inside |
-|---|----------|---------------|
-| 1 | [Assumptions](docs/01-assumptions.md) | Server prereqs, what is assumed, missing-piece install commands |
-| 2 | [Product Research](docs/02-product-research.md) | Selection criteria, ranked shortlist of 10, top pick with rationale |
-| 3 | [Brand & Positioning](docs/03-brand-positioning.md) | Name ideas, tagline, brand voice, visual style guide |
-| 4 | [Technical Build Plan](docs/04-technical-build.md) | Step-by-step WP-CLI + shell commands (server → SSL → WP → Woo → theme → pages) |
-| 5 | [WooCommerce Configuration](docs/05-woo-configuration.md) | Plugins, settings, CLI commands for Woo options |
-| 6 | [Dropshipping Ops Workflow](docs/06-dropshipping-ops.md) | Supplier sourcing, QC, returns tree, support macros, fulfillment SOP |
-| 7 | [Site Copy Templates](docs/07-site-copy-templates.md) | Paste-ready copy for every page |
-| 8 | [Tracking & Analytics](docs/08-tracking-analytics.md) | GA4 setup, pixel setup, UTM conventions, KPI list |
-| 9 | [Launch Plan](docs/09-launch-plan.md) | 7-day launch + 30-day growth plan |
-| 10 | [AI Asset Prompts](docs/10-ai-asset-prompts.md) | Logo, lifestyle, mockup, and video storyboard prompts |
-| B | [setup.sh](scripts/setup.sh) | Bonus: single bash script to automate the entire build |
+| #   | Document                                                  | What's inside                                                                  |
+| --- | --------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 1   | [Assumptions](docs/01-assumptions.md)                     | Server prereqs, what is assumed, missing-piece install commands                |
+| 2   | [Product Research](docs/02-product-research.md)           | Selection criteria, ranked shortlist of 10, top pick with rationale            |
+| 3   | [Brand & Positioning](docs/03-brand-positioning.md)       | Name ideas, tagline, brand voice, visual style guide                           |
+| 4   | [Technical Build Plan](docs/04-technical-build.md)        | Step-by-step WP-CLI + shell commands (server → SSL → WP → Woo → theme → pages) |
+| 5   | [WooCommerce Configuration](docs/05-woo-configuration.md) | Plugins, settings, CLI commands for Woo options                                |
+| 6   | [Dropshipping Ops Workflow](docs/06-dropshipping-ops.md)  | Supplier sourcing, QC, returns tree, support macros, fulfillment SOP           |
+| 7   | [Site Copy Templates](docs/07-site-copy-templates.md)     | Paste-ready copy for every page                                                |
+| 8   | [Tracking & Analytics](docs/08-tracking-analytics.md)     | GA4 setup, pixel setup, UTM conventions, KPI list                              |
+| 9   | [Launch Plan](docs/09-launch-plan.md)                     | 7-day launch + 30-day growth plan                                              |
+| 10  | [AI Asset Prompts](docs/10-ai-asset-prompts.md)           | Logo, lifestyle, mockup, and video storyboard prompts                          |
+| B   | [setup.sh](scripts/setup.sh)                              | Bonus: single bash script to automate the entire build                         |
 
 ---
 
@@ -43,31 +43,32 @@ See [Product Research](docs/02-product-research.md) for the full ranking and rat
 
 ## Chosen Brand
 
-**LatherLoop** — *"Your daily ritual, simplified."*  
+**LatherLoop** — _"Your daily ritual, simplified."_  
 See [Brand & Positioning](docs/03-brand-positioning.md) for the full style guide.
 
 ---
 
 ## Budget Snapshot
 
-| Item | Cost |
-|------|------|
-| Domain (.com, 1 yr) | ~$12 |
-| VPS (e.g. Hetzner CX22 / DigitalOcean Basic) | $6–$12/mo |
-| SSL | $0 (Let's Encrypt) |
-| Plugins (all free tier) | $0 |
-| Theme (Astra free) | $0 |
-| First ad test budget | $50–$100 |
-| Sample orders (3–5 units) | $20–$40 |
-| **Total first-month** | **~$100–$165** |
+| Item                                         | Cost               |
+| -------------------------------------------- | ------------------ |
+| Domain (.com, 1 yr)                          | ~$12               |
+| VPS (e.g. Hetzner CX22 / DigitalOcean Basic) | $6–$12/mo          |
+| SSL                                          | $0 (Let's Encrypt) |
+| Plugins (all free tier)                      | $0                 |
+| Theme (Astra free)                           | $0                 |
+| First ad test budget                         | $50–$100           |
+| Sample orders (3–5 units)                    | $20–$40            |
+| **Total first-month**                        | **~$100–$165**     |
 
 ---
 
 ## Legal Disclaimers
 
-- No medical/health cure claims are made anywhere in this project.  
-- No trademarked brand names are referenced in product copy.  
+- No medical/health cure claims are made anywhere in this project.
+- No trademarked brand names are referenced in product copy.
 - All supplier relationships are at arm's length; always verify import regulations for your specific SKU.
+
 # money-press
 
 A dropshipping storefront built with [Next.js](https://nextjs.org/) and TypeScript.
@@ -103,13 +104,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server with hot reload |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format all files with Prettier |
+| Command          | Description                      |
+| ---------------- | -------------------------------- |
+| `npm run dev`    | Start dev server with hot reload |
+| `npm run build`  | Build for production             |
+| `npm run start`  | Start production server          |
+| `npm run lint`   | Run ESLint                       |
+| `npm run format` | Format all files with Prettier   |
 
 ## Project Structure
 

@@ -2,13 +2,13 @@
 
 ## Brand Name Ideas
 
-| # | Name | Why It Works |
-|---|------|-------------|
-| 1 | **LatherLoop** | "Lather" = the act of washing; "Loop" = the daily ritual and the zero-waste circular concept |
-| 2 | DropFresh | Clean/simple; "drop" echoes the pod format |
-| 3 | PodPure | Alliterative; signals purity and the pod format |
-| 4 | RefillRitual | Explains the replenishment model in the name |
-| 5 | FoamForm | Playful; the pod "forms" the foam |
+| #   | Name           | Why It Works                                                                                 |
+| --- | -------------- | -------------------------------------------------------------------------------------------- |
+| 1   | **LatherLoop** | "Lather" = the act of washing; "Loop" = the daily ritual and the zero-waste circular concept |
+| 2   | DropFresh      | Clean/simple; "drop" echoes the pod format                                                   |
+| 3   | PodPure        | Alliterative; signals purity and the pod format                                              |
+| 4   | RefillRitual   | Explains the replenishment model in the name                                                 |
+| 5   | FoamForm       | Playful; the pod "forms" the foam                                                            |
 
 ### ✅ Chosen: **LatherLoop**
 
@@ -21,6 +21,7 @@ Short, memorable, .com available (verify before launch), communicates the daily 
 > **"Your daily ritual, simplified."**
 
 Secondary taglines for A/B testing:
+
 - "One pod. One perfect wash."
 - "Less bottle. More you."
 - "The cleanest routine on the planet."
@@ -39,21 +40,21 @@ Secondary taglines for A/B testing:
 
 ### Color Palette
 
-| Name | Hex | Use |
-|------|-----|-----|
-| Foam White | `#F7F5F2` | Page backgrounds, card backgrounds |
-| Deep Forest | `#1E3A2F` | Primary text, buttons, headings |
-| Sage Mist | `#A8C5A0` | Accent highlights, badges, icons |
-| Warm Sand | `#D9C9B0` | Secondary backgrounds, section dividers |
-| Clean Slate | `#2D2D2D` | Body copy, footer |
+| Name        | Hex       | Use                                     |
+| ----------- | --------- | --------------------------------------- |
+| Foam White  | `#F7F5F2` | Page backgrounds, card backgrounds      |
+| Deep Forest | `#1E3A2F` | Primary text, buttons, headings         |
+| Sage Mist   | `#A8C5A0` | Accent highlights, badges, icons        |
+| Warm Sand   | `#D9C9B0` | Secondary backgrounds, section dividers |
+| Clean Slate | `#2D2D2D` | Body copy, footer                       |
 
 ### Typography
 
-| Role | Font | Weight | Notes |
-|------|------|--------|-------|
-| Headings | **DM Serif Display** (Google Fonts) | 400 | Elegant, editorial feel |
-| Body | **DM Sans** (Google Fonts) | 300 / 400 | Readable at small sizes |
-| Accent / CTA | **DM Sans** | 600 Bold | Buttons and callouts |
+| Role         | Font                                | Weight    | Notes                   |
+| ------------ | ----------------------------------- | --------- | ----------------------- |
+| Headings     | **DM Serif Display** (Google Fonts) | 400       | Elegant, editorial feel |
+| Body         | **DM Sans** (Google Fonts)          | 300 / 400 | Readable at small sizes |
+| Accent / CTA | **DM Sans**                         | 600 Bold  | Buttons and callouts    |
 
 All fonts are free via Google Fonts. Load only the weights listed to keep performance.
 

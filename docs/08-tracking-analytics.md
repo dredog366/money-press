@@ -4,12 +4,12 @@
 
 You need exactly four data streams before launch:
 
-| # | Stream | Tool | Cost |
-|---|--------|------|------|
-| 1 | Site analytics + ecommerce funnel | GA4 | Free |
-| 2 | Ad attribution (paid social) | Meta Pixel + TikTok Pixel | Free |
-| 3 | Email performance | Mailchimp / Klaviyo | Free tier |
-| 4 | WooCommerce revenue | WooCommerce Reports (built-in) | Free |
+| #   | Stream                            | Tool                           | Cost      |
+| --- | --------------------------------- | ------------------------------ | --------- |
+| 1   | Site analytics + ecommerce funnel | GA4                            | Free      |
+| 2   | Ad attribution (paid social)      | Meta Pixel + TikTok Pixel      | Free      |
+| 3   | Email performance                 | Mailchimp / Klaviyo            | Free tier |
+| 4   | WooCommerce revenue               | WooCommerce Reports (built-in) | Free      |
 
 ---
 
@@ -35,7 +35,7 @@ You need exactly four data streams before launch:
 wp plugin install woocommerce-google-analytics-integration --activate --allow-root
 ```
 
-  - Go to WooCommerce → Settings → Integration → Google Analytics → enter Measurement ID → enable "Add to cart events" + "Purchase events"
+- Go to WooCommerce → Settings → Integration → Google Analytics → enter Measurement ID → enable "Add to cart events" + "Purchase events"
 - [ ] Verify in GA4 → Realtime → open your site in another tab, verify events firing
 - [ ] Create a GA4 **Conversion** event:
   - GA4 → Admin → Events → Mark `purchase` as a conversion
@@ -96,31 +96,32 @@ Format: `utm_source / utm_medium / utm_campaign / utm_content / utm_term`
 
 ### Source Values
 
-| Channel | `utm_source` |
-|---------|-------------|
-| Facebook feed ad | `facebook` |
-| Instagram ad | `instagram` |
-| TikTok ad | `tiktok` |
-| Google Search | `google` |
-| Email (Mailchimp) | `mailchimp` |
+| Channel                      | `utm_source`        |
+| ---------------------------- | ------------------- |
+| Facebook feed ad             | `facebook`          |
+| Instagram ad                 | `instagram`         |
+| TikTok ad                    | `tiktok`            |
+| Google Search                | `google`            |
+| Email (Mailchimp)            | `mailchimp`         |
 | Organic social (manual link) | `instagram-organic` |
-| Influencer | `influencer` |
+| Influencer                   | `influencer`        |
 
 ### Medium Values
 
-| Type | `utm_medium` |
-|------|-------------|
-| Paid social | `paid-social` |
-| Paid search | `cpc` |
-| Email | `email` |
-| Organic social | `social` |
-| Influencer / UGC | `influencer` |
+| Type             | `utm_medium`  |
+| ---------------- | ------------- |
+| Paid social      | `paid-social` |
+| Paid search      | `cpc`         |
+| Email            | `email`       |
+| Organic social   | `social`      |
+| Influencer / UGC | `influencer`  |
 
 ### Campaign Naming Template
 
 `[PRODUCT]-[OBJECTIVE]-[AUDIENCE]-[DATE]`
 
 Examples:
+
 - `starter6-purchase-lookalike1pct-2024q1`
 - `starter6-purchase-retarget-atc-2024q1`
 - `bundle18-purchase-purchasers-lal-2024q2`
@@ -143,40 +144,40 @@ echo "${BASE}/?utm_source=${SOURCE}&utm_medium=${MEDIUM}&utm_campaign=${CAMPAIGN
 
 ### Week 1 (Validation)
 
-| KPI | Target | Tool |
-|-----|--------|------|
-| Sessions | ≥ 200 | GA4 |
-| Add-to-cart rate | ≥ 5% | GA4 / WooCommerce |
-| Checkout initiation rate | ≥ 2% | GA4 |
-| First purchase (any) | ≥ 1 | WooCommerce |
-| Email subscribers | ≥ 20 | Mailchimp |
-| Pixel events firing | 100% | Meta Events Manager |
+| KPI                      | Target | Tool                |
+| ------------------------ | ------ | ------------------- |
+| Sessions                 | ≥ 200  | GA4                 |
+| Add-to-cart rate         | ≥ 5%   | GA4 / WooCommerce   |
+| Checkout initiation rate | ≥ 2%   | GA4                 |
+| First purchase (any)     | ≥ 1    | WooCommerce         |
+| Email subscribers        | ≥ 20   | Mailchimp           |
+| Pixel events firing      | 100%   | Meta Events Manager |
 
 ### Week 2 (First Paid Test)
 
-| KPI | Target | Tool |
-|-----|--------|------|
-| Cost per click (CPC) | < $1.50 | Meta Ads Manager |
-| Cost per add-to-cart | < $5 | Meta Ads Manager |
-| Cost per purchase (CPP) | < $25 | Meta Ads Manager |
-| ROAS | ≥ 1.4× | Meta Ads Manager |
-| Email open rate | ≥ 30% | Mailchimp |
+| KPI                     | Target  | Tool             |
+| ----------------------- | ------- | ---------------- |
+| Cost per click (CPC)    | < $1.50 | Meta Ads Manager |
+| Cost per add-to-cart    | < $5    | Meta Ads Manager |
+| Cost per purchase (CPP) | < $25   | Meta Ads Manager |
+| ROAS                    | ≥ 1.4×  | Meta Ads Manager |
+| Email open rate         | ≥ 30%   | Mailchimp        |
 
 ### Week 3 (Optimization)
 
-| KPI | Target | Tool |
-|-----|--------|------|
-| ROAS | ≥ 1.8× | Meta / TikTok |
-| Returning visitor rate | ≥ 15% | GA4 |
-| Cart abandonment rate | < 70% | GA4 / WooCommerce |
-| Average order value (AOV) | ≥ $38 | WooCommerce |
+| KPI                       | Target | Tool              |
+| ------------------------- | ------ | ----------------- |
+| ROAS                      | ≥ 1.8× | Meta / TikTok     |
+| Returning visitor rate    | ≥ 15%  | GA4               |
+| Cart abandonment rate     | < 70%  | GA4 / WooCommerce |
+| Average order value (AOV) | ≥ $38  | WooCommerce       |
 
 ### Week 4 (Scale)
 
-| KPI | Target | Tool |
-|-----|--------|------|
-| ROAS | ≥ 2.0× | Meta / TikTok |
-| Revenue (cumulative) | ≥ $500 | WooCommerce |
-| Email list size | ≥ 100 | Mailchimp |
-| Repeat purchase rate | ≥ 10% | WooCommerce |
-| Customer acquisition cost (CAC) | < $18 | Calculated |
+| KPI                             | Target | Tool          |
+| ------------------------------- | ------ | ------------- |
+| ROAS                            | ≥ 2.0× | Meta / TikTok |
+| Revenue (cumulative)            | ≥ $500 | WooCommerce   |
+| Email list size                 | ≥ 100  | Mailchimp     |
+| Repeat purchase rate            | ≥ 10%  | WooCommerce   |
+| Customer acquisition cost (CAC) | < $18  | Calculated    |
