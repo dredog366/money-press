@@ -4,37 +4,51 @@ Your WordPress site is currently at: `dgrelli-bopge.wpcomstaging.com`
 Your target domain is: `facetea.org`
 
 **Your setup:**
-- **Domain purchased through:** Hostinger (registered via Name.com behind the scenes)
-- **Domain managed at:** Hostinger dashboard (hpanel.hostinger.com)
-- **Registered:** 2026-03-03
-
-The domain is currently pointing to Hostinger's servers. We need to change the nameservers in Hostinger to point to WordPress.com instead.
+- **Domain purchased through:** Vercel
+- **Domain managed at:** Vercel Dashboard (vercel.com/dashboard)
+- **Registered:** 2026-03-03 (via Name.com as registrar behind the scenes)
 
 ---
 
 ## Prerequisites
 
 - A WordPress.com plan that supports custom domains (Personal plan or higher)
-- Access to your **Hostinger** account (where you bought facetea.org)
+- Access to your **Vercel** account (where you bought facetea.org)
 
 ---
 
-## Step 1: Change Nameservers in Hostinger (Do This First)
+## Step 1: Change DNS Records in Vercel
 
-1. Log in to **Hostinger** at https://hpanel.hostinger.com
-2. In the left sidebar, click **Domains**
+1. Go to https://vercel.com/dashboard
+2. Click on **Domains** in the top nav (or go to https://vercel.com/dashboard/domains)
 3. Click on **facetea.org**
-4. Look for **DNS / Nameservers** (may be under "DNS Zone" or "Nameservers" tab)
-5. Switch to **custom nameservers** (instead of Hostinger's default)
-6. **Delete** the existing Hostinger nameservers
-7. **Add** these two WordPress.com nameservers:
+4. Go to the **DNS Records** tab
+
+### Remove Existing Records
+Delete any A records or CNAME records that Vercel auto-created (these point to Vercel's servers — you don't want that if you're using WordPress.com).
+
+### Add WordPress.com Records
+
+Add these DNS records:
+
+| Type | Name | Value | TTL |
+|------|------|-------|-----|
+| A | @ | 192.0.78.24 | 60 |
+| A | @ | 192.0.78.25 | 60 |
+| CNAME | www | `dgrelli-bopge.wpcomstaging.com` | 60 |
+
+> **Important:** WordPress.com may show you different IPs during setup (Step 2). Always use the IPs that WordPress.com displays — they override the ones above.
+
+### Alternative: Change Nameservers
+If you prefer to let WordPress.com manage all DNS:
+
+1. In Vercel **Domains > facetea.org**, look for **Nameservers** settings
+2. Change nameservers from Vercel's defaults to:
 ```
 ns1.wordpress.com
 ns2.wordpress.com
 ```
-8. **Save** changes
-
-> **Note:** Hostinger may warn you that changing nameservers means their hosting won't work for this domain. That's fine — you want WordPress.com to handle it now.
+3. Save — note this means Vercel will no longer manage DNS for this domain
 
 ---
 
@@ -46,28 +60,8 @@ ns2.wordpress.com
 4. Click **"Add a domain"**
 5. Select **"Use a domain I own"** (also called "Connect a domain")
 6. Enter: `facetea.org`
-7. WordPress.com will attempt to verify the nameservers
-
----
-
-## Alternative: Use DNS Records Instead of Nameservers
-
-If you prefer to keep Hostinger managing DNS (and just point records to WordPress.com):
-
-1. In Hostinger, go to **Domains > facetea.org > DNS Zone**
-2. **Delete** any existing A records (they point to Hostinger's servers)
-3. **Delete** any existing CNAME record for `www`
-4. **Add** the following records:
-
-| Type | Host/Name | Value | TTL |
-|------|-----------|-------|-----|
-| A | @ (or blank) | 192.0.78.24 | 300 |
-| A | @ (or blank) | 192.0.78.25 | 300 |
-| CNAME | www | `dgrelli-bopge.wpcomstaging.com` | 300 |
-
-> **Important:** Use the exact IPs that WordPress.com shows you in Step 2 — they may differ from the ones above. Always trust what WordPress.com displays.
-
-5. Save all changes
+7. WordPress.com will show you the DNS records needed — **use those exact IPs** for the A records if they differ from what's above
+8. WordPress.com will attempt to verify the DNS
 
 ---
 
@@ -76,15 +70,15 @@ If you prefer to keep Hostinger managing DNS (and just point records to WordPres
 1. Go back to WordPress.com **Upgrades > Domains**
 2. Click **"Verify"** next to `facetea.org`
 3. DNS propagation usually takes 15 minutes to 1 hour, but can take up to 48 hours
-4. You can check propagation status at https://dnschecker.org (search for `facetea.org` A record)
+4. You can check propagation at https://dnschecker.org (search for `facetea.org` A record)
 5. Once verified, click **"Make primary"** to set `facetea.org` as your main domain
-6. WordPress.com will automatically redirect `dgrelli-bopge.wpcomstaging.com` → `facetea.org`
+6. WordPress.com will automatically redirect `dgrelli-bopge.wpcomstaging.com` to `facetea.org`
 
 ---
 
 ## Step 4: SSL Certificate
 
-WordPress.com automatically provisions a **free SSL certificate** for your custom domain. This usually happens within minutes of DNS verification, but can take up to 72 hours.
+WordPress.com automatically provisions a free SSL certificate for your custom domain. This usually happens within minutes of DNS verification, but can take up to 72 hours.
 
 You'll know it's working when `https://facetea.org` shows a padlock icon in the browser.
 
@@ -93,12 +87,12 @@ You'll know it's working when `https://facetea.org` shows a padlock icon in the 
 ## Troubleshooting
 
 ### "Domain not verified" after several hours
-- Log back into Hostinger and confirm the nameservers or DNS records are saved correctly
-- Make sure you **deleted** the old Hostinger A records if using the DNS records method
+- Log back into Vercel and confirm the DNS records are saved correctly
+- Make sure you **deleted** the old Vercel A/CNAME records that pointed to Vercel's servers (like `76.76.21.21`)
 - Check propagation at https://dnschecker.org (search for `facetea.org`)
 
 ### "ERR_NAME_NOT_RESOLVED" or site won't load
-- Nameserver changes can take up to 48 hours to fully propagate (usually 1–2 hours)
+- DNS changes can take up to 48 hours to propagate (usually 15 min – 1 hour)
 - Clear your browser cache and try in an incognito/private window
 
 ### "SSL not working" (shows insecure warning)
@@ -106,8 +100,9 @@ You'll know it's working when `https://facetea.org` shows a padlock icon in the 
 - Go to **Upgrades > Domains** in WordPress.com, click on `facetea.org`, check SSL status
 - If still not working after 72 hours, contact WordPress.com support
 
-### Still seeing the Hostinger default page
+### Still seeing Vercel's default page or parking page
 - The old DNS records are still cached. Wait for propagation or try from a different device/network.
+- Double-check that you removed Vercel's A record pointing to `76.76.21.21`
 
 ---
 
@@ -117,4 +112,4 @@ Once `facetea.org` is live:
 1. Update your **WooCommerce > Settings > General** store URL if needed
 2. Update any hardcoded links in your site content
 3. Test that `facetea.org`, `www.facetea.org`, and the old staging URL all work
-4. Set up email forwarding (e.g., `support@facetea.org`) via Hostinger's email settings
+4. Set up email forwarding (e.g., `support@facetea.org`) — Vercel doesn't offer email, so you'll need a service like Zoho Mail (free tier), Google Workspace, or Cloudflare Email Routing
