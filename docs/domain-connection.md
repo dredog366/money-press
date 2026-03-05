@@ -3,6 +3,7 @@
 Your target domain is: `facetea.org`
 
 **Your setup:**
+
 - **Domain purchased through:** Vercel (registrar: Name.com behind the scenes)
 - **Domain managed at:** Vercel Dashboard (vercel.com/dashboard)
 - **Hosting:** Hostinger (WordPress + WooCommerce)
@@ -19,11 +20,14 @@ This hands all DNS management to Hostinger — simplest approach.
 2. Go to **Hosting > Manage** for your plan
 3. In the sidebar, click **Plan Details** or **Account Details**
 4. Note the nameservers — they look like:
+
 ```
 ns1.dns-parking.com
 ns2.dns-parking.com
 ```
+
 Or for premium plans:
+
 ```
 ns1.hostinger.com
 ns2.hostinger.com
@@ -74,10 +78,10 @@ Use this if you want Vercel to keep managing DNS but serve the site from Hosting
 3. **Delete** any existing A records or CNAME records (these point to Vercel's servers)
 4. Add these records:
 
-| Type  | Name | Value                      | TTL   |
-|-------|------|----------------------------|-------|
-| A     | @    | `<your Hostinger server IP>` | 3600  |
-| CNAME | www  | `facetea.org`              | 3600  |
+| Type  | Name | Value                        | TTL  |
+| ----- | ---- | ---------------------------- | ---- |
+| A     | @    | `<your Hostinger server IP>` | 3600 |
+| CNAME | www  | `facetea.org`                | 3600 |
 
 ### Step 3: Add Domain in Hostinger
 
@@ -128,20 +132,25 @@ Once `facetea.org` is resolving to your Hostinger server:
 ## Troubleshooting
 
 ### Site still shows Vercel page
+
 - Old DNS is cached. Wait for propagation or try incognito/different device.
 - Verify at https://dnschecker.org that the A record points to Hostinger's IP (not `76.76.21.21`).
 
 ### "Domain not pointed" in Hostinger
+
 - Nameserver/DNS changes haven't propagated yet. Wait 1–4 hours.
 - Double-check the nameservers or A record are correct.
 
 ### SSL certificate won't install
+
 - SSL requires the domain to resolve to Hostinger first. Wait for DNS propagation.
 - In hPanel: **Security > SSL** > click **Install** again after propagation.
 
 ### WordPress shows "localhost" or staging URL
+
 - Go to wp-admin **Settings > General** and update both URL fields to `https://facetea.org`.
 - If locked out, edit via hPanel **File Manager**: `wp-config.php` — add:
+
 ```php
 define('WP_HOME', 'https://facetea.org');
 define('WP_SITEURL', 'https://facetea.org');

@@ -48,22 +48,26 @@ git push -u origin claude/claude-md-mm2mnu1wdd9474mi-a5IGM
 Since no stack has been chosen yet, the following are placeholder conventions to apply once the project is initialized:
 
 ### General
+
 - Keep the codebase minimal — only add what is needed for the current task
 - No over-engineering; avoid premature abstractions
 - Validate only at system boundaries (user input, external APIs)
 - No backwards-compatibility hacks for code that is not yet in use
 
 ### Code Style
+
 - Follow the conventions of whatever language/framework is adopted
 - Use linting and formatting tools standard to that ecosystem
 - Do not add docstrings or comments to code you did not change
 
 ### Security
+
 - Never commit secrets, credentials, or `.env` files
 - Sanitize all user input before use
 - Avoid OWASP Top 10 vulnerabilities (injection, XSS, CSRF, etc.)
 
 ### Testing
+
 - Write tests for new features once a testing framework is established
 - Run tests before committing
 

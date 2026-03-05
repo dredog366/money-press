@@ -133,14 +133,19 @@ function renderFilters() {
   filtersEl.innerHTML =
     '<button class="filter-btn active" data-filter="all">All</button>' +
     categories
-      .map((cat) => `<button class="filter-btn" data-filter="${cat}">${cat}</button>`)
+      .map(
+        (cat) =>
+          `<button class="filter-btn" data-filter="${cat}">${cat}</button>`,
+      )
       .join("");
 
   filtersEl.addEventListener("click", (e) => {
     const btn = e.target.closest(".filter-btn");
     if (!btn) return;
 
-    filtersEl.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+    filtersEl
+      .querySelectorAll(".filter-btn")
+      .forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
 
     const filter = btn.dataset.filter;
@@ -184,7 +189,7 @@ function renderProducts() {
         <button class="add-to-cart" data-id="${p.id}">Add to Cart</button>
       </div>
     </article>
-  `
+  `,
   ).join("");
 
   grid.querySelectorAll(".add-to-cart").forEach((btn) => {
@@ -267,13 +272,13 @@ function updateCartUI() {
             <button class="qty-btn" data-id="${item.id}" data-delta="1" aria-label="Increase quantity">+</button>
           </div>
         </div>
-      `
+      `,
         )
         .join("");
 
       itemsEl.querySelectorAll(".qty-btn").forEach((btn) => {
         btn.addEventListener("click", () =>
-          changeQty(Number(btn.dataset.id), Number(btn.dataset.delta))
+          changeQty(Number(btn.dataset.id), Number(btn.dataset.delta)),
         );
       });
     }
@@ -442,7 +447,9 @@ function initFooterFilters() {
       if (!filter) return;
       // Scroll to products and activate filter
       setTimeout(() => {
-        const filterBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+        const filterBtn = document.querySelector(
+          `.filter-btn[data-filter="${filter}"]`,
+        );
         if (filterBtn) filterBtn.click();
       }, 300);
     });
