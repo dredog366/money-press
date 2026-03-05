@@ -109,9 +109,51 @@ const PRODUCTS = [
 ];
 
 // ===========================
-// Cart state
+// Constants
 // ===========================
-let cart = [];
+const FREE_SHIPPING_THRESHOLD = 50;
+const STORE_URL = "https://dgrelli-bopge.wpcomstaging.com";
+
+// ===========================
+// Cart state (persisted to localStorage)
+// ===========================
+let cart = JSON.parse(localStorage.getItem("facetea_cart") || "[]");
+
+function saveCart() {
+  localStorage.setItem("facetea_cart", JSON.stringify(cart));
+}
+
+// ===========================
+// Render product filters
+// ===========================
+function renderFilters() {
+  const filtersEl = document.getElementById("productFilters");
+  if (!filtersEl) return;
+
+  const categories = [...new Set(PRODUCTS.map((p) => p.category))];
+  filtersEl.innerHTML =
+    '<button class="filter-btn active" data-filter="all">All</button>' +
+    categories
+      .map((cat) => `<button class="filter-btn" data-filter="${cat}">${cat}</button>`)
+      .join("");
+
+  filtersEl.addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+
+    filtersEl.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    document.querySelectorAll(".product-card").forEach((card) => {
+      if (filter === "all" || card.dataset.category === filter) {
+        card.classList.remove("hidden-card");
+      } else {
+        card.classList.add("hidden-card");
+      }
+    });
+  });
+}
 
 // ===========================
 // Render products
@@ -120,8 +162,9 @@ function renderProducts() {
   const grid = document.getElementById("productsGrid");
   if (!grid) return;
 
-  grid.innerHTML = PRODUCTS.map((p) => `
-    <article class="product-card">
+  grid.innerHTML = PRODUCTS.map(
+    (p) => `
+    <article class="product-card" data-category="${p.category}">
       <div class="product-img-wrap">
         <div class="product-img" role="img" aria-label="${p.name}" style="display:flex;align-items:center;justify-content:center;font-size:5rem;">
           ${p.emoji}
@@ -142,7 +185,8 @@ function renderProducts() {
         <button class="add-to-cart" data-id="${p.id}">Add to Cart</button>
       </div>
     </article>
-  `).join("");
+  `
+  ).join("");
 
   grid.querySelectorAll(".add-to-cart").forEach((btn) => {
     btn.addEventListener("click", () => addToCart(Number(btn.dataset.id)));
@@ -163,12 +207,14 @@ function addToCart(productId) {
     cart.push({ ...product, qty: 1 });
   }
 
+  saveCart();
   updateCartUI();
   openCart();
 }
 
 function removeFromCart(productId) {
   cart = cart.filter((item) => item.id !== productId);
+  saveCart();
   updateCartUI();
 }
 
@@ -179,6 +225,7 @@ function changeQty(productId, delta) {
   if (item.qty <= 0) {
     removeFromCart(productId);
   } else {
+    saveCart();
     updateCartUI();
   }
 }
@@ -196,6 +243,7 @@ function updateCartUI() {
   const itemsEl = document.getElementById("cartItems");
   const footerEl = document.getElementById("cartFooter");
   const totalEl = document.getElementById("cartTotal");
+  const shippingNote = document.getElementById("cartShippingNote");
 
   if (countEl) countEl.textContent = cartItemCount();
 
@@ -203,7 +251,9 @@ function updateCartUI() {
     if (cart.length === 0) {
       itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
     } else {
-      itemsEl.innerHTML = cart.map((item) => `
+      itemsEl.innerHTML = cart
+        .map(
+          (item) => `
         <div class="cart-item">
           <div class="cart-item-img" role="img" aria-label="${item.name}" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">
             ${item.emoji}
@@ -218,7 +268,9 @@ function updateCartUI() {
             <button class="qty-btn" data-id="${item.id}" data-delta="1" aria-label="Increase quantity">+</button>
           </div>
         </div>
-      `).join("");
+      `
+        )
+        .join("");
 
       itemsEl.querySelectorAll(".qty-btn").forEach((btn) => {
         btn.addEventListener("click", () =>
@@ -233,6 +285,17 @@ function updateCartUI() {
   }
 
   if (totalEl) totalEl.textContent = `$${cartTotal().toFixed(2)}`;
+
+  // Free shipping progress
+  if (shippingNote) {
+    const total = cartTotal();
+    if (total >= FREE_SHIPPING_THRESHOLD) {
+      shippingNote.textContent = "🚚 You qualify for FREE shipping!";
+    } else {
+      const remaining = (FREE_SHIPPING_THRESHOLD - total).toFixed(2);
+      shippingNote.textContent = `Add $${remaining} more for free shipping`;
+    }
+  }
 }
 
 // ===========================
@@ -246,6 +309,7 @@ function openCart() {
     sidebar.setAttribute("aria-hidden", "false");
   }
   if (overlay) overlay.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
 function closeCart() {
@@ -256,6 +320,60 @@ function closeCart() {
     sidebar.setAttribute("aria-hidden", "true");
   }
   if (overlay) overlay.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// ===========================
+// Checkout — redirect to WooCommerce store
+// ===========================
+function handleCheckout() {
+  if (cart.length === 0) return;
+  // Redirect to WooCommerce checkout with cart items
+  // When WooCommerce is live, this will add products to the WC cart via URL
+  const checkoutUrl = STORE_URL + "/checkout/";
+  window.open(checkoutUrl, "_blank");
+}
+
+// ===========================
+// Mobile menu
+// ===========================
+function initMobileMenu() {
+  const btn = document.getElementById("mobileMenuBtn");
+  const nav = document.getElementById("mainNav");
+  if (!btn || !nav) return;
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    btn.textContent = nav.classList.contains("open") ? "✕" : "☰";
+  });
+
+  // Close menu when a link is clicked
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      btn.textContent = "☰";
+    });
+  });
+}
+
+// ===========================
+// Back to top button
+// ===========================
+function initBackToTop() {
+  const btn = document.getElementById("backToTop");
+  if (!btn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 // ===========================
@@ -288,19 +406,48 @@ function initContactForm() {
 }
 
 // ===========================
+// Footer category filter links
+// ===========================
+function initFooterFilters() {
+  document.querySelectorAll("[data-filter]").forEach((link) => {
+    if (link.classList.contains("filter-btn")) return; // skip filter buttons
+    link.addEventListener("click", (e) => {
+      const filter = link.dataset.filter;
+      if (!filter) return;
+      // Scroll to products and activate filter
+      setTimeout(() => {
+        const filterBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+        if (filterBtn) filterBtn.click();
+      }, 300);
+    });
+  });
+}
+
+// ===========================
 // Init
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
+  renderFilters();
   updateCartUI();
+  initMobileMenu();
+  initBackToTop();
   initNewsletter();
   initContactForm();
+  initFooterFilters();
 
   const cartBtn = document.getElementById("cartBtn");
   const cartClose = document.getElementById("cartClose");
   const cartOverlay = document.getElementById("cartOverlay");
+  const checkoutBtn = document.getElementById("checkoutBtn");
 
   if (cartBtn) cartBtn.addEventListener("click", openCart);
   if (cartClose) cartClose.addEventListener("click", closeCart);
   if (cartOverlay) cartOverlay.addEventListener("click", closeCart);
+  if (checkoutBtn) checkoutBtn.addEventListener("click", handleCheckout);
+
+  // Close cart on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeCart();
+  });
 });
