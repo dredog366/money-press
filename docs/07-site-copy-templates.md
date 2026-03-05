@@ -12,7 +12,7 @@ All copy is written to be safe: no cure claims, no medical guarantees, no "befor
 > One pod. One perfect wash.
 
 **Subheadline:**
-> LatherLoop turns a single dissolvable pod into a rich, skin-loving foam — in seconds. No plastic bottle. No fuss. Just the cleanest start to your day.
+> FaceTea Shop turns a single dissolvable pod into a rich, skin-loving foam — in seconds. No plastic bottle. No fuss. Just the cleanest start to your day.
 
 **Primary CTA Button:**
 > Shop the Starter Pack — $34.99
@@ -63,7 +63,7 @@ All copy is written to be safe: no cure claims, no medical guarantees, no "befor
 ## Product Page — Starter Pack (LL-STARTER-6)
 
 ### Headline
-> LatherLoop Daily Wash Pods — Starter Pack (6 pods)
+> FaceTea Shop Daily Wash Pods — Starter Pack (6 pods)
 
 ### Benefit Bullets
 - 🫧 **Rich foaming lather** from one small pod — no extra cleanser needed
@@ -141,7 +141,7 @@ A: Store pods in a cool, dry place. Avoid humidity, which can cause the wrapper 
 > Your satisfaction matters to us. Here's our straightforward policy.
 >
 > ### 30-Day Satisfaction Guarantee
-> If you're not happy with your LatherLoop purchase for any reason, contact us within **30 days of delivery**.
+> If you're not happy with your FaceTea Shop purchase for any reason, contact us within **30 days of delivery**.
 >
 > ### Return Guidelines
 >
@@ -203,4 +203,4 @@ A: Store pods in a cool, dry place. Avoid humidity, which can cause the wrapper 
 
 **Order confirmation page headline:**
 > You're all set, [First Name]! 🎉
-> Your LatherLoop pods are being prepared for shipment. Check your inbox for a confirmation and tracking email within 2 business days.
+> Your FaceTea Shop pods are being prepared for shipment. Check your inbox for a confirmation and tracking email within 2 business days.

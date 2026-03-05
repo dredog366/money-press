@@ -4,13 +4,13 @@
 
 | # | Name | Why It Works |
 |---|------|-------------|
-| 1 | **LatherLoop** | "Lather" = the act of washing; "Loop" = the daily ritual and the zero-waste circular concept |
+| 1 | **FaceTea Shop** | "Lather" = the act of washing; "Loop" = the daily ritual and the zero-waste circular concept |
 | 2 | DropFresh | Clean/simple; "drop" echoes the pod format |
 | 3 | PodPure | Alliterative; signals purity and the pod format |
 | 4 | RefillRitual | Explains the replenishment model in the name |
 | 5 | FoamForm | Playful; the pod "forms" the foam |
 
-### ✅ Chosen: **LatherLoop**
+### ✅ Chosen: **FaceTea Shop**
 
 Short, memorable, .com available (verify before launch), communicates the daily habit loop and the eco-refill concept without over-explaining.
 
@@ -70,7 +70,7 @@ All fonts are free via Google Fonts. Load only the weights listed to keep perfor
 
 ### Logo Guidelines
 
-- Minimal wordmark: "LatherLoop" in DM Serif Display
+- Minimal wordmark: "FaceTea Shop" in DM Serif Display
 - Optional: a small icon of a foam bubble or a circular loop/leaf to the left of the wordmark
 - Primary version: Deep Forest on Foam White
 - Reversed version: Foam White on Deep Forest (for dark backgrounds)

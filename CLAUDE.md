@@ -1,84 +1,63 @@
-# CLAUDE.md — AI Assistant Guide for money-press
+# CLAUDE.md — AI Assistant Guide for FaceTea Shop
 
 ## Project Overview
 
-**money-press** is a dropshipping company project. This repository is in its earliest stage — only a README exists. No tech stack, framework, or source code has been committed yet.
+**FaceTea Shop** is a tea-infused skincare dropshipping store. Static HTML/CSS/JS site with Stripe Checkout, deployed on Vercel.
 
-## Current Repository State
+**Live site:** [facetea.org](https://facetea.org)
+
+## Tech Stack
+
+- **Frontend:** Static HTML, CSS, vanilla JavaScript (no framework)
+- **Payments:** Stripe Checkout via Vercel serverless function (`api/checkout.js`)
+- **Hosting:** Vercel (auto-deploys from `main` branch)
+- **Domain:** facetea.org (managed via Vercel)
+- **Formatting:** Prettier
+
+## Repository Structure
 
 ```
 money-press/
-├── .git/
-├── README.md       # "money-press — dropshipping company"
-└── CLAUDE.md       # This file
+├── api/checkout.js          # Stripe Checkout serverless function
+├── docs/                    # Business planning docs
+├── templates/               # Email and social media templates
+├── index.html               # Main storefront (all pages in one file)
+├── styles.css               # All styles
+├── script.js                # Product data, cart logic, checkout flow
+├── success.html             # Post-purchase confirmation
+├── cancel.html              # Checkout cancelled
+├── privacy.html             # Privacy policy
+├── terms.html               # Terms of service
+├── vercel.json              # Vercel routing (rewrites /api/checkout)
+├── package.json             # Only dependency: stripe
+└── .env.example             # Required: STRIPE_SECRET_KEY
 ```
 
-- **Single commit:** `454ed35` — "Initial commit"
-- **Language/Framework:** Not yet established
-- **Dependencies:** None
-- **Tests:** None
-- **CI/CD:** None
+## Development
 
-## Development Branch
-
-The active development branch is:
-
-```
-claude/claude-md-mm2mnu1wdd9474mi-a5IGM
+```bash
+npm install
+npx vercel dev              # Runs site + serverless functions locally
 ```
 
-Always develop on the designated `claude/` branch. Never push to `main` or `master` without explicit permission.
+Environment variable required: `STRIPE_SECRET_KEY` (from Stripe dashboard).
+
+## Key Architecture Decisions
+
+- **No framework** — pure static HTML for maximum speed and simplicity
+- **Server-side price validation** — `api/checkout.js` validates prices against a hardcoded product map to prevent tampering
+- **Stripe hosted checkout** — no PCI scope; Stripe handles all payment UI
+- **Single-page storefront** — `index.html` contains hero, products, about, newsletter, contact, and footer sections
 
 ## Git Workflow
 
-```bash
-# Push changes
-git push -u origin claude/claude-md-mm2mnu1wdd9474mi-a5IGM
+- `main` branch auto-deploys to Vercel production
+- Create feature branches for changes, merge via PR
+- Never commit `.env` or secrets
 
-# If push fails due to network error, retry with exponential backoff:
-# 2s → 4s → 8s → 16s
-```
+## Conventions
 
-- Write clear, descriptive commit messages
-- Commit and push when changes are complete
-- Create the branch locally first if it does not exist
-
-## Conventions to Follow (When Code is Added)
-
-Since no stack has been chosen yet, the following are placeholder conventions to apply once the project is initialized:
-
-### General
-- Keep the codebase minimal — only add what is needed for the current task
-- No over-engineering; avoid premature abstractions
-- Validate only at system boundaries (user input, external APIs)
-- No backwards-compatibility hacks for code that is not yet in use
-
-### Code Style
-- Follow the conventions of whatever language/framework is adopted
-- Use linting and formatting tools standard to that ecosystem
-- Do not add docstrings or comments to code you did not change
-
-### Security
-- Never commit secrets, credentials, or `.env` files
+- Keep the codebase minimal — only add what is needed
 - Sanitize all user input before use
-- Avoid OWASP Top 10 vulnerabilities (injection, XSS, CSRF, etc.)
-
-### Testing
-- Write tests for new features once a testing framework is established
-- Run tests before committing
-
-## Next Steps for the Project
-
-When development begins, update this file with:
-
-1. **Tech stack** — language, framework, runtime version
-2. **Setup instructions** — how to install dependencies and run locally
-3. **Development scripts** — `npm run dev`, `make serve`, etc.
-4. **Test commands** — how to run the test suite
-5. **Environment variables** — list required vars (use `.env.example`)
-6. **Directory structure** — explain what lives in each top-level folder
-7. **Deployment** — how the app is built and shipped
-
-## Updating This File
-
-Keep this file current as the project evolves. After any major structural change (new framework, new directory layout, new scripts), update the relevant sections here so future AI sessions have accurate context.
+- Never commit secrets, credentials, or `.env` files
+- Format with Prettier before committing: `npm run format`

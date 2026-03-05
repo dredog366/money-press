@@ -1,160 +1,113 @@
-# money-press — WooCommerce Dropshipping Store
+# FaceTea Shop — Tea-Powered Skincare
 
-A complete, CLI-first blueprint for launching a WooCommerce dropshipping store on a $0–$200 budget.  
-All commands are copy-pasteable. All templates are paste-ready. All prompts are ready to run.
+A dropshipping storefront for tea-infused skincare products. Static HTML/CSS/JS site with Stripe Checkout, deployed on Vercel.
+
+**Live site:** [facetea.org](https://facetea.org)
+
+---
+
+## Tech Stack
+
+- **Frontend:** Static HTML, CSS, vanilla JavaScript
+- **Payments:** Stripe Checkout (serverless function on Vercel)
+- **Hosting:** Vercel
+- **Domain:** facetea.org (managed via Vercel)
+
+## How It Works
+
+1. Customer browses products and adds items to cart
+2. Clicks **Checkout** — cart is sent to `/api/checkout`
+3. Vercel serverless function creates a Stripe Checkout session (server-side price validation)
+4. Customer is redirected to Stripe's hosted checkout page
+5. After payment, customer is redirected to `success.html`
+
+Shipping: free over $50, $4.99 flat rate, or $7.99 expedited.
 
 ---
 
 ## Quick Start
 
 ```bash
-# Clone and run the automated setup script
 git clone https://github.com/dredog366/money-press.git
 cd money-press
-cp scripts/setup.sh /your/web/root/setup.sh
-# Edit the variables at the top of setup.sh, then:
-bash setup.sh
-```
-
----
-
-## Table of Contents
-
-| # | Document | What's inside |
-|---|----------|---------------|
-| 1 | [Assumptions](docs/01-assumptions.md) | Server prereqs, what is assumed, missing-piece install commands |
-| 2 | [Product Research](docs/02-product-research.md) | Selection criteria, ranked shortlist of 10, top pick with rationale |
-| 3 | [Brand & Positioning](docs/03-brand-positioning.md) | Name ideas, tagline, brand voice, visual style guide |
-| 4 | [Technical Build Plan](docs/04-technical-build.md) | Step-by-step WP-CLI + shell commands (server → SSL → WP → Woo → theme → pages) |
-| 5 | [WooCommerce Configuration](docs/05-woo-configuration.md) | Plugins, settings, CLI commands for Woo options |
-| 6 | [Dropshipping Ops Workflow](docs/06-dropshipping-ops.md) | Supplier sourcing, QC, returns tree, support macros, fulfillment SOP |
-| 7 | [Site Copy Templates](docs/07-site-copy-templates.md) | Paste-ready copy for every page |
-| 8 | [Tracking & Analytics](docs/08-tracking-analytics.md) | GA4 setup, pixel setup, UTM conventions, KPI list |
-| 9 | [Launch Plan](docs/09-launch-plan.md) | 7-day launch + 30-day growth plan |
-| 10 | [AI Asset Prompts](docs/10-ai-asset-prompts.md) | Logo, lifestyle, mockup, and video storyboard prompts |
-| B | [setup.sh](scripts/setup.sh) | Bonus: single bash script to automate the entire build |
-
----
-
-## Chosen Product
-
-**Daily Foaming Facial Wash Refill Pods** — a lightweight, repeat-purchase skincare consumable.  
-See [Product Research](docs/02-product-research.md) for the full ranking and rationale.
-
-## Chosen Brand
-
-**LatherLoop** — *"Your daily ritual, simplified."*  
-See [Brand & Positioning](docs/03-brand-positioning.md) for the full style guide.
-
----
-
-## Budget Snapshot
-
-| Item | Cost |
-|------|------|
-| Domain (.com, 1 yr) | ~$12 |
-| VPS (e.g. Hetzner CX22 / DigitalOcean Basic) | $6–$12/mo |
-| SSL | $0 (Let's Encrypt) |
-| Plugins (all free tier) | $0 |
-| Theme (Astra free) | $0 |
-| First ad test budget | $50–$100 |
-| Sample orders (3–5 units) | $20–$40 |
-| **Total first-month** | **~$100–$165** |
-
----
-
-## Legal Disclaimers
-
-- No medical/health cure claims are made anywhere in this project.  
-- No trademarked brand names are referenced in product copy.  
-- All supplier relationships are at arm's length; always verify import regulations for your specific SKU.
-# money-press
-
-A dropshipping storefront built with [Next.js](https://nextjs.org/) and TypeScript.
-
-## Tech Stack
-
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **Styling:** CSS Modules
-- **Linting:** ESLint (eslint-config-next)
-- **Formatting:** Prettier
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.17 or later
-- npm, yarn, or pnpm
-
-### Install dependencies
-
-```bash
 npm install
 ```
 
-### Run the development server
+### Local development
 
 ```bash
-npm run dev
+npx vercel dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+This runs the site locally with the serverless `/api/checkout` function.
 
-## Available Scripts
+### Environment variables
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server with hot reload |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format all files with Prettier |
+Copy `.env.example` to `.env` and add your Stripe secret key:
+
+```bash
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key_here
+```
+
+---
 
 ## Project Structure
 
 ```
 money-press/
-├── src/
-│   ├── app/                 # Next.js App Router pages and layouts
-│   │   ├── layout.tsx       # Root layout (HTML shell, global fonts)
-│   │   ├── globals.css      # Global CSS reset and variables
-│   │   ├── page.tsx         # Home page (/)
-│   │   └── products/
-│   │       └── page.tsx     # Products listing (/products)
-│   ├── components/
-│   │   └── ProductCard.tsx  # Reusable product card component
-│   ├── data/
-│   │   └── products.ts      # Sample product data (replace with API/DB)
-│   └── types/
-│       └── index.ts         # Shared TypeScript types
-├── public/                  # Static assets
-├── .eslintrc.json
-├── .gitignore
-├── .prettierrc
-├── next.config.ts
+├── api/
+│   └── checkout.js          # Stripe Checkout serverless function
+├── docs/
+│   ├── 02-product-research.md
+│   ├── 03-brand-positioning.md
+│   ├── 06-dropshipping-ops.md
+│   ├── 07-site-copy-templates.md
+│   ├── 08-tracking-analytics.md
+│   ├── 09-launch-plan.md
+│   ├── 10-ai-asset-prompts.md
+│   └── product-descriptions.md
+├── templates/
+│   ├── email-templates.md
+│   └── social-media-templates.md
+├── index.html               # Main storefront
+├── styles.css               # All styles
+├── script.js                # Product rendering, cart, checkout
+├── success.html             # Post-purchase confirmation
+├── cancel.html              # Checkout cancelled
+├── privacy.html             # Privacy policy
+├── terms.html               # Terms of service
+├── vercel.json              # Vercel routing config
 ├── package.json
-└── tsconfig.json
+└── .env.example
 ```
 
-## Environment Variables
+## Deployment (Vercel)
 
-Create a `.env.local` file in the root (never commit this file):
+1. Import repo at [vercel.com/new](https://vercel.com/new)
+2. Add environment variable: `STRIPE_SECRET_KEY`
+3. Assign `facetea.org` in Vercel > Settings > Domains
+4. Test with Stripe test card `4242 4242 4242 4242`
+5. Switch to live Stripe key when ready
 
-```bash
-# Example — add variables as needed
-# NEXT_PUBLIC_API_URL=https://api.example.com
-```
+---
 
-`.env.local` is already excluded in `.gitignore`.
+## Documentation
 
-## Deployment
+| Doc | What's inside |
+|-----|---------------|
+| [Product Research](docs/02-product-research.md) | Selection criteria, ranked shortlist, top pick |
+| [Brand & Positioning](docs/03-brand-positioning.md) | Brand voice, visual style guide, colors |
+| [Dropshipping Ops](docs/06-dropshipping-ops.md) | Supplier sourcing, QC, returns, fulfillment SOP |
+| [Site Copy](docs/07-site-copy-templates.md) | Paste-ready copy for every page |
+| [Tracking & Analytics](docs/08-tracking-analytics.md) | GA4, pixel setup, UTM conventions, KPIs |
+| [Launch Plan](docs/09-launch-plan.md) | 7-day launch + 30-day growth plan |
+| [AI Asset Prompts](docs/10-ai-asset-prompts.md) | Prompts for logo, lifestyle, mockup images |
+| [Product Descriptions](docs/product-descriptions.md) | Full copy for all 8 products |
 
-Build and start the production server:
+---
 
-```bash
-npm run build
-npm run start
-```
+## Legal
 
-Or deploy to [Vercel](https://vercel.com/) with zero configuration — connect your GitHub repo and Vercel handles the rest.
+- No medical/health cure claims are made anywhere in this project.
+- No trademarked brand names are referenced in product copy.
+- All supplier relationships are at arm's length; always verify import regulations for your specific SKU.

@@ -1,4 +1,4 @@
-# Social Media Content Templates — LatherLoop
+# Social Media Content Templates — FaceTea Shop
 
 Paste-ready captions for Instagram, TikTok, and Pinterest.  
 Replace `[LINK IN BIO]` with your actual URL.
@@ -12,7 +12,7 @@ Replace `[LINK IN BIO]` with your actual URL.
 ```
 One pod. One perfect wash. 🫧
 
-No plastic bottle. No mess. Just drop a LatherLoop pod in your palm, add a little water, and watch it foam into a full facial wash in seconds.
+No plastic bottle. No mess. Just drop a FaceTea Shop pod in your palm, add a little water, and watch it foam into a full facial wash in seconds.
 
 That's it. That's the whole routine.
 
@@ -31,7 +31,7 @@ Starter Pack → link in bio
 
 We did the math so you don't have to. The average person throws away 300+ plastic toiletry bottles per year.
 
-LatherLoop pods come in a biodegradable wrapper. No bottle. No refill. Just a tiny pod that does the full job.
+FaceTea Shop pods come in a biodegradable wrapper. No bottle. No refill. Just a tiny pod that does the full job.
 
 Small change. Big difference.
 
@@ -47,7 +47,7 @@ Small change. Big difference.
 ```
 "I can't believe I was lugging a full bottle around. These are genius." — Jamie L. ⭐⭐⭐⭐⭐
 
-Real words from a real customer who discovered LatherLoop pods. 🫧
+Real words from a real customer who discovered FaceTea Shop pods. 🫧
 
 If you've been curious, now's the time. Link in bio.
 
@@ -61,7 +61,7 @@ If you've been curious, now's the time. Link in bio.
 ```
 TSA line: zero stress. ✈️
 
-LatherLoop pods are:
+FaceTea Shop pods are:
 ✓ Under 1 oz (no liquid limit)
 ✓ Individually wrapped
 ✓ Perfect for gym bag, carry-on, desk drawer
@@ -89,7 +89,7 @@ Same pods. Save $24.98. The bundle math is kind of embarrassing how good it is.
 
 → link in bio
 
-#savemoney #smartshopping #skincareroutine #cleanbeauty #latherloop
+#savemoney #smartshopping #skincareroutine #cleanbeauty #faceteashop
 ```
 
 ---
@@ -109,7 +109,7 @@ No bottle. No liquid. No TSA drama.
 [show the pods fitting in a coin purse]
 Six pods. One month. That's it."
 
-END CARD: "LatherLoop — link in bio"
+END CARD: "FaceTea Shop — link in bio"
 ```
 
 ---
@@ -127,7 +127,7 @@ TEXT 3 (0:06): "WAIT FOR IT"
 [Full foam explosion in palm]
 TEXT 4 (0:09): "🫧🫧🫧"
 [Pan out to show clean, minimal bathroom vibe]
-TEXT 5 (0:12): "LatherLoop — one pod, one perfect wash — link in bio"
+TEXT 5 (0:12): "FaceTea Shop — one pod, one perfect wash — link in bio"
 
 Audio: trending sound or ASMR water sound
 ```
@@ -139,15 +139,15 @@ Audio: trending sound or ASMR water sound
 ### Pin 1 — "How to Use" Tutorial Pin
 
 ```
-Title: How to Use LatherLoop Facial Wash Pods (Step-by-Step)
+Title: How to Use FaceTea Shop Facial Wash Pods (Step-by-Step)
 Description:
-LatherLoop foaming facial wash pods make your morning cleanse effortless.
+FaceTea Shop foaming facial wash pods make your morning cleanse effortless.
 Step 1: Wet your hands or face.
 Step 2: Drop one pod in your palm.
 Step 3: Rub hands — watch it foam in seconds.
 Step 4: Massage over face 20–30 sec, rinse, done.
 One pod = one perfect wash. Plastic-free. Travel-ready.
-Shop the Starter Pack at latherloop.com
+Shop the Starter Pack at facetea.org
 
 Keywords: facial wash, foaming cleanser, skincare routine, eco skincare, plastic-free beauty, clean beauty, morning routine
 ```
@@ -157,13 +157,13 @@ Keywords: facial wash, foaming cleanser, skincare routine, eco skincare, plastic
 ### Pin 2 — "Shop" Product Pin
 
 ```
-Title: LatherLoop Daily Foaming Facial Wash Pods — Starter Pack
+Title: FaceTea Shop Daily Foaming Facial Wash Pods — Starter Pack
 Description:
 6 dissolvable foaming facial wash pods. Approx. 30-day supply.
 pH-balanced, no parabens, no SLS. Biodegradable wrapper.
 Perfect for travel — TSA compliant.
 Free shipping on orders over $35.
-Shop at latherloop.com
+Shop at facetea.org
 
 Keywords: skincare, facial cleanser, eco friendly skincare, clean beauty, foaming face wash, zero waste skincare
 ```

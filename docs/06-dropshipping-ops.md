@@ -109,7 +109,7 @@ Is the item damaged / defective?
 
 ### Macro 1 — Order Status / Where Is My Order?
 
-**Subject:** Your LatherLoop order update
+**Subject:** Your FaceTea Shop order update
 
 > Hi [First Name],
 >
@@ -123,7 +123,7 @@ Is the item damaged / defective?
 > If anything looks off, just reply to this email and we'll sort it out within one business day.
 >
 > Warm regards,
-> [Name], LatherLoop Support
+> [Name], FaceTea Shop Support
 
 ---
 
@@ -141,7 +141,7 @@ Is the item damaged / defective?
 >
 > If you have any other questions, I'm right here.
 >
-> [Name], LatherLoop Support
+> [Name], FaceTea Shop Support
 
 ---
 
@@ -157,7 +157,7 @@ Is the item damaged / defective?
 >
 > Just reply to this email and I'll activate the credit on your account immediately.
 >
-> [Name], LatherLoop Support
+> [Name], FaceTea Shop Support
 
 ---
 
@@ -175,7 +175,7 @@ Is the item damaged / defective?
 >
 > As a reminder, if you experience any severe or persistent reaction, please consult a healthcare professional. Our formula is dermatologically tested, but individual sensitivities vary.
 >
-> [Name], LatherLoop Support
+> [Name], FaceTea Shop Support
 
 ---
 
@@ -185,7 +185,7 @@ Is the item damaged / defective?
 
 > Hi [First Name],
 >
-> It's been about 25 days since your LatherLoop Starter Pack arrived — meaning you're probably on your last pod or two! 🫧
+> It's been about 25 days since your FaceTea Shop Starter Pack arrived — meaning you're probably on your last pod or two! 🫧
 >
 > Tap below to reorder in one click:
 >
@@ -194,7 +194,7 @@ Is the item damaged / defective?
 >
 > Your skin will thank you. 😊
 >
-> [Name], LatherLoop Team
+> [Name], FaceTea Shop Team
 > P.S. Use code **REFILL10** for 10% off your next order.
 
 ---
@@ -203,13 +203,12 @@ Is the item damaged / defective?
 
 ### Manual (1–20 orders/day)
 
-1. **Morning check (8 AM)** — Review new orders in WooCommerce → Orders
+1. **Morning check (8 AM)** — Review new orders in Stripe Dashboard → Payments
 2. **Log to spreadsheet** — Order ID, SKU, customer name, shipping address, email
-3. **Place order with supplier** — Copy address directly from WooCommerce into CJDropshipping / AliExpress dashboard
+3. **Place order with supplier** — Copy address from Stripe into CJDropshipping / AliExpress dashboard
 4. **Get tracking number** — Supplier provides within 24–48 hours
-5. **Update WooCommerce** — Orders → [Order ID] → Paste tracking → Mark "Completed"
-6. **WooCommerce sends auto-email** — Customer receives tracking notification
-7. **Day 25 proactive email** — Trigger Macro 5 manually (or via Mailchimp automation)
+5. **Send tracking email** — Use Template 7 (Order Shipped) via Mailchimp or manually
+6. **Day 25 proactive email** — Trigger Macro 5 manually (or via Mailchimp automation)
 
 ### Semi-Automated (20+ orders/day)
 
@@ -218,7 +217,7 @@ Is the item damaged / defective?
 | **DSers** (AliExpress) | Bulk order placement to AliExpress in 1 click | Free |
 | **CJDropshipping Chrome Extension** | Auto-fill CJDropshipping orders | Free |
 | **AutoDS** | Full auto-fulfillment + tracking sync | $9.90/mo (basic) |
-| **Zendrop** | Auto-fulfillment with WooCommerce integration | $49/mo (pro) |
+| **Zendrop** | Auto-fulfillment with tracking sync | $49/mo (pro) |
 
 > **Recommended path:** Start manual. At 20+ orders/day, add DSers (free) for AliExpress orders.  
 > At 50+ orders/day, evaluate AutoDS or Zendrop for full automation.

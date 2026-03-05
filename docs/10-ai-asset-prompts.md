@@ -23,7 +23,7 @@ do NOT reference any trademarked brand, logo, or copyrighted character.
 **Use with:** Midjourney, DALL·E 3, Adobe Firefly (vector export), or a human designer for final SVG.
 
 ```
-Logo design for a skincare brand called "LatherLoop".
+Logo design for a skincare brand called "FaceTea Shop".
 Minimal wordmark-style logo.
 Font style: elegant serif with thin strokes, similar to DM Serif Display.
 Optional small icon: a simple abstract loop or foam bubble to the left of the wordmark.
@@ -45,7 +45,7 @@ Use the Consistency Header for all of these. Specify 4:5 aspect ratio for social
 ```
 [CONSISTENCY HEADER]
 Aspect ratio: 16:9.
-A single LatherLoop foaming facial wash pod (small oval pod, branded in forest green and white)
+A single FaceTea Shop foaming facial wash pod (small oval pod, branded in forest green and white)
 resting on a ceramic white soap dish on a marble bathroom shelf.
 Morning sunlight streams in from the left. A small plant and folded cream linen towel in the background.
 No people. The scene feels calm, clean, and intentional.
@@ -57,7 +57,7 @@ No people. The scene feels calm, clean, and intentional.
 [CONSISTENCY HEADER]
 Aspect ratio: 4:5.
 Close-up of a pair of hands (medium-brown skin tone, clean nails, no nail polish)
-holding a single LatherLoop pod between two fingers.
+holding a single FaceTea Shop pod between two fingers.
 Soft white background. The pod is the clear focus.
 ```
 
@@ -76,7 +76,7 @@ Satisfying texture, sharp focus on the foam. Clean white background.
 ```
 [CONSISTENCY HEADER]
 Aspect ratio: 4:5.
-A minimalist bathroom shelf with: a small ceramic dish holding 3 LatherLoop pods,
+A minimalist bathroom shelf with: a small ceramic dish holding 3 FaceTea Shop pods,
 a glass cup with a bamboo toothbrush, a small aloe plant.
 No branding other than the pods. Warm soft light. No person visible.
 ```
@@ -87,7 +87,7 @@ No branding other than the pods. Warm soft light. No person visible.
 [CONSISTENCY HEADER]
 Aspect ratio: 1:1.
 Top-down flat lay on a warm off-white linen surface:
-the LatherLoop 6-pod starter pack (small box, forest green, minimal branding),
+the FaceTea Shop 6-pod starter pack (small box, forest green, minimal branding),
 3 individual pods arranged beside it,
 a small ceramic leaf tray,
 2–3 green herb sprigs (eucalyptus or rosemary).
@@ -99,7 +99,7 @@ Overhead shot, perfectly centered, natural shadows.
 ```
 [CONSISTENCY HEADER]
 Aspect ratio: 4:5.
-Open travel bag or toiletry pouch partially unzipped, with 2–3 LatherLoop pods
+Open travel bag or toiletry pouch partially unzipped, with 2–3 FaceTea Shop pods
 visible inside alongside a small passport, lip balm, and earbuds.
 Warm background, casual travel feel, no faces.
 ```
@@ -109,7 +109,7 @@ Warm background, casual travel feel, no faces.
 ```
 [CONSISTENCY HEADER]
 Aspect ratio: 4:5.
-A LatherLoop 3-month supply box (slightly larger, forest green, white ribbon)
+A FaceTea Shop 3-month supply box (slightly larger, forest green, white ribbon)
 on a pale wooden surface next to a simple kraft paper gift tag.
 Minimalist gifting aesthetic, warm holiday light.
 ```
@@ -120,7 +120,7 @@ Minimalist gifting aesthetic, warm holiday light.
 [CONSISTENCY HEADER]
 Aspect ratio: 1:1.
 Three different pairs of hands (light, medium, and deep skin tones)
-each holding one LatherLoop pod, arranged side by side.
+each holding one FaceTea Shop pod, arranged side by side.
 White background, clean studio light. Inclusive and welcoming feel.
 No faces, wrists and below only.
 ```
@@ -131,7 +131,7 @@ No faces, wrists and below only.
 [CONSISTENCY HEADER]
 Aspect ratio: 4:5.
 Split-frame image: LEFT side shows a cluttered bathroom shelf full of plastic bottles.
-RIGHT side shows a minimalist shelf with only a small LatherLoop pod box and one ceramic dish.
+RIGHT side shows a minimalist shelf with only a small FaceTea Shop pod box and one ceramic dish.
 Visual contrast between clutter and simplicity. No people.
 ```
 
@@ -140,7 +140,7 @@ Visual contrast between clutter and simplicity. No people.
 ```
 [CONSISTENCY HEADER]
 Aspect ratio: 4:5.
-Top-down view of an open LatherLoop starter pack box, tissue paper partially pulled aside,
+Top-down view of an open FaceTea Shop starter pack box, tissue paper partially pulled aside,
 revealing 6 neatly wrapped pods in a grid inside the box.
 Hands (light-tan skin, clean) pulling back the tissue paper.
 Warm off-white background. Unboxing delight aesthetic.
@@ -156,7 +156,7 @@ Use with **Canva's Smart Mockup**, **Placeit**, Midjourney, or Photoshop.
 
 ```
 Product mockup photography: single oval foaming facial wash pod,
-forest green (#1E3A2F) matte wrapper with "LatherLoop" in white minimal serif text.
+forest green (#1E3A2F) matte wrapper with "FaceTea Shop" in white minimal serif text.
 Pure white background. Soft studio shadow below product.
 Centered, 1:1 crop, high resolution, no distractions.
 ```
@@ -165,7 +165,7 @@ Centered, 1:1 crop, high resolution, no distractions.
 
 ```
 Product mockup: small rectangular box (approx 3"×2"×1"),
-forest green matte with white "LatherLoop" wordmark centered on front panel,
+forest green matte with white "FaceTea Shop" wordmark centered on front panel,
 "Daily Foaming Facial Wash Pods" in thin white text below,
 "6 Pods / 30-Day Supply" in small white text at bottom.
 Pure white background, soft drop shadow. 3/4 angle view.
@@ -191,7 +191,7 @@ Pure white background, soft drop shadow. Front-facing 1:1.
 ### Mockup 5 — All Three Products Together
 
 ```
-Product family photo: LatherLoop Starter Pack box, 3-Month Supply box, and Travel Pod Case
+Product family photo: FaceTea Shop Starter Pack box, 3-Month Supply box, and Travel Pod Case
 arranged in a slight fan/triangle composition.
 Pure white background, individual soft shadows under each.
 High-resolution, clean product photography style.
@@ -202,7 +202,7 @@ High-resolution, clean product photography style.
 For each, use:
 
 ```
-Product mockup: LatherLoop [PRODUCT NAME] on [SURFACE — marble, wood, linen, concrete, glass shelf].
+Product mockup: FaceTea Shop [PRODUCT NAME] on [SURFACE — marble, wood, linen, concrete, glass shelf].
 Soft shadow, natural side light, clean minimal setting.
 No text overlay. No other branding visible.
 1:1 crop. White balance warm. High detail, sharp focus on packaging.
@@ -242,7 +242,7 @@ Do NOT include any copyrighted music, brand references, or celebrity likeness.
 AI VIDEO PROMPT:
 Scene: Fast-cut morning bathroom routine POV.
 Cut 1 (0:00–0:03): Alarm goes off, hand taps phone.
-Cut 2 (0:03–0:06): Tap runs, hand drops a LatherLoop pod in palm, foam forms instantly.
+Cut 2 (0:03–0:06): Tap runs, hand drops a FaceTea Shop pod in palm, foam forms instantly.
 Cut 3 (0:06–0:10): Foam applied to face (no face shown — just hands on cheeks from below chin).
 Cut 4 (0:10–0:13): Rinse, pat dry on cream towel.
 Cut 5 (0:13–0:15): Hand places empty pod wrapper in a small bin (eco-conscious beat).
@@ -260,7 +260,7 @@ Do NOT include any copyrighted music or celebrity likeness.
 AI VIDEO PROMPT:
 Scene: Split screen or cut comparison.
 LEFT: A hand rummaging through an overflowing toiletry bag full of bulky plastic bottles.
-RIGHT: The same hand dropping a single LatherLoop pod into a small pouch — done in 1 second.
+RIGHT: The same hand dropping a single FaceTea Shop pod into a small pouch — done in 1 second.
 Camera: wide shot for left, tight close-up for right. Cut between them 3×.
 Duration: 20 seconds.
 Color: LEFT side slightly desaturated/cold. RIGHT side warm and clean.
@@ -276,7 +276,7 @@ Do NOT reference or show any real brand's bottles.
 ```
 AI VIDEO PROMPT:
 Scene: Overhead flat-lay unboxing, then first-use sequence.
-(0:00–0:08): Hands (light-tan skin) open a small LatherLoop box, pull back tissue paper,
+(0:00–0:08): Hands (light-tan skin) open a small FaceTea Shop box, pull back tissue paper,
 reveal 6 individually wrapped pods in a neat grid. Hands pick up one pod.
 (0:08–0:16): Cut to sink. Tap on. Pod placed in palm. Foam forms.
 (0:16–0:22): Foam applied to skin (below chin, no face). Rinse. Towel dry.
@@ -298,7 +298,7 @@ Scene: Day-counter montage — feel of a "7-day / 30-day challenge" video.
 (0:05–0:10): Text: "Day 1 — one pod, one wash."
            Cut to: pod dissolving in hands. Clean counter.
 (0:10–0:18): Time-lapse montage: empty bottles being removed from the shelf,
-           replaced only with a LatherLoop starter pack box. Counter gets cleaner each cut.
+           replaced only with a FaceTea Shop starter pack box. Counter gets cleaner each cut.
 (0:18–0:25): Text: "Day 30. Still just the pods."
            Wide shot of a minimal, clean bathroom shelf with only the pod box and one plant.
 Camera: static shots with slight Ken Burns, fast cuts for montage.

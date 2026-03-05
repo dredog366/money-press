@@ -54,5 +54,5 @@ Score each product concept 1–5 on every criterion (5 = best).
 | Flagship SKU | 6-pod starter pack — $34.99 |
 | Bundle SKU | 3-month supply (18 pods) — $79.99 (save 24%) |
 | Upsell | Travel pod case (silicone zip pouch) — $9.99 |
-| Subscription cadence | Every 30 days (via WooCommerce Subscriptions or manual reminder email) |
+| Subscription cadence | Every 30 days (via Mailchimp automation or manual reminder email) |
 | Target ROAS (month 3) | 2.5× |
