@@ -7,20 +7,28 @@
 }
 
 :root {
-  --font-geist-sans: sans-serif;
-  --font-geist-mono: monospace;
-  --color-bg: #ffffff;
-  --color-text: #111111;
-  --color-muted: #666666;
-  --color-border: #e5e5e5;
-  --color-accent: #0070f3;
+  --color-bg: #F7F5F2;
+  --color-surface: #ffffff;
+  --color-text: #1E3A2F;
+  --color-body: #2D2D2D;
+  --color-muted: #6B7A6E;
+  --color-border: #DDD8D0;
+  --color-accent: #1E3A2F;
+  --color-accent-hover: #2A5040;
+  --color-sage: #A8C5A0;
+  --color-sand: #D9C9B0;
 }
 
 body {
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: "DM Sans", sans-serif;
   background: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-body);
   line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: "DM Serif Display", serif;
+  color: var(--color-text);
 }
 
 a {
