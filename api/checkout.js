@@ -1,16 +1,7 @@
 const Stripe = require("stripe");
+const { getProductsByIdMap } = require("../lib/products");
 
-// Valid product prices (server-side validation to prevent price tampering)
-const PRODUCT_PRICES = {
-  1: { name: "Green Tea Brightening Serum", price: 2499 },
-  2: { name: "Chamomile Calming Face Wash", price: 1499 },
-  3: { name: "White Tea Eye Cream", price: 3499 },
-  4: { name: "Oolong Hydrating Day Cream", price: 2999 },
-  5: { name: "Black Tea Firming Toner", price: 1999 },
-  6: { name: "Matcha Detox Clay Mask", price: 2299 },
-  7: { name: "Rooibos Repair Night Oil", price: 3999 },
-  8: { name: "Hibiscus AHA Exfoliating Pads", price: 2799 },
-};
+const PRODUCT_BY_ID = getProductsByIdMap();
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
@@ -27,9 +18,9 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: "No items provided" });
     }
 
-    // Build line items with server-side price validation
+    // Build line items with server-side price validation (single source: lib/products.js)
     const lineItems = items.map((item) => {
-      const product = PRODUCT_PRICES[item.id];
+      const product = PRODUCT_BY_ID[item.id];
       if (!product) {
         throw new Error(`Invalid product ID: ${item.id}`);
       }

@@ -13,6 +13,10 @@ build/
 .env.local
 .env.*.local
 
+# CJ API cache (may contain product data)
+cj-my-products.json
+scripts/cj-my-products.json
+
 # Debug logs
 npm-debug.log*
 yarn-debug.log*
