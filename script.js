@@ -1,179 +1,7 @@
 // ===========================
-// Product data (fallback when /api/products unavailable)
+// Product data (loaded from /api/products on page load)
 // ===========================
-const PRODUCTS_FALLBACK = [
-  {
-    id: 1,
-    name: "Green Tea Brightening Serum",
-    category: "Serums",
-    price: 24.99,
-    oldPrice: 34.99,
-    badge: "Best Seller",
-    desc: "Antioxidant-rich serum with matcha extract and vitamin C that visibly brightens and evens skin tone in as little as 2 weeks. Lightweight, fast-absorbing formula with hyaluronic acid and niacinamide.",
-    emoji: "🍵",
-    sku: "FT-SRM-001",
-    size: "30 ml / 1 fl oz",
-    skinType: "All skin types",
-  },
-  {
-    id: 2,
-    name: "Chamomile Calming Face Wash",
-    category: "Cleansers",
-    price: 14.99,
-    oldPrice: null,
-    badge: "New",
-    desc: "Gentle foam cleanser with chamomile flower extract and calendula oil that soothes redness and removes impurities without stripping moisture. Leaves skin soft, balanced, and never tight.",
-    emoji: "🌼",
-    sku: "FT-CLN-002",
-    size: "150 ml / 5 fl oz",
-    skinType: "Sensitive & dry skin",
-  },
-  {
-    id: 3,
-    name: "White Tea Eye Cream",
-    category: "Treatments",
-    price: 34.99,
-    oldPrice: 44.99,
-    badge: "Sale",
-    desc: "Delicate eye cream with white tea peptides and caffeine that visibly reduces dark circles, puffiness, and crow's feet. The least processed tea delivers premium antioxidant protection.",
-    emoji: "☁️",
-    sku: "FT-TRT-003",
-    size: "15 ml / 0.5 fl oz",
-    skinType: "All skin types",
-  },
-  {
-    id: 4,
-    name: "Oolong Hydrating Day Cream",
-    category: "Moisturisers",
-    price: 29.99,
-    oldPrice: null,
-    badge: null,
-    desc: "Lightweight SPF 30 moisturiser with oolong tea polyphenols and ceramides. All-day hydration meets mineral sun protection in one non-greasy step. Sits beautifully under makeup.",
-    emoji: "🌿",
-    sku: "FT-MST-004",
-    size: "50 ml / 1.7 fl oz",
-    skinType: "All skin types",
-  },
-  {
-    id: 5,
-    name: "Black Tea Firming Toner",
-    category: "Toners",
-    price: 19.99,
-    oldPrice: 27.99,
-    badge: "Sale",
-    desc: "Alcohol-free toner rich in black tea EGCG catechins. Visibly tightens pores, improves elasticity, and preps skin to absorb serums and moisturisers more effectively.",
-    emoji: "🫖",
-    sku: "FT-TNR-005",
-    size: "200 ml / 6.8 fl oz",
-    skinType: "Oily & combination skin",
-  },
-  {
-    id: 6,
-    name: "Matcha Detox Clay Mask",
-    category: "Masks",
-    price: 22.99,
-    oldPrice: null,
-    badge: "New",
-    desc: "Deep-cleansing mask with ceremonial-grade matcha and French kaolin clay. Draws out impurities, excess oil, and pollutants in just 10 minutes — without over-drying or stripping.",
-    emoji: "🧪",
-    sku: "FT-MSK-006",
-    size: "100 ml / 3.4 fl oz",
-    skinType: "Oily & acne-prone skin",
-  },
-  {
-    id: 7,
-    name: "Rooibos Repair Night Oil",
-    category: "Treatments",
-    price: 39.99,
-    oldPrice: null,
-    badge: null,
-    desc: "Nourishing facial oil with South African rooibos, rosehip seed oil, and jojoba. Works overnight to repair daily damage, reduce redness, and boost cell turnover while you sleep.",
-    emoji: "🌙",
-    sku: "FT-TRT-007",
-    size: "30 ml / 1 fl oz",
-    skinType: "Dry & mature skin",
-  },
-  {
-    id: 8,
-    name: "Hibiscus AHA Exfoliating Pads",
-    category: "Exfoliants",
-    price: 27.99,
-    oldPrice: 35.99,
-    badge: "Best Seller",
-    desc: "Pre-soaked pads with hibiscus-derived AHAs and lactic acid. Textured side buffs dead skin cells; smooth side deposits brightening actives. No rinsing required — radiance in one swipe.",
-    emoji: "🌺",
-    sku: "FT-EXF-008",
-    size: "50 pads per jar",
-    skinType: "All skin types",
-  },
-  {
-    id: 9,
-    name: "Jade Gua Sha & Roller Set",
-    category: "Tools",
-    price: 24.99,
-    oldPrice: null,
-    badge: "New",
-    desc: "Premium jade gua sha stone and facial roller duo for sculpting, depuffing, and boosting circulation. Use with your favourite serum or oil for a spa-worthy facial massage at home.",
-    emoji: "💎",
-    sku: "FT-TLS-009",
-    size: "2-piece set with velvet pouch",
-    skinType: "All skin types",
-  },
-  {
-    id: 10,
-    name: "Hydrocolloid Pimple Patches — Botanical Shapes",
-    category: "Treatments",
-    price: 9.99,
-    oldPrice: null,
-    badge: "Best Seller",
-    desc: "Fun star, heart, and flower-shaped hydrocolloid patches that flatten blemishes overnight. Ultra-thin, invisible edges stay put under makeup. 36 patches per pack in assorted shapes.",
-    emoji: "🌸",
-    sku: "FT-TRT-010",
-    size: "36 patches per pack",
-    skinType: "Acne-prone skin",
-  },
-  {
-    id: 11,
-    name: "Ice Roller Facial Depuffer",
-    category: "Tools",
-    price: 18.99,
-    oldPrice: null,
-    badge: null,
-    desc: "Stainless steel ice roller that stays cold for up to 10 minutes. Reduces morning puffiness, calms redness, and tightens pores. Keep in the freezer for an instant wake-up ritual.",
-    emoji: "🧊",
-    sku: "FT-TLS-011",
-    size: "1 roller with storage cap",
-    skinType: "All skin types",
-  },
-  {
-    id: 12,
-    name: "LED Light Therapy Wand",
-    category: "Tools",
-    price: 59.99,
-    oldPrice: 79.99,
-    badge: "Premium",
-    desc: "4-in-1 skincare wand with red LED, blue LED, warmth, and microcurrent modes. Red light boosts collagen, blue light targets acne bacteria. Rechargeable with 3 intensity levels.",
-    emoji: "✨",
-    sku: "FT-TLS-012",
-    size: "1 wand with USB-C charger",
-    skinType: "All skin types",
-  },
-  {
-    id: 13,
-    name: "Centella & Green Tea Hydrating Serum",
-    category: "Serums",
-    price: 29.99,
-    oldPrice: null,
-    badge: "New",
-    desc: "Calming serum with centella asiatica (cica) and green tea extract in a premium glass dropper bottle. Reduces redness, repairs the moisture barrier, and delivers deep hydration without stickiness.",
-    emoji: "🌱",
-    sku: "FT-SRM-013",
-    size: "30 ml / 1 fl oz",
-    skinType: "Sensitive & all skin types",
-  },
-];
-
-let PRODUCTS = [...PRODUCTS_FALLBACK];
+let PRODUCTS = [];
 
 // ===========================
 // Constants
@@ -524,17 +352,31 @@ function initFooterFilters() {
 }
 
 // ===========================
-// Load products from API (single source of truth), fallback to static list
+// Load products from API (single source of truth: lib/products.js)
 // ===========================
 async function loadProducts() {
   try {
     const res = await fetch("/api/products");
-    if (res.ok) {
-      const data = await res.json();
-      PRODUCTS = data;
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
     }
-  } catch (_) {
-    PRODUCTS = [...PRODUCTS_FALLBACK];
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0) {
+      throw new Error("Invalid product data received from API");
+    }
+    PRODUCTS = data;
+  } catch (err) {
+    console.error("Failed to load products from API:", err);
+    // Show error message to user
+    const productsGrid = document.getElementById("productsGrid");
+    if (productsGrid) {
+      productsGrid.innerHTML = `
+        <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+          <p style="font-size: 1.25rem; color: #999; margin-bottom: 1rem;">⚠️ Unable to load products</p>
+          <p style="color: #666;">Please refresh the page or try again later.</p>
+        </div>
+      `;
+    }
   }
 }
 
