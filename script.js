@@ -1,7 +1,7 @@
 // ===========================
-// Product data
+// Product data (fallback when /api/products unavailable)
 // ===========================
-const PRODUCTS = [
+const PRODUCTS_FALLBACK = [
   {
     id: 1,
     name: "Green Tea Brightening Serum",
@@ -106,7 +106,74 @@ const PRODUCTS = [
     size: "50 pads per jar",
     skinType: "All skin types",
   },
+  {
+    id: 9,
+    name: "Jade Gua Sha & Roller Set",
+    category: "Tools",
+    price: 24.99,
+    oldPrice: null,
+    badge: "New",
+    desc: "Premium jade gua sha stone and facial roller duo for sculpting, depuffing, and boosting circulation. Use with your favourite serum or oil for a spa-worthy facial massage at home.",
+    emoji: "💎",
+    sku: "FT-TLS-009",
+    size: "2-piece set with velvet pouch",
+    skinType: "All skin types",
+  },
+  {
+    id: 10,
+    name: "Hydrocolloid Pimple Patches — Botanical Shapes",
+    category: "Treatments",
+    price: 9.99,
+    oldPrice: null,
+    badge: "Best Seller",
+    desc: "Fun star, heart, and flower-shaped hydrocolloid patches that flatten blemishes overnight. Ultra-thin, invisible edges stay put under makeup. 36 patches per pack in assorted shapes.",
+    emoji: "🌸",
+    sku: "FT-TRT-010",
+    size: "36 patches per pack",
+    skinType: "Acne-prone skin",
+  },
+  {
+    id: 11,
+    name: "Ice Roller Facial Depuffer",
+    category: "Tools",
+    price: 18.99,
+    oldPrice: null,
+    badge: null,
+    desc: "Stainless steel ice roller that stays cold for up to 10 minutes. Reduces morning puffiness, calms redness, and tightens pores. Keep in the freezer for an instant wake-up ritual.",
+    emoji: "🧊",
+    sku: "FT-TLS-011",
+    size: "1 roller with storage cap",
+    skinType: "All skin types",
+  },
+  {
+    id: 12,
+    name: "LED Light Therapy Wand",
+    category: "Tools",
+    price: 59.99,
+    oldPrice: 79.99,
+    badge: "Premium",
+    desc: "4-in-1 skincare wand with red LED, blue LED, warmth, and microcurrent modes. Red light boosts collagen, blue light targets acne bacteria. Rechargeable with 3 intensity levels.",
+    emoji: "✨",
+    sku: "FT-TLS-012",
+    size: "1 wand with USB-C charger",
+    skinType: "All skin types",
+  },
+  {
+    id: 13,
+    name: "Centella & Green Tea Hydrating Serum",
+    category: "Serums",
+    price: 29.99,
+    oldPrice: null,
+    badge: "New",
+    desc: "Calming serum with centella asiatica (cica) and green tea extract in a premium glass dropper bottle. Reduces redness, repairs the moisture barrier, and delivers deep hydration without stickiness.",
+    emoji: "🌱",
+    sku: "FT-SRM-013",
+    size: "30 ml / 1 fl oz",
+    skinType: "Sensitive & all skin types",
+  },
 ];
+
+let PRODUCTS = [...PRODUCTS_FALLBACK];
 
 // ===========================
 // Constants
@@ -348,13 +415,7 @@ async function handleCheckout() {
       }),
     });
 
-        const contentType = res.headers.get("content-type") || "";
-        let data;
-        if (contentType.includes("application/json")) {
-                data = await res.json();
-        } else {
-                throw new Error("Server error. Please try again later.");
-        }
+    const data = await res.json();
 
     if (!res.ok) {
       throw new Error(data.error || "Checkout failed");
@@ -463,9 +524,25 @@ function initFooterFilters() {
 }
 
 // ===========================
+// Load products from API (single source of truth), fallback to static list
+// ===========================
+async function loadProducts() {
+  try {
+    const res = await fetch("/api/products");
+    if (res.ok) {
+      const data = await res.json();
+      PRODUCTS = data;
+    }
+  } catch (_) {
+    PRODUCTS = [...PRODUCTS_FALLBACK];
+  }
+}
+
+// ===========================
 // Init
 // ===========================
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadProducts();
   renderProducts();
   renderFilters();
   updateCartUI();
@@ -485,7 +562,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (cartOverlay) cartOverlay.addEventListener("click", closeCart);
   if (checkoutBtn) checkoutBtn.addEventListener("click", handleCheckout);
 
-  // Close cart on Escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeCart();
   });

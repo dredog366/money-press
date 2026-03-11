@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "fill-cj-mapping": "node scripts/fill-cj-mapping.js"
   },
   "dependencies": {
     "stripe": "^17.0.0"
