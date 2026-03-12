@@ -2,5 +2,8 @@
   "buildCommand": "",
   "outputDirectory": ".",
   "framework": null,
-  "rewrites": [{ "source": "/api/checkout", "destination": "/api/checkout.js" }]
+  "rewrites": [
+    { "source": "/api/products", "destination": "/api/products.js" },
+    { "source": "/api/checkout", "destination": "/api/checkout.js" }
+  ]
 }
