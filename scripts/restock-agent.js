@@ -118,12 +118,12 @@ async function getStock(accessToken, vid) {
 }
 
 // ---------------------------------------------------------------------------
-// Alert  extend this to send email/Slack notificationsfunction 
+// Alert — extend this to send email/Slack notifications
 // ---------------------------------------------------------------------------
 function alertLowStock(product, stock) {
   console.warn(
-  LOW STOCK ALERT: "${product.name}" (id=${product.id}, sku=${product.sku}) ` +    `
- only ${stock} units remaining (threshold: ${LOW_STOCK_THRESHOLD})`      `
+    `LOW STOCK ALERT: "${product.name}" (id=${product.id}, sku=${product.sku}) ` +
+    `only ${stock} units remaining (threshold: ${LOW_STOCK_THRESHOLD})`
   );
   // TODO: send email via SendGrid, Mailchimp, or post to Slack webhook:
   // await fetch(process.env.SLACK_WEBHOOK_URL, { method: "POST",
@@ -145,14 +145,14 @@ async function main() {
     return;
   }
 
-  console.log(`FaceTea Restock  checking ${mapped.length} mapped `);productsAgent 
+  console.log(`FaceTea Restock — checking ${mapped.length} mapped products`);
   console.log(`Low-stock threshold: ${LOW_STOCK_THRESHOLD} units\n`);
 
   const accessToken = await getAccessToken();
 
   const results = [];
   for (const product of mapped) {
-    process.stdout.write(`  Checking "${product.name}" (vid=${product. `);cjVid})
+    process.stdout.write(`  Checking "${product.name}" (vid=${product.cjVid})... `);
     try {
       const stock = await getStock(accessToken, product.cjVid);
       if (stock === null) {
@@ -160,7 +160,7 @@ async function main() {
         results.push({ ...product, stock: null, status: "unavailable" });
       } else {
         const low = stock <= LOW_STOCK_THRESHOLD;
-        console.log(`${stock} units${  "}`);LOW" : " low ? " 
+        console.log(`${stock} units${low ? " — LOW" : ""}`);
         results.push({ ...product, stock, status: low ? "low" : "ok" });
         if (low) alertLowStock(product, stock);
       }
@@ -173,15 +173,15 @@ async function main() {
   // Summary table
   const lowCount = results.filter((r) => r.status === "low").length;
   const okCount = results.filter((r) => r.status === "ok").length;
-");  console. Inventory Summary log("\n
-  console.  In stock:   ${okCount}`);log(`  
-  console.  Low stock:  ${lowCount}`);log(`  
-  console.  Unmapped:   ${products.length - mapped.length}`);log(`  
-");  console.log("
+  console.log("\nInventory Summary");
+  console.log(`  In stock:   ${okCount}`);
+  console.log(`  Low stock:  ${lowCount}`);
+  console.log(`  Unmapped:   ${products.length - mapped.length}`);
+  console.log("");
 
   if (lowCount > 0) {
     console.log(`\n${lowCount} product(s) need restocking. Check your CJ Dropshipping dashboard.`);
-    process.exit(0); // exit 0 even on low  let callers decide severitystock 
+    process.exit(0); // exit 0 even on low stock — let callers decide severity
   }
 }
 

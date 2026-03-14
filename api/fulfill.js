@@ -63,7 +63,7 @@ module.exports = async function handler(req, res) {
   let event;
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-    // req.body must be the raw  Vercel provides this when bodyParser is disabledBuffer 
+    // req.body must be the raw Buffer — Vercel provides this when bodyParser is disabled
     event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
   } catch (err) {
     console.error("Webhook signature verification failed:", err.message);
@@ -89,7 +89,7 @@ module.exports = async function handler(req, res) {
 
     const addr = shippingDetails.address;
 
-    // Build CJ order products  requires cjVid to be mapped in lib/products.jslist 
+    // Build CJ order products list — requires cjVid to be mapped in lib/products.js
     const orderProducts = [];
     for (const li of lineItemsPage.data) {
       // Match by product name (Stripe stores the name we passed during checkout)
@@ -101,7 +101,7 @@ module.exports = async function handler(req, res) {
         continue;
       }
       if (!product.cjVid && !product.cjSku) {
-        console.warn("Product has no CJ mapping:", product. skipping fulfillment");name, "
+        console.warn("Product has no CJ mapping:", product.name, "skipping fulfillment");
         continue;
       }
       orderProducts.push({
