@@ -110,7 +110,7 @@ async function getAccessToken(apiKey) {
 
 /**
  * Search CJ catalogue for a product by name.
- * Returns the first match { cjVid, cjSku } or null if none found.
+ * Returns the first match { cjVid, cjSku, image } or null if none found.
  */
 async function searchProduct(accessToken, productName) {
   const searchUrl =
@@ -131,9 +131,12 @@ async function searchProduct(accessToken, productName) {
   const first = data.data.list[0];
   // CJ returns variants inside each product listing
   const variant = first.variants && first.variants[0];
+  // productImage is the main listing image; productImageSet is a JSON array of extras
+  const image = first.productImage || null;
   return {
     cjVid: variant ? variant.vid : null,
     cjSku: first.productSku || (variant ? variant.variantSku : null),
+    image,
   };
 }
 
@@ -174,11 +177,12 @@ async function main() {
     try {
       const match = await searchProduct(accessToken, product.name);
       if (match && (match.cjVid || match.cjSku)) {
-        console.log(`found  cjVid=${match.cjVid}  cjSku=${match.cjSku}`);
+        console.log(`found  cjVid=${match.cjVid}  cjSku=${match.cjSku}  image=${match.image ? "yes" : "none"}`);
         results.push({
           ...product,
           cjVid: match.cjVid,
           cjSku: match.cjSku,
+          image: match.image,
           _status: "found",
         });
       } else {
@@ -220,7 +224,7 @@ async function main() {
   for (const r of results) {
     if (r._status !== "found") continue;
 
-    // Replace cjVid placeholder for this product (match null or existing value on same line after cjVid:)
+    // Replace cjVid / cjSku / image placeholders for this product
     source = source.replace(
       new RegExp(`(id:\\s*${r.id}[\\s\\S]*?cjVid:\\s*)(?:null|"[^"]*")`),
       `$1${r.cjVid ? `"${r.cjVid}"` : "null"}`,
@@ -228,6 +232,10 @@ async function main() {
     source = source.replace(
       new RegExp(`(id:\\s*${r.id}[\\s\\S]*?cjSku:\\s*)(?:null|"[^"]*")`),
       `$1${r.cjSku ? `"${r.cjSku}"` : "null"}`,
+    );
+    source = source.replace(
+      new RegExp(`(id:\\s*${r.id}[\\s\\S]*?image:\\s*)(?:null|"[^"]*")`),
+      `$1${r.image ? `"${r.image}"` : "null"}`,
     );
     patchCount++;
   }

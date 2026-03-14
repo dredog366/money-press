@@ -14,6 +14,7 @@ module.exports = async function handler(req, res) {
     cjVid: p.cjVid,
     cjSku: p.cjSku,
     category: p.category,
+    image: p.image || null,
     emoji: p.emoji,
     desc: p.desc,
     size: p.size,

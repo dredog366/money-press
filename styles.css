@@ -383,6 +383,21 @@ img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   background: var(--color-light-gray);
+  display: block;
+}
+
+.product-img--emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.cart-item-img--emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 .product-badge {
