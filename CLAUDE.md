@@ -46,35 +46,44 @@ money-press/
 The store sells **13 tea-infused skincare products** for women's faces:
 
 **Serums:**
+
 - Green Tea Brightening Serum ($24.99)
 - Centella & Green Tea Hydrating Serum ($29.99)
 
 **Cleansers:**
+
 - Chamomile Calming Face Wash ($14.99)
 
 **Treatments:**
+
 - White Tea Eye Cream ($34.99)
 - Rooibos Repair Night Oil ($39.99)
 - Hydrocolloid Pimple Patches ($9.99)
 
 **Moisturisers:**
+
 - Oolong Hydrating Day Cream ($29.99)
 
 **Toners:**
+
 - Black Tea Firming Toner ($19.99)
 
 **Masks:**
+
 - Matcha Detox Clay Mask ($22.99)
 
 **Exfoliants:**
+
 - Hibiscus AHA Exfoliating Pads ($27.99)
 
 **Tools:**
+
 - Jade Gua Sha & Roller Set ($24.99)
 - Ice Roller Facial Depuffer ($18.99)
 - LED Light Therapy Wand ($59.99)
 
 **Product Data Architecture:**
+
 - Single source of truth: `lib/products.js` (prices in cents)
 - API endpoint: `/api/products` (prices in dollars)
 - Frontend: Fetches from `/api/products` on page load
@@ -119,6 +128,7 @@ npm run fill-cj-mapping -- --write
 ## Key Features
 
 **Checkout Flow:**
+
 1. User adds products to cart (stored in localStorage)
 2. User clicks "Checkout" → POST /api/checkout
 3. Server validates prices against `lib/products.js`
@@ -128,11 +138,13 @@ npm run fill-cj-mapping -- --write
 7. On cancel → /cancel.html
 
 **Shipping Logic:**
+
 - Orders $50+ → FREE shipping (7-14 business days)
 - Orders under $50 → $4.99 standard (7-14 days) or $7.99 expedited (3-5 days)
 - Ships to contiguous US only
 
 **Product Data Flow:**
+
 - Products defined in `lib/products.js` (Node.js module)
 - Exported via `/api/products` API endpoint
 - Frontend fetches on page load via `loadProducts()`
@@ -170,6 +182,7 @@ git push origin main
 ```
 
 **Pre-deployment checklist:**
+
 1. Set `STRIPE_SECRET_KEY` in Vercel dashboard
 2. Verify all products have valid CJ mappings
 3. Test checkout flow in Stripe test mode
@@ -178,23 +191,27 @@ git push origin main
 ## Code Conventions
 
 ### General
+
 - Keep codebase minimal — no frameworks, no build step
 - Single source of truth for product data: `lib/products.js`
 - Validate user input at API boundaries (checkout.js)
 - Never commit `.env` or `.env.local`
 
 ### Security
+
 - All Stripe operations server-side
 - Client never sees Stripe secret key
 - Price validation server-side (prevent tampering)
 - HTTPS required (enforced by Vercel)
 
 ### Product Updates
+
 **IMPORTANT:** Only edit products in `lib/products.js`. The frontend automatically fetches from `/api/products`. Do not duplicate product data in `script.js`.
 
 ## Updating This File
 
 Keep this file current as the project evolves. Update it after:
+
 - Adding/removing products
 - Changing API endpoints
 - Modifying deployment workflow

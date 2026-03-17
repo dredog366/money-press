@@ -15,16 +15,16 @@
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `lib/products.js` | Single source of truth — product data, prices in **cents** |
-| `api/products.js` | `GET /api/products` — returns catalog with prices in dollars |
-| `api/checkout.js` | `POST /api/checkout` — creates Stripe Checkout session |
-| `api/fulfill.js` | `POST /api/fulfill` — places CJ order on successful Stripe payment |
+| File                         | Purpose                                                            |
+| ---------------------------- | ------------------------------------------------------------------ |
+| `lib/products.js`            | Single source of truth — product data, prices in **cents**         |
+| `api/products.js`            | `GET /api/products` — returns catalog with prices in dollars       |
+| `api/checkout.js`            | `POST /api/checkout` — creates Stripe Checkout session             |
+| `api/fulfill.js`             | `POST /api/fulfill` — places CJ order on successful Stripe payment |
 | `scripts/fill-cj-mapping.js` | Resolves `cjVid`/`cjSku` from CJ catalog (run once with `--write`) |
-| `scripts/restock-agent.js` | Monitors inventory via CJ API and alerts on low stock |
-| `vercel.json` | Routes `/api/products` and `/api/checkout` to serverless functions |
-| `script.js` | Frontend cart, product rendering, checkout flow |
+| `scripts/restock-agent.js`   | Monitors inventory via CJ API and alerts on low stock              |
+| `vercel.json`                | Routes `/api/products` and `/api/checkout` to serverless functions |
+| `script.js`                  | Frontend cart, product rendering, checkout flow                    |
 
 ## Environment Variables (`.env.local`)
 

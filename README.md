@@ -1,6 +1,6 @@
-# money- FaceTea Shoppress 
+# money- FaceTea Shoppress
 
-Source code for **[FaceTea Shop](https://facetea. a dropshipping storefront selling tea-infused skincare products. Built with vanilla HTML/CSS/JS, Vercel serverless functions, Stripe Checkout, and CJ Dropshipping.org)** 
+Source code for **[FaceTea Shop](https://facetea. a dropshipping storefront selling tea-infused skincare products. Built with vanilla HTML/CSS/JS, Vercel serverless functions, Stripe Checkout, and CJ Dropshipping.org)**
 
 ## Quick Start
 
@@ -16,11 +16,11 @@ vercel dev                    # local dev with serverless functions
 
 See `.env.example` for required values:
 
-| Variable | Where to get it |
-|---|---|
-| `STRIPE_SECRET_KEY` | [Stripe Dashboard API keys](https://dashboard.stripe.com/apikeys) |
-| `STRIPE_WEBHOOK_SECRET` | [Stripe Webhooks](https://dashboard.stripe.com/ add endpoint `/api/fulfill` |webhooks) 
-| `CJ_API_KEY` | [CJ Dropshipping API key](https://www.cjdropshipping.com/myCJ.html#/apikey) |
+| Variable                | Where to get it                                                             |
+| ----------------------- | --------------------------------------------------------------------------- | --------- |
+| `STRIPE_SECRET_KEY`     | [Stripe Dashboard API keys](https://dashboard.stripe.com/apikeys)           |
+| `STRIPE_WEBHOOK_SECRET` | [Stripe Webhooks](https://dashboard.stripe.com/ add endpoint `/api/fulfill` | webhooks) |
+| `CJ_API_KEY`            | [CJ Dropshipping API key](https://www.cjdropshipping.com/myCJ.html#/apikey) |
 
 ## CJ Dropshipping Setup
 
@@ -47,9 +47,9 @@ CJ_API_KEY=your_key node scripts/restock-agent.js --threshold=20
 ```
 index.html           Frontend storefront
 script.js            Cart + checkout flow (fetches /api/products)
-api/products.js      GET  /api/ product catalogproducts  
-api/checkout.js      POST /api/ creates Stripe sessioncheckout  
-api/fulfill.js       POST /api/ Stripe webhook -> CJ orderfulfill   
+api/products.js      GET  /api/ product catalogproducts
+api/checkout.js      POST /api/ creates Stripe sessioncheckout
+api/fulfill.js       POST /api/ Stripe webhook -> CJ orderfulfill
 lib/products.js      Single source of truth (prices in cents)
 scripts/fill-cj-mapping.js   Maps products to CJ variant IDs
 scripts/restock-agent.js     Monitors CJ inventory for low stock
