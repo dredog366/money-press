@@ -5,6 +5,6 @@
   "rewrites": [
     { "source": "/api/products", "destination": "/api/products.js" },
     { "source": "/api/checkout", "destination": "/api/checkout.js" },
-    { "source": "/api/fulfill",  "destination": "/api/fulfill.js" }
+    { "source": "/api/fulfill", "destination": "/api/fulfill.js" }
   ]
 }
