@@ -1,5 +1,30 @@
 # CLAUDE.md — AI Assistant Guide for money-press
 
+## CRITICAL — Do Not Misidentify Deployed Files
+
+This is a **static HTML/JS/CSS storefront deployed on Vercel**. It is NOT a Next.js app.
+
+The following files ARE the live production site — **do not delete, "clean up", or treat as contamination:**
+- `index.html` — the deployed storefront
+- `styles.css` — all site styling
+- `script.js` — product catalog, cart, and checkout UI
+- `api/checkout.js` — Stripe serverless checkout (Vercel function)
+- `api/products.js` — product catalog API (Vercel function)
+- `api/fulfill.js` — CJ fulfillment webhook (Vercel function)
+- `lib/products.js` — canonical product data (single source of truth)
+- `vercel.json` — deployment configuration (static site, no build step)
+- `hero-bg.jpg`, `og-image.svg` — production images
+
+The old Next.js scaffold (`src/`, `next.config.ts`, `tsconfig.json`) was intentionally removed from `main` and replaced with this static architecture. Do not recreate it.
+
+## Canonical Location & Repository Isolation
+
+- **Canonical local path:** `/Users/danielgrelli/Projects/new-money-press`
+- **GitHub remote:** `https://github.com/dredog366/money-press.git` (branch: `main`)
+- **Vercel deploys from:** `dredog366/money-press` → `main` branch
+
+This is the **only** copy that should be edited. Do not create worktrees, clone to other directories, or mix code from sibling projects (`sweattees-shopify`, `real-estate-study-app`). Stale duplicates and worktrees were archived on 2026-03-16 — see `/Users/danielgrelli/Projects/cleanup-report.md` for details.
+
 ## Project Overview
 
 **money-press** is the repository for **FaceTea Shop** — a dropshipping storefront selling tea-infused skincare products. The site is a fully functional e-commerce platform with Stripe checkout integration and CJ Dropshipping fulfillment.
@@ -220,5 +245,5 @@ Keep this file current as the project evolves. Update it after:
 
 ---
 
-**Last Updated:** 2026-03-11
-**Current Branch:** `claude/fix-code-duplicates-facetea`
+**Last Updated:** 2026-03-16
+**Current Branch:** `main`
