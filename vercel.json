@@ -5,6 +5,9 @@
   "rewrites": [
     { "source": "/api/products", "destination": "/api/products.js" },
     { "source": "/api/checkout", "destination": "/api/checkout.js" },
-    { "source": "/api/fulfill", "destination": "/api/fulfill.js" }
+    { "source": "/api/fulfill", "destination": "/api/fulfill.js" },
+    { "source": "/api/cj-search", "destination": "/api/cj-search.js" },
+    { "source": "/api/admin", "destination": "/api/admin.js" },
+    { "source": "/admin", "destination": "/admin.html" }
   ]
 }

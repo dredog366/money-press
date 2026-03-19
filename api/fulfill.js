@@ -3,8 +3,10 @@ const https = require("https");
 const { getProductsByIdMap } = require("../lib/products");
 
 const PRODUCT_BY_ID = getProductsByIdMap();
-const CJ_AUTH_URL = "https://developers.cjdropshipping.com/api2.0/v1/authentication/getAccessToken";
-const CJ_ORDER_URL = "https://developers.cjdropshipping.com/api2.0/v1/shopping/order/createOrderV2";
+const CJ_AUTH_URL =
+  "https://developers.cjdropshipping.com/api2.0/v1/authentication/getAccessToken";
+const CJ_ORDER_URL =
+  "https://developers.cjdropshipping.com/api2.0/v1/shopping/order/createOrderV2";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -14,16 +16,27 @@ function httpsPost(url, body, headers = {}) {
     const raw = JSON.stringify(body);
     const { hostname, pathname } = new URL(url);
     const req = https.request(
-      { hostname, path: pathname, method: "POST",
-        headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(raw), ...headers } },
+      {
+        hostname,
+        path: pathname,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Content-Length": Buffer.byteLength(raw),
+          ...headers,
+        },
+      },
       (res) => {
         let data = "";
         res.on("data", (c) => (data += c));
         res.on("end", () => {
-          try { resolve(JSON.parse(data)); }
-          catch (e) { reject(new Error("CJ response parse error: " + data)); }
+          try {
+            resolve(JSON.parse(data));
+          } catch (e) {
+            reject(new Error("CJ response parse error: " + data));
+          }
         });
-      }
+      },
     );
     req.on("error", reject);
     req.write(raw);
@@ -54,16 +67,20 @@ module.exports = async function handler(req, res) {
   const sig = req.headers["stripe-signature"];
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
   if (!webhookSecret) {
-    return res.status(500).json({ error: "STRIPE_WEBHOOK_SECRET is not configured" });
+    return res
+      .status(500)
+      .json({ error: "STRIPE_WEBHOOK_SECRET is not configured" });
   }
   if (!process.env.STRIPE_SECRET_KEY) {
-    return res.status(500).json({ error: "STRIPE_SECRET_KEY is not configured" });
+    return res
+      .status(500)
+      .json({ error: "STRIPE_SECRET_KEY is not configured" });
   }
 
   let event;
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-    // req.body must be the raw  Vercel provides this when bodyParser is disabledBuffer 
+    // req.body must be the raw Buffer — Vercel provides this when bodyParser is disabled
     event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
   } catch (err) {
     console.error("Webhook signature verification failed:", err.message);
@@ -79,29 +96,38 @@ module.exports = async function handler(req, res) {
 
   try {
     // Retrieve full line items from Stripe
-    const lineItemsPage = await stripe.checkout.sessions.listLineItems(session.id, { limit: 100 });
+    const lineItemsPage = await stripe.checkout.sessions.listLineItems(
+      session.id,
+      { limit: 100 },
+    );
     const shippingDetails = session.shipping_details;
 
     if (!shippingDetails?.address) {
       console.error("No shipping address on session", session.id);
-      return res.status(200).json({ received: true, error: "No shipping address" });
+      return res
+        .status(200)
+        .json({ received: true, error: "No shipping address" });
     }
 
     const addr = shippingDetails.address;
 
-    // Build CJ order products  requires cjVid to be mapped in lib/products.jslist 
+    // Build CJ order products list — requires cjVid to be mapped in lib/products.js
     const orderProducts = [];
     for (const li of lineItemsPage.data) {
       // Match by product name (Stripe stores the name we passed during checkout)
       const product = Object.values(PRODUCT_BY_ID).find(
-        (p) => p.name === li.description
+        (p) => p.name === li.description,
       );
       if (!product) {
         console.warn("Could not match line item to product:", li.description);
         continue;
       }
       if (!product.cjVid && !product.cjSku) {
-        console.warn("Product has no CJ mapping:", product. skipping fulfillment");name, "
+        console.warn(
+          "Product has no CJ mapping:",
+          product.name,
+          "skipping fulfillment",
+        );
         continue;
       }
       orderProducts.push({
@@ -112,7 +138,9 @@ module.exports = async function handler(req, res) {
 
     if (orderProducts.length === 0) {
       console.error("No CJ-mapped products found in order", session.id);
-      return res.status(200).json({ received: true, error: "No products with CJ mapping" });
+      return res
+        .status(200)
+        .json({ received: true, error: "No products with CJ mapping" });
     }
 
     const token = await getCJToken();
@@ -131,15 +159,24 @@ module.exports = async function handler(req, res) {
       products: orderProducts,
     };
 
-    const cjRes = await httpsPost(CJ_ORDER_URL, cjPayload, { "CJ-Access-Token": token });
+    const cjRes = await httpsPost(CJ_ORDER_URL, cjPayload, {
+      "CJ-Access-Token": token,
+    });
 
     if (!cjRes.result) {
       console.error("CJ order creation failed:", JSON.stringify(cjRes));
       return res.status(200).json({ received: true, cjError: cjRes.message });
     }
 
-    console.log("CJ order created:", cjRes.data?.orderId, "for Stripe session:", session.id);
-    return res.status(200).json({ received: true, cjOrderId: cjRes.data?.orderId });
+    console.log(
+      "CJ order created:",
+      cjRes.data?.orderId,
+      "for Stripe session:",
+      session.id,
+    );
+    return res
+      .status(200)
+      .json({ received: true, cjOrderId: cjRes.data?.orderId });
   } catch (err) {
     console.error("Fulfill error:", err.message);
     return res.status(500).json({ error: err.message });

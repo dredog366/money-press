@@ -1,7 +1,34 @@
 const Stripe = require("stripe");
 const { getProductsByIdMap } = require("../lib/products");
 
-const PRODUCT_BY_ID = getProductsByIdMap();
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY;
+
+async function getProductMap() {
+  if (SUPABASE_URL && SUPABASE_KEY) {
+    try {
+      const r = await fetch(
+        `${SUPABASE_URL}/rest/v1/products?select=id,name,price,sku,cj_vid,cj_sku&active=eq.true`,
+        {
+          headers: {
+            apikey: SUPABASE_KEY,
+            Authorization: `Bearer ${SUPABASE_KEY}`,
+          },
+        },
+      );
+      if (r.ok) {
+        const rows = await r.json();
+        return rows.reduce((acc, p) => {
+          acc[p.id] = { name: p.name, price: p.price, sku: p.sku, cjVid: p.cj_vid, cjSku: p.cj_sku };
+          return acc;
+        }, {});
+      }
+    } catch (err) {
+      console.error("Supabase price lookup failed, using lib/products.js:", err.message);
+    }
+  }
+  return getProductsByIdMap();
+}
 
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
@@ -25,7 +52,8 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: "No items provided" });
     }
 
-    // Build line items with server-side price validation (single source: lib/products.js)
+    // Build line items with server-side price validation
+    const PRODUCT_BY_ID = await getProductMap();
     const lineItems = items.map((item) => {
       const product = PRODUCT_BY_ID[item.id];
       if (!product) {

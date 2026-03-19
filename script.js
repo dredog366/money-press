@@ -65,9 +65,10 @@ function renderProducts() {
     (p) => `
     <article class="product-card" data-category="${p.category}">
       <div class="product-img-wrap">
-        <div class="product-img" role="img" aria-label="${p.name}" style="display:flex;align-items:center;justify-content:center;font-size:5rem;">
-          ${p.emoji}
-        </div>
+        ${p.image
+          ? `<img class="product-img" src="${p.image}" alt="${p.name}" loading="lazy" />`
+          : `<div class="product-img product-img-emoji" role="img" aria-label="${p.name}">${p.emoji}</div>`
+        }
         ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ""}
       </div>
       <div class="product-body">
@@ -154,8 +155,11 @@ function updateCartUI() {
         .map(
           (item) => `
         <div class="cart-item">
-          <div class="cart-item-img" role="img" aria-label="${item.name}" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">
-            ${item.emoji}
+          <div class="cart-item-img" role="img" aria-label="${item.name}">
+            ${item.image
+              ? `<img src="${item.image}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;border-radius:6px;" />`
+              : `<span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:2rem;">${item.emoji}</span>`
+            }
           </div>
           <div class="cart-item-info">
             <p class="cart-item-name">${item.name}</p>

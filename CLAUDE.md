@@ -5,6 +5,7 @@
 This is a **static HTML/JS/CSS storefront deployed on Vercel**. It is NOT a Next.js app.
 
 The following files ARE the live production site — **do not delete, "clean up", or treat as contamination:**
+
 - `index.html` — the deployed storefront
 - `styles.css` — all site styling
 - `script.js` — product catalog, cart, and checkout UI
