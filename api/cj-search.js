@@ -3,7 +3,7 @@ const https = require("https");
 const CJ_AUTH_URL =
   "https://developers.cjdropshipping.com/api2.0/v1/authentication/getAccessToken";
 const CJ_LIST_URL =
-  "https://developers.cjdropshipping.com/api2.0/v1/product/listProduct";
+  "https://developers.cjdropshipping.com/api2.0/v1/product/listV2";
 
 // ---------------------------------------------------------------------------
 // HTTP helpers (mirrors api/fulfill.js pattern — no extra deps)
@@ -100,8 +100,8 @@ module.exports = async function handler(req, res) {
   try {
     const token = await getCJToken();
     const searchUrl =
-      `${CJ_LIST_URL}?productNameEn=${encodeURIComponent(q.trim())}` +
-      `&pageNum=${Number(page)}&pageSize=20`;
+      `${CJ_LIST_URL}?keyWord=${encodeURIComponent(q.trim())}` +
+      `&page=${Number(page)}&size=20`;
 
     const data = await httpsGet(searchUrl, { "CJ-Access-Token": token });
 
@@ -111,23 +111,26 @@ module.exports = async function handler(req, res) {
         .json({ error: "CJ search failed: " + (data.message || "unknown") });
     }
 
-    const products = (data.data?.list || []).map((p) => ({
-      pid: p.pid,
-      name: p.productName,
-      image: p.productImage,
+    // listV2 returns data.content[0].productList
+    const rawList = data.data?.content?.[0]?.productList || [];
+    const products = rawList.map((p) => ({
+      pid: p.id,
+      name: p.nameEn,
+      image: p.bigImage,
       price: p.sellPrice,
-      categoryName: p.categoryName || "",
-      variants: (p.variants || []).map((v) => ({
-        vid: v.vid,
-        name: v.variantName || "Default",
-        sku: v.variantSku || "",
-        price: v.variantSellPrice || p.sellPrice,
-        image: v.variantImage || p.productImage,
-      })),
+      categoryName: p.threeCategoryName || "",
+      // listV2 doesn't return variants inline — use sku as fallback
+      variants: [{
+        vid: null,
+        name: "Default",
+        sku: p.sku || "",
+        price: p.sellPrice,
+        image: p.bigImage,
+      }],
     }));
 
     return res.status(200).json({
-      total: data.data?.total || 0,
+      total: data.data?.totalRecords || 0,
       page: Number(page),
       products,
     });

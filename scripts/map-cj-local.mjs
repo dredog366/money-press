@@ -19,7 +19,7 @@ if (!CJ_TOKEN || !SUPABASE_KEY) {
   process.exit(1);
 }
 
-const CJ_LIST = "https://developers.cjdropshipping.com/api2.0/v1/product/listProduct";
+const CJ_SEARCH_URL = "https://developers.cjdropshipping.com/api2.0/v1/product/listV2";
 
 function httpsGet(url, headers) {
   return new Promise((resolve, reject) => {
@@ -40,10 +40,10 @@ function httpsGet(url, headers) {
 }
 
 async function searchCJ(q) {
-  const url = `${CJ_LIST}?productNameEn=${encodeURIComponent(q)}&pageNum=1&pageSize=5`;
+  const url = `${CJ_SEARCH_URL}?keyWord=${encodeURIComponent(q)}&page=1&size=5`;
   const data = await httpsGet(url, { "CJ-Access-Token": CJ_TOKEN });
   if (!data.result) throw new Error("CJ: " + (data.message || JSON.stringify(data)));
-  return data.data?.list || [];
+  return data.data?.content?.[0]?.productList || [];
 }
 
 async function updateSupabase(id, image, cj_vid, cj_sku) {
@@ -88,15 +88,16 @@ async function run() {
       const first = results[0];
       if (!first) { console.log("⚠  no results"); fail++; continue; }
 
-      const variant = first.variants?.[0];
-      const image   = variant?.variantImage || first.productImage;
-      const cj_vid  = variant?.vid  || null;
-      const cj_sku  = variant?.variantSku || null;
+      // listV2 fields: id, nameEn, bigImage, sku (SPU)
+      const image  = first.bigImage || null;
+      const cj_vid = null;           // variants require a separate call; sku is sufficient
+      const cj_sku = first.sku || null;
 
       await updateSupabase(p.id, image, cj_vid, cj_sku);
       console.log(`✅`);
-      console.log(`         CJ: "${first.productName?.slice(0, 55)}"`);
+      console.log(`         CJ: "${first.nameEn?.slice(0, 55)}"`);
       console.log(`         img: ${image}`);
+      console.log(`         sku: ${cj_sku}`);
       ok++;
     } catch (e) {
       console.log(`❌  ${e.message}`);
